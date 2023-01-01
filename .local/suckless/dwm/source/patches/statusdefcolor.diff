@@ -1,0 +1,13 @@
+diff --git a/dwm.c b/dwm.c
+index bf00abe..cd83af1 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -861,7 +861,7 @@ drawbar(Monitor *m)
+ 
+ 	/* draw status first so it can be overdrawn by tags later */
+ 	if (m == selmon) { /* status is only drawn on selected monitor */
+-		drw_setscheme(drw, scheme[SchemeNorm]);
++		drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
+ 		tw = TEXTW(stext) - lrpad / 2 + 2; /* 2px extra right padding */
+ 		drw_text(drw, m->ww - tw - stw, 0, tw, bh, lrpad / 2 - 2, stext, 0);
+ 	}

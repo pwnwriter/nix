@@ -1,0 +1,42 @@
+diff --git a/config.h b/config.h
+index de82afe..7153a26 100644
+--- a/config.h
++++ b/config.h
+@@ -97,6 +97,7 @@ static Key keys[] = {
+ 	{ MODKEY,			XK_equal,  setgaps,	   {.i = +1 } },
+ 	{ MODKEY|ShiftMask,		XK_equal,  setgaps,	   {.i =  0 } },
+ 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
++	{ MODKEY,                       XK_r,      resizemouse,    {0} },
+ 	TAGKEYS(                        XK_1,                      0)
+ 	TAGKEYS(                        XK_2,                      1)
+ 	TAGKEYS(                        XK_3,                      2)
+diff --git a/dwm.c b/dwm.c
+index 7f38b61..e22775a 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -40,6 +40,7 @@
+ #include <X11/extensions/Xinerama.h>
+ #endif /* XINERAMA */
+ #include <X11/Xft/Xft.h>
++#include <X11/X.h>
+ 
+ #include "drw.h"
+ #include "util.h"
+@@ -1315,7 +1316,7 @@ resizemouse(const Arg *arg)
+ 		return;
+ 	XWarpPointer(dpy, None, c->win, 0, 0, 0, 0, c->w + c->bw - 1, c->h + c->bw - 1);
+ 	do {
+-		XMaskEvent(dpy, MOUSEMASK|ExposureMask|SubstructureRedirectMask, &ev);
++		XMaskEvent(dpy, KeyPressMask|MOUSEMASK|ExposureMask|SubstructureRedirectMask, &ev);
+ 		switch(ev.type) {
+ 		case ConfigureRequest:
+ 		case Expose:
+@@ -1340,7 +1341,7 @@ resizemouse(const Arg *arg)
+ 				resize(c, c->x, c->y, nw, nh, 1);
+ 			break;
+ 		}
+-	} while (ev.type != ButtonRelease);
++	} while (ev.type != ButtonRelease && ev.type != KeyPress);
+ 	XWarpPointer(dpy, None, c->win, 0, 0, 0, 0, c->w + c->bw - 1, c->h + c->bw - 1);
+ 	XUngrabPointer(dpy, CurrentTime);
+ 	while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
