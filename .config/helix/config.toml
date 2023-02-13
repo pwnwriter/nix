@@ -1,0 +1,31 @@
+theme = "catppuccin_mocha"
+
+[editor]
+bufferline = "multiple"
+line-number = "relative"
+auto-info = false
+auto-completion = true
+true-color = true
+
+[keys.normal]
+Z = { Z = ":wq", Q = ":q!" } # save and quit, quit without saving
+C-s = ":w" # save and quit, quit without saving
+tab = ":buffer-next"
+S-tab = ":buffer-previous"
+esc = ["collapse_selection", "keep_primary_selection"]
+G = "goto_file_end"
+
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
