@@ -1,10 +1,11 @@
 #!/bin/zsh
 
-# Adds `~/.local/bin` to $PATH
-export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 export PATH="$PATH:${$(find ~/.local/share/cargo/bin -type d -printf %p:)%%:}"
-export PATH="$PATH:${$(find ~/.local/autostart -type d -printf %p:)%%:}"
- 
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+eval "$(zoxide init zsh)"
+
+
+
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="st"
