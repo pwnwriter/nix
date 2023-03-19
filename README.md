@@ -12,7 +12,9 @@
 <a href="https://github.com/catppuccin/catppuccin/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
 </p>
 <p align="center">
+  <img src="https://raw.githubusercontent.com/pwnwriter/files/main/dots/02.png" style="border-radius:20%"/>
   <img src="https://raw.githubusercontent.com/pwnwriter/files/main/dots/preview.png" style="border-radius:20%"/>
+
 </p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
