@@ -1,0 +1,24 @@
+# Maintainer: iyamnabeen <iym.nabeen@gmail.com>
+
+pkgname=metis-dmenu
+pkgver=2.0
+pkgrel=0
+pkgdesc="Dmenu launcher for  @metis-os"
+url="https://github.com/metis-os/core-utils"
+arch=('any')
+license=('GPL3')
+depends=(glibc  fontconfig  libx11  libxft)
+conflicts=(metis-dmenu)
+groups=(core-utils)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+      cd "${_pkgname}"
+      make PREFIX=/usr DESTDIR="${pkgdir}" install
+  }
+

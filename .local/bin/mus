@@ -7,3 +7,4 @@ exec mpv --geometry=200x200+1600+800 \
          --x11-name=no-title \
          "$@" \
          -- ~/music/
+

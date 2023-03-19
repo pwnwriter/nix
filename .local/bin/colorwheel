@@ -10,4 +10,5 @@ printf "\033[0m
   \033[104;34m|\033[44;97m|\033[49;90m||\033[40;39m||\033[49;39m||\033[102;32m|\033[42;97m|\033[0m
     \033[49;34m|\033[49;36m|\033[106;36m|\033[46;97m|\033[49;96m|\033[49;92m|\033[0m
 
-"
+"# MIT License : Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files.
+# For more information: https://github.com/pwnwriter/bin

@@ -7,3 +7,4 @@ fi
 src=http://www.doc2pdf.net/convert/document.pdf
 curl -F "inputDocument=@$1" $src > "$HOME/study/${1%.*}.pdf" 
 echo "done myan study now"
+

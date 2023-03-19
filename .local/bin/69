@@ -30,3 +30,4 @@ done
 # kill the found PPID (which will be the
 # terminal).
 setsid "$@" >/dev/null & kill "$pid"
+

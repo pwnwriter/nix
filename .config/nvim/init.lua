@@ -1,11 +1,12 @@
-require('core.options')
-require('pwn.plugins')
-require('pwn.mappings')
-require('config.bufferline')
-require('config.nvim-tree')
-require('config.lsp')
-require('config.completion')
-require('config.term')
-require('config.theme')
-require('config.autopair')
+local modules = {
+        "core.options", 
+        "core.mappings",
+        "plugins.init", 
+}
 
+for i = 1, #modules do
+  local ok, err = pcall(require, modules[i])
+  if not ok then
+    error("Error loading module " .. modules[i] .. ": " .. err)
+  end
+end

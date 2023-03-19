@@ -1,3 +1,0 @@
-#!/bin/sh
-read -r  file? file
-ffmpeg -f x11grab  -i :0.0 $file.mkv

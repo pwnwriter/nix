@@ -1,3 +1,0 @@
-#!/bin/sh
-echo -e "\e[36m  $(uptime|cut -d, -f1)"
-

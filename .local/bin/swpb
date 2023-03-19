@@ -1,11 +1,6 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
-##########################################
-# A pure sh script used in ewm           #
-##########################################
-# SHELLCHECK PASSED !
 
-# Global variable to generate Random number
 
 SSNAME=$(date +%N|sed s/...$//).png
 
@@ -66,3 +61,4 @@ while getopts 'sbpw' OPTION; do
       ;;
   esac
 done
+

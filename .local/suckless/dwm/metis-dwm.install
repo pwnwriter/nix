@@ -1,6 +1,0 @@
-post_install() {
-	echo '*************************************************************************'
-	echo -e "\n[*]Thanks for installing metis-dwm[*]\n"	
-	echo -e "Please "refer https://metislinux.org/key-bindings " for keybindings.\n"	
-	echo '*************************************************************************'
-}

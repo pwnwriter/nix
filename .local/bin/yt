@@ -1,0 +1,6 @@
+#!/bin/bash
+
+yourquery=$(echo "" | dmenu -p "Search YouTube:")
+query=$(echo "$yourquery" | sed 's/ /+/g')
+url="https://www.youtube.com/results?search_query=$query"
+xdg-open "$url"

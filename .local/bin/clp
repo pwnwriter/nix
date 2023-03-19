@@ -1,6 +1,21 @@
 #!/bin/sh
-#
 
-file=$*
 
-command xclip -sel c ${file} && notify-send "copied ${file}"
+# Check if a file name was passed as an argument
+if [ -z "$1" ]; then
+    echo "Error: Please specify a file name."
+    exit 1
+fi
+
+file="$1"
+
+# Check if the file exists
+if [ ! -f "$file" ]; then
+    echo "Error: File not found."
+    exit 1
+fi
+
+# Copy the file to the clipboard and display a notification
+xclip -sel c "$file" && dunstify "File copied" "File $file has been copied to clipboard"
+
+
