@@ -1,6 +1,6 @@
 autoload -U colors && colors	# Load colors
 #PROMPT="%B%F{1}%1~ %F{3}⚡%f%b "
-PROMPT="%B%F{1}%1~ %F{3} %f%b "
+PROMPT=" %B%F{1}%1~ %F{3} %f%b "
 setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments

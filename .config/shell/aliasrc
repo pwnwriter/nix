@@ -19,6 +19,7 @@ alias \
 	yt="yt-dlp --embed-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner" \
+        wget="wget --no-hsts" \
         
 # Colorize commands when possible.
 alias \
@@ -28,7 +29,7 @@ alias \
 	ccat="highlight --out-format=ansi" \
         sxiv="nsxiv" \
         ip="ip -color=auto" \
-        gcl="git clone --depth=1" \
+
 alias \
     sudo="doas" \
     zzz="doas zzz" \
@@ -50,13 +51,8 @@ alias \
 	sdn="shutdown -h now" \
 	e="$EDITOR" \
 	v="$EDITOR" \
-	z="zathura"  \
-        b="bat" \
-        c="cat" \
 
 
-alias \
-  yarn="yarn --cache-folder $HOME/.config/yarn"\
 
 alias \
         gcl="git clone --depth=1" \
