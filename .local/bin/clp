@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 # Check if a file name was passed as an argument
 if [ -z "$1" ]; then
     echo "Error: Please specify a file name."
@@ -15,7 +14,17 @@ if [ ! -f "$file" ]; then
     exit 1
 fi
 
-# Copy the file to the clipboard and display a notification
-xclip -sel c "$file" && dunstify "File copied" "File $file has been copied to clipboard"
-
+# Check if the file is an image
+case "$(file --mime-type -b "$file")" in
+    image/*)
+        # Copy the image to the clipboard and display a notification
+        xclip -selection clipboard -target image/png -i < "$file" && \
+        notify-send "Image copied" "Image $file has been copied to clipboard"
+        ;;
+    *)
+        # Copy the file to the clipboard and display a notification
+        xclip -selection clipboard "$file" && \
+        notify-send "File copied" "File $file has been copied to clipboard"
+        ;;
+esac
 

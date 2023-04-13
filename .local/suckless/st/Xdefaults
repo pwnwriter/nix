@@ -3,7 +3,7 @@ st.alpha: 0.92
 st.alphaOffset: 0.3
 
 !! Set a default font and font size as below:
-st.font: Monospace-11;
+st.font: JetBrainsMono Nerd Font-11;
 
 ! st.termname: st-256color
 ! st.borderpx: 2
