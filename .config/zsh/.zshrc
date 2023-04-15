@@ -64,7 +64,7 @@ bindkey -s '^t' '^utmux \n'
 
 bindkey -s '^r' '^uranger \n'
 
-bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n'
+bindkey -s '^f' '^ucd "$(dirname "$(preview)")"\n'
 
 bindkey -s '^v' '^unvim . \n'
 
