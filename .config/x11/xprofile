@@ -4,9 +4,11 @@
 # If you use startx/xinit like a Chad, this file will also be sourced.
 
 setbg &			# set the background with the `setbg` script
+xset r rate 350 50 &
 xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Uncomment to use Xresources colors/settings on startup
 
-autostart="pipewire pipewire-pulse wireplumber slstatus dunst"
+# Most essential apps
+autostart="pipewire pipewire-pulse wireplumber dunst dwmbar "
 
 for program in $autostart; do
 	pidof -s "$program" || "$program" &

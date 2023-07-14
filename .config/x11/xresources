@@ -1,8 +1,8 @@
 !! Transparency (0-1):
-*.alpha: 0.30
+*.alpha: 0.8
 
 !! Set a default font and font size as below:
-*.font: JetBrainsMono Nerd Font:size=13
+*.font: JetBrainsMono Nerd Font:size=11
 
 /* name		dark	light */
 /* black	0	8 */

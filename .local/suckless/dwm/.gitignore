@@ -1,5 +1,0 @@
-source/config.h
-source/*.o
-source/*.diff
-source/*.orig
-source/*.rej

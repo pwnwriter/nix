@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1671100132617415-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Example for a custom action</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>gimp</icon>
+	<name>Edit with Gimp</name>
+	<unique-id>1671615960737911-1</unique-id>
+	<command>gimp %f</command>
+	<description>Edit selected image with Gimp</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<image-files/>
+</action>
+</actions>

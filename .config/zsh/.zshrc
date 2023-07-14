@@ -1,6 +1,6 @@
 autoload -U colors && colors	# Load colors
-#PROMPT="%B%F{1}%1~ %F{3}⚡%f%b "
-PROMPT=" %B%F{1}%1~ %F{3} %f%b "
+PROMPT=" %B%F{1}%1~ %F{3} %f%b "
+#PROMPT=" %B%F{1}%1~ %F{3} %f%b "
 setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
@@ -13,6 +13,9 @@ HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc"
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -58,17 +61,9 @@ lfcd () {
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
 }
-bindkey -s '^n' '^uls -l\n'
-
-bindkey -s '^t' '^utmux \n'
-
-bindkey -s '^r' '^uranger \n'
-
-bindkey -s '^f' '^ucd "$(dirname "$(preview)")"\n'
 
 bindkey -s '^v' '^unvim . \n'
-
-bindkey -s '^p' '^upython -q \n'
+bindkey -s '^f' '^ucd "$(dirname "$(preview)")"\n'
 
 bindkey '^[[P' delete-char
 
