@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Send notification of current battery and stuffs
+
+battery_info=$(acpi)
+notify-send "Battery information " "$battery_info" 
+
+
+
+
