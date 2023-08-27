@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Powermenu for wofi
+
+menus=$(printf "%s\n" "logout" "shutdown" "restart" | wofi --dmenu --prompt="Hey, what do you want?")
+if [ "$menus" = "logout" ]; then
+    echo "You have been logged out."
+else
+    echo "An error occurred."
+fi
+

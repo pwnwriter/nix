@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 generate_ssh_key() {
     # Get the email from gitconfig
     email=$(git config user.email)
 
-    ssh_dir="$XDG_CONFIG_HOME/.ssh"
+    ssh_dir="$XDG_HOME/.ssh"
     mkdir -p "$ssh_dir"
 
     ssh-keygen -t rsa -b 4096 -C "$email" -f "$ssh_dir/id_rsa"
