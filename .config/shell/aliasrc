@@ -3,9 +3,6 @@
 # Use neovim for vim if present.
 [ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
 
-# Use $XINITRC variable if file exists.
-[ -f "$XINITRC" ] && alias startx="startx $XINITRC"
-
 # sudo not required for some system commands
 for command in mount umount sv pacman updatedb su shutdown poweroff reboot; do
 	alias $command="sudo $command"
@@ -30,32 +27,10 @@ alias \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
 	sxiv="nsxiv" \
-	ip="ip -color=auto"
+	ip="ip -color=auto" \
 
 alias \
 	sudo="doas" \
-	zzz="doas zzz" \
-	x="startx" \
-    hypr="Hyprland"
+    v="$EDITOR" \
+    gcl="git clone --depth=1" \
 
-alias \
-	rc="rustc" \
-	cr="cargo run" \
-	cn="cargo new"
-
-# These common commands are just too long! Abbreviate them.
-alias \
-	ka="killall" \
-	g="git" \
-	trem="transmission-remote" \
-	YT="youtube-viewer" \
-	sdn="shutdown -h now" \
-	e="$EDITOR" \
-	v="$EDITOR"
-
-alias \
-	gcl="git clone --depth=1" \
-	lf="lfub" \
-	magit="nvim -c MagitOnly" \
-	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
-	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport"
