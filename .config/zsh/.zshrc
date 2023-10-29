@@ -49,8 +49,8 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-bindkey -s '^v' '^unvim . \n'
 bindkey -s '^f' '^ucd "$(dirname "$(preview)")"\n'
+bindkey -s '^v' '^unvim . \n'
 
 bindkey '^[[P' delete-char
 
@@ -60,3 +60,4 @@ bindkey '^e' edit-command-line
 bindkey -M vicmd '^[[P' vi-delete-char
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M visual '^[[P' vi-delete
+eval "$(zoxide init zsh)"
