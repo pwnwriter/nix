@@ -37,7 +37,7 @@ symbol = '🌱 '
 truncation_length = 10
 truncation_symbol = ''
 ignore_branches = ['main']
-format = "[$branch]($style) "
+format = "[ $symbol$branch]($style) "
 style = " rosewater"
 
 [palettes.catppuccin_macchiato]
