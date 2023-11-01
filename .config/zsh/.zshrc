@@ -1,9 +1,7 @@
 autoload -U colors && colors	# Load colors
-PROMPT=" %B%F{1}%1~ %F{3}󰏿 %f%b "
-setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
-# History in cache directory:
+
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
@@ -20,7 +18,7 @@ autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots)		# Include hidden files.
+_comp_options+=(globdots)
 
 # vi mode
 bindkey -v
@@ -52,7 +50,7 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 bindkey -s '^f' '^ucd "$(dirname "$(preview)")"\n'
-bindkey -s '^v' '^unvim . \n'
+bindkey -s '^v' '^unvim\n'
 
 bindkey '^[[P' delete-char
 
@@ -62,5 +60,7 @@ bindkey '^e' edit-command-line
 bindkey -M vicmd '^[[P' vi-delete-char
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M visual '^[[P' vi-delete
+
+# shell gud apps
 eval "$(zoxide init zsh)"
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
