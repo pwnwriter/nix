@@ -1,7 +1,7 @@
 palette = "catppuccin_macchiato"
 
 format = """
-$directory \
+ $directory\
 $character\
 """
 
@@ -20,7 +20,7 @@ truncation_length = 1
 style = "bold pink"
 
 [battery]
-disabled = true
+disabled = false
 full_symbol = "󱈑"
 charging_symbol = "󰂄"
 discharging_symbol = "󰂌"
