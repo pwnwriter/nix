@@ -20,7 +20,7 @@ truncation_length = 1
 style = "bold pink"
 
 [battery]
-disabled = false
+disabled = true
 full_symbol = "󱈑"
 charging_symbol = "󰂄"
 discharging_symbol = "󰂌"

@@ -18,7 +18,9 @@ alias \
 	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner" \
 	wget="wget --no-hsts" \
-    cdtmp="cd \$(mktemp -d)" \
+        cdtmp="cd \$(mktemp -d)" \
+        ..="cd .." \
+        ...="cd ../ && cd ../" \
 
 # Colorize commands when possible.
 alias \
