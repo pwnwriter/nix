@@ -2,7 +2,7 @@
 
 # Copyright @pwnwriter/chadrice MIT License
 
-outdir="$HOME/playground/screenshots"
+outdir="$HOME/screenshots"
 mkdir -p "$outdir"
 clipboard=wl-copy
 

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Wallpaper changer 
+
+wall_dir=~/pictures
+wall_file=~/.config/hypr/hyprpaper.conf
+
+wall_name=$(ls "$wall_dir" | wofi --dmenu --prompt="Select a wallpaper??" --location=center --width=500 --height=400)
+
+if [ -z "$wall_name" ]; then
+  exit 0
+fi
+
+sed -i "s|preload = .*$|preload = ~/pictures/$wall_name|" "$wall_file"
+sed -i "s|wallpaper = ,~/pictures/.*$|wallpaper = ,~/pictures/$wall_name|" "$wall_file"
+
+
+pkill -9 hyprpaper 
+setsid hyprpaper &
