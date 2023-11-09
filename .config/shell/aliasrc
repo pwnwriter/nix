@@ -18,22 +18,21 @@ alias \
 	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner" \
 	wget="wget --no-hsts" \
-        cdtmp="cd \$(mktemp -d)" \
-        ..="cd .." \
-        ...="cd ../ && cd ../" \
+	cdtmp="cd \$(mktemp -d)" \
+	..="cd .." \
+	...="cd ../ && cd ../"
 
 # Colorize commands when possible.
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi" \
+	ccat="" \
 	sxiv="nsxiv" \
 	ip="ip -color=auto" \
-	cd="z" \
+	cd="z || cd"
 
 alias \
 	sudo="doas" \
-    v="$EDITOR" \
-    gcl="git clone --depth=1" \
-
+	v="$EDITOR" \
+	gcl="git clone --depth=1"
