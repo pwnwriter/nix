@@ -1,11 +1,8 @@
 #!/bin/sh
 
-# Use neovim for vim if present.
-[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
-
 # sudo not required for some system commands
 for command in mount umount sv pacman updatedb su shutdown poweroff reboot; do
-	alias $command="sudo $command"
+	alias $command="doas $command"
 done
 unset command
 
@@ -13,24 +10,22 @@ unset command
 alias \
 	cp="cp -iv" \
 	bc="bc -ql" \
-	mkd="mkdir -pv" \
 	yt="yt-dlp --embed-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner" \
 	wget="wget --no-hsts" \
-	cdtmp="cd \$(mktemp -d)" \
-	..="cd .." \
-	...="cd ../ && cd ../"
 
 # Colorize commands when possible.
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
-	ccat="" \
 	sxiv="nsxiv" \
 	ip="ip -color=auto" \
-	cd="z || cd"
+        cd="z" \
+	..="cd .." \
+	...="cd ../ && cd ../" \
+	cdtmp="cd \$(mktemp -d)" \
 
 alias \
 	sudo="doas" \
