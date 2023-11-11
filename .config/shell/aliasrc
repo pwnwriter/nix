@@ -30,4 +30,5 @@ alias \
 alias \
 	sudo="doas" \
 	v="$EDITOR" \
-	gcl="git clone --depth=1"
+	gcl="git clone --depth=1" \
+        hx="helix ."

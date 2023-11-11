@@ -31,7 +31,7 @@ export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
 export UNISON="${XDG_DATA_HOME:-$HOME/.local/share}/unison"
-export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
+export HISTFILE="${XDG_DATA_HOME:-$HOME/.cache/zsh}/history"
 export WEECHAT_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/weechat"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 
@@ -53,6 +53,8 @@ export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.
 export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
 export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
 export STARSHIP_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/starship/starship.toml"
+export YARN_CACHE_FOLDER="${XDG_CACHE_HOME:-$HOME/.cache/zsh}/yarn"
+export YARN_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/yarn"
 
 if [ "$(tty)" = "/dev/tty1" ];then
   exec Hyprland
