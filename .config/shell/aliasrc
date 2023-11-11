@@ -6,6 +6,11 @@ for command in mount umount sv pacman updatedb su shutdown poweroff reboot; do
 done
 unset command
 
+# check if a command exists
+_exists() {
+  command -v $1 > /dev/null 2>&1
+}
+
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
 	cp="cp -iv" \
@@ -14,6 +19,18 @@ alias \
 	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner" \
 	wget="wget --no-hsts" \
+
+if _exists zoxide; then
+  alias cd="z"
+fi
+
+if _exists bat; then
+  alias cat="bat"
+fi
+
+if _exists doas; then
+  alias sudo="doas"
+fi
 
 # Colorize commands when possible.
 alias \
@@ -31,4 +48,3 @@ alias \
 	sudo="doas" \
 	v="$EDITOR" \
 	gcl="git clone --depth=1" \
-        hx="helix ."
