@@ -8,6 +8,14 @@ bindkey -M menuselect '^l' vi-forward-char
 bindkey -M menuselect '^j' vi-down-line-or-history
 bindkey -M menuselect '^[[Z' vi-up-line-or-history
 bindkey -v '^?' backward-delete-char
+bindkey -s '^v' '^unvim\n'
+bindkey -s '^f' '^ucd "$(dirname "$(preview)")"\n'
+bindkey -M viins 'jj' vi-cmd-mode
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select() {

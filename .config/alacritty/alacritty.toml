@@ -45,6 +45,7 @@ program = "/usr/bin/zsh"
 [window]
 dynamic_padding = true
 decorations = "Full"
+# opacity= 0.7
 
 [window.class]
 general = "Alacritty"
