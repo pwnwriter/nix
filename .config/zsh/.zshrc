@@ -13,7 +13,6 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 
-bindkey -s '^v' '^unvim\n'
 bindkey -s '^f' '^ucd "$(dirname "$(preview)")"\n'
 
 # Load aliases and shortcuts if existent.
