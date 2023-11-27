@@ -1,10 +1,10 @@
 {
     "alpha":0,
     "align":"top",
-    "background":"#000000",
+    "background":"#ee99a0",
     "widgets":{
         "battery":{
-            "format":"    {percentage} %",
+            "format":"BAT: {percentage} %",
             "type":"battery",
             "is_json":false,
             "align":"left",
@@ -12,7 +12,7 @@
           },
         "brightness":{
             "format":"󰃜 {} %",
-            "align":"right",
+            "align":"left",
             "is_json":false,
             "type":"brightness",
             "refresh-rate":1
@@ -21,8 +21,7 @@
           "hyprland":{
             "format":"󱂬   {workspace}",
             "type":"hyprland",
-            "align":"center"
-
+            "align":"left"
           }
         
       }
