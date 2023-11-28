@@ -5,7 +5,8 @@
 
 .battery,.brightness,.tray,.hyprland{
   background-color:#6e738d;
-  padding:6px 10px;
+  padding:10px 5px;
   color:#f4dbd6;
+  border-radius: 1px;
 }
 

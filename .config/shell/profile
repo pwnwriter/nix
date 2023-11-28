@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
-export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}" # add !/.local/bin as path
-export PATH="$PATH:${$(find ~/.local/share/cargo/bin -type d -printf %p:)%%:}" # add ~/.local/share/cargo/bin as path ( for rust )
-export PATH="$PATH:${$(find ~/.local/share/go/bin -type d -printf %p:)%%:}" # add ~/.local/share/go/bin as path ( for golang )
-export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse # Add sparse index protocol for cargo
+for dir in ~/.local/bin ~/.local/share/cargo/bin ~/.local/share/go/bin ~/.local/share/hysp/bin; do
+    [ -d "$dir" ] && export PATH="$PATH:${$(find "$dir" -type d -printf %p:)%%:}"
+done
+export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse 
 
 # Default programs:
 export EDITOR="nvim"
