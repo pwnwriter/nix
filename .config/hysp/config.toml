@@ -1,8 +1,9 @@
 [source]
-remote = "https://raw.githubusercontent.com/metis-os/hysp-pkgs/main/data"
+remote = "https://raw.githubusercontent.com/metis-os/hysp-pkgs/main/data/x86_64"
+metadata ="https://raw.githubusercontent.com/metis-os/hysp-pkgs/main/data/x86_64/available.toml"
 aarch = "x86_64"
 
 [local]
 home="/home/pwn/.local/share/hysp"
 bin="/home/pwn/.local/share/hysp/bin/" 
-data="/home/pwn/.local/share/hysp/data/x86_64/" 
+data="/home/pwn/.local/share/hysp/data/" 
