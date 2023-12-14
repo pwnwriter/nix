@@ -2,13 +2,13 @@
 
 # sudo not required for some system commands
 for command in mount umount sv pacman updatedb su shutdown poweroff reboot; do
-	alias $command="doas $command"
+	alias "$command"="doas $command"
 done
 unset command
 
 # check if a command exists
 _exists() {
-  command -v $1 > /dev/null 2>&1
+  command -v "$1" > /dev/null 2>&1
 }
 
 # Verbosity and settings that you pretty much just always are going to want.
