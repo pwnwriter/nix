@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# github.com/@pwnwriter
+
+if ! command -v zoxide &> /dev/null; then
+    echo "zoxide not installed"
+    exit 1
+fi
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <directory>"
+    exit 1
+fi
+
+directory="$1"
+
+pane_name=$(basename "$(zoxide query "$directory")")
+
+tmux new-session -s "$pane_name" -c "$directory"
