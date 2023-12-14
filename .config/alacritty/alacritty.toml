@@ -50,3 +50,6 @@ decorations = "Full"
 [window.class]
 general = "Alacritty"
 instance = "Alacritty"
+
+[env]
+TERM = "xterm-256color"
