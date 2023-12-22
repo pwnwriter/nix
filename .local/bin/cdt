@@ -1,9 +1,10 @@
 #!/usr/bin/env zsh
 
-# github.com/@pwnwriter
+# Author: @pwnwriter
 
+# Check if zoxide is installed
 if ! command -v zoxide &> /dev/null; then
-    echo "zoxide not installed"
+    echo "zoxide not found"
     exit 1
 fi
 
@@ -16,4 +17,18 @@ directory="$1"
 directory_path=$(zoxide query "$directory")
 
 pane_name=$(basename "$directory_path")
-builtin cd "$directory_path" && tmux new-session -s "$pane_name" -c "$directory"
+
+# Check if a tmux session with the same name exists
+if tmux has-session -t "$pane_name" 2>/dev/null; then
+    # If exists, switch to that session
+    tmux switch-client -t "$pane_name"
+else
+    # If not, change directory and create a new tmux session
+    if [ -d "$directory_path" ]; then
+        # Check if the directory exists before attempting to change into it
+        builtin cd "$directory_path" && tmux new-session -s "$pane_name" -c "$directory_path"
+    else
+        echo "Directory not found: $directory"
+        exit 1
+    fi
+fi
