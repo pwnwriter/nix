@@ -1,34 +1,39 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # Author: @pwnwriter
 
-# Check if zoxide is installed
-if ! command -v zoxide &> /dev/null; then
-    echo "zoxide not found"
-    exit 1
-fi
+for cmd in zoxide fzf tmux; do
+    command -v "$cmd" >/dev/null || {
+        echo "$cmd not found. Please install it."
+        exit 1
+    }
+done
 
-if [ -z "$1" ]; then
-    echo "Usage: $0 <directory>"
-    exit 1
-fi
+# when no directory is specified
+no_directory_specified() {
+    available_sessions=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | sort)
+    [ -z "$available_sessions" ] && echo "No sessions available, specify a dir to open a new session" && return
+
+    selected_session=$(echo "$available_sessions" | fzf --prompt="  Available sessions " --height=35% --layout=reverse --border --exit-0)
+    [ -z "$selected_session" ] && echo "No sessions selected." && return
+
+    tmux attach-session -t "$selected_session"
+}
+
+# when a directory is specified
+directory_specified() {
+    if tmux has-session -t "$pane_name" 2>/dev/null && [ -n "$directory_path" ]; then
+        tmux switch-client -t "$pane_name"
+    else
+        [ -d "$directory_path" ] && builtin cd "$directory_path" && tmux new-session -s "$pane_name" -c "$directory_path" || {
+            echo "Directory not found: $directory. Please check the path and try again."
+            exit 1
+        }
+    fi
+}
 
 directory="$1"
 directory_path=$(zoxide query "$directory")
-
 pane_name=$(basename "$directory_path")
 
-# Check if a tmux session with the same name exists
-if tmux has-session -t "$pane_name" 2>/dev/null; then
-    # If exists, switch to that session
-    tmux switch-client -t "$pane_name"
-else
-    # If not, change directory and create a new tmux session
-    if [ -d "$directory_path" ]; then
-        # Check if the directory exists before attempting to change into it
-        builtin cd "$directory_path" && tmux new-session -s "$pane_name" -c "$directory_path"
-    else
-        echo "Directory not found: $directory"
-        exit 1
-    fi
-fi
+[ -n "$directory" ] && directory_specified || no_directory_specified
