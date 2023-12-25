@@ -2,16 +2,16 @@
 
 # Binaries path
 paths=(
-    ~/.local/bin
-    ~/.local/share/cargo/bin
-    ~/.local/share/go/bin
-    ~/.local/share/hysp/bin
+	~/.local/bin
+	~/.local/share/cargo/bin
+	~/.local/share/go/bin
+	~/.local/share/hysp/bin
 )
 
 for p in "${paths[@]}"; do
-    if [ -d "$p" ]; then
-        export PATH="$PATH:$p"
-    fi
+	if [ -d "$p" ]; then
+		export PATH="$PATH:$p"
+	fi
 done
 
 export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse # Add sparse index protocol for cargo
@@ -59,14 +59,14 @@ export LESS_TERMCAP_se="$(printf '%b' '[0m')"
 export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
-export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
-export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.
-export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
-export _JAVA_AWT_WM_NONREPARENTING=1	# Fix for Java applications in dwm
+export QT_QPA_PLATFORMTHEME="gtk2"        # Have QT use gtk2 theme.
+export MOZ_USE_XINPUT2="1"                # Mozilla smooth scrolling/touchpads.
+export AWT_TOOLKIT="MToolkit wmname LG3D" #May have to install wmname
+export _JAVA_AWT_WM_NONREPARENTING=1      # Fix for Java applications in dwm
 export STARSHIP_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/starship/starship.toml"
 export YARN_CACHE_FOLDER="${XDG_CACHE_HOME:-$HOME/.cache/zsh}/yarn"
 export YARN_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/yarn"
 
-if [ "$(tty)" = "/dev/tty1" ];then
-  exec Hyprland
+if [ "$(tty)" = "/dev/tty1" ]; then
+	exec Hyprland
 fi

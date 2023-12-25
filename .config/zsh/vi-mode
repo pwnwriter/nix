@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+
 bindkey -v
 export KEYTIMEOUT=15
 
