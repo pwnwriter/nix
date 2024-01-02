@@ -36,6 +36,7 @@ export ANDROID_SDK_HOME="${XDG_CONFIG_HOME}/android"
 export ANSIBLE_CONFIG="${XDG_CONFIG_HOME}/ansible/ansible.cfg"
 export WEECHAT_HOME="${XDG_CONFIG_HOME}/weechat"
 export MBSYNCRC="${XDG_CONFIG_HOME}/mbsync/config"
+export STARSHIP_CONFIG="${XDG_CONFIG_HOME}/starship/config.toml"
 
 # Data-related directories
 export GNUPGHOME="${XDG_DATA_HOME}/gnupg"
@@ -43,13 +44,12 @@ export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
 export GOPATH="${XDG_DATA_HOME}/go"
 export UNISON="${XDG_DATA_HOME}/unison"
-export HISTFILE="${XDG_DATA_HOME}/zsh/history"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME}/pass"
 
+# Cache-related directories
+export HISTFILE="${XDG_CACHE_HOME}/zsh/history"
+
 # Other program settings
-export DICS="/usr/share/stardict/dic/"
-export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
-export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
 export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
 export LESS_TERMCAP_me="$(printf '%b' '[0m')"
@@ -57,10 +57,12 @@ export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"
 export LESS_TERMCAP_se="$(printf '%b' '[0m')"
 export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
+export DICS="/usr/share/stardict/dic/"
+export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+export LESS=-R
 export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
 export QT_QPA_PLATFORMTHEME="gtk2"
 export AWT_TOOLKIT="MToolkit wmname LG3D"
-export STARSHIP_CONFIG="${XDG_CONFIG_HOME}/starship/starship.toml"
 
 if [ "$(tty)" = "/dev/tty1" ]; then
 	exec Hyprland
