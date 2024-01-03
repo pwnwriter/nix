@@ -48,6 +48,7 @@ export PASSWORD_STORE_DIR="${XDG_DATA_HOME}/pass"
 
 # Cache-related directories
 export HISTFILE="${XDG_CACHE_HOME}/zsh/history"
+export CARGO_TARGET_DIR="${XDG_CACHE_HOME}/target"
 
 # Other program settings
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
