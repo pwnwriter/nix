@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
-# github.com/pwnwriter/chadrice
-# MIT license
+# github.com/pwnwriter/dotfiles
+# WTFPL license
 
 # Sudo replacement for specific commands
 for command in mount umount sv pacman updatedb su shutdown poweroff reboot; do
@@ -27,6 +27,10 @@ if _exists doas; then
 	alias sudo="doas"
 fi
 
+if _exists eza; then
+	alias ls="eza --icons  -T -L 2 -x"
+fi
+
 # Always useful
 alias \
 	cp="cp -iv" \
@@ -36,18 +40,11 @@ alias \
 	ffmpeg="ffmpeg -hide_banner" \
 	wget="wget --no-hsts"
 
-# Colorize commands where possible
-alias \
-	ls="ls -hN --color=auto --group-directories-first" \
-	grep="grep --color=auto" \
-	diff="diff --color=auto" \
-	ip="ip -color=auto"
-
 # Additional aliases
 alias \
 	v="nvim" \
 	gcl="git clone --depth=1 --filter=blob:none" \
-	..="cd .." \
 	sxiv="nsxiv" \
-	...="cd ../ && cd ../" \
-	cdtmp="cd \$(mktemp -d)"
+        cdtmp="cd \$(mktemp -d)" \
+        ...="cd ../ && cd ../" \
+        ..="cd .." \
