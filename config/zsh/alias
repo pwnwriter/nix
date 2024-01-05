@@ -28,7 +28,9 @@ if _exists doas; then
 fi
 
 if _exists eza; then
-	alias ls="eza --icons  -T -L 2 -x"
+	alias \
+                ls="eza --icons  -T -L 1 -x" \
+	        ll="eza --icons  -T -L 2 -x" 
 fi
 
 # Always useful
