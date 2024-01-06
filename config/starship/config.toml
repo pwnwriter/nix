@@ -33,7 +33,7 @@ style = "italic mauve"
 threshold=100
 
 [git_branch]
-symbol = '🌱 '
+symbol = '󱐚 '
 truncation_length = 10
 truncation_symbol = ''
 ignore_branches = ['main']

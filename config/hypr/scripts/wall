@@ -4,13 +4,19 @@
 
 wall_dir="$HOME/.config/hypr/wallpapers"
 
-wall_name=$(ls "$wall_dir" --hide=current | wofi --dmenu --prompt="Select a wallpaper??" --location=center --width=500 --height=400)
+selected_wall=$(find "$wall_dir/collections" -maxdepth 1 -type f -not -name 'current' -exec basename {} \; | wofi --dmenu --prompt="Select a wallpaper" --location=center --width=500 --height=400)
 
-if [ -z "$wall_name" ]; then
+if [ -z "$selected_wall" ]; then
   exit 0
 fi
 
-command cp -f "$wall_dir/$wall_name" "$wall_dir/current"
+if ! cp -f "$wall_dir/collections/$selected_wall" "$wall_dir/current"; then
+  exit 1
+fi
 
-killall -9 hyprpaper
-setsid hyprpaper > /dev/null &
+if pgrep -x "hyprpaper" > /dev/null; then
+  pkill -9 hyprpaper
+fi
+
+# Start hyprpaper
+setsid hyprpaper > /dev/null 2>&1 &
