@@ -47,6 +47,10 @@ dynamic_padding = true
 decorations = "Full"
 # opacity= 0.7
 
+[window.padding]
+x = 10
+y = 10
+
 [window.class]
 general = "Alacritty"
 instance = "Alacritty"
