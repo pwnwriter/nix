@@ -1,3 +1,0 @@
-[submodule "local/share/pass"]
-	path = local/share/pass
-	url = git@github.com:pwnwriter/pass
