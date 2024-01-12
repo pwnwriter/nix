@@ -1,8 +1,3 @@
-# ================================================================ #
-# =                           WELCOME!                           = #
-# ================================================================ #
- 
-
 {
   description = "PwnWriter's NixOS configuration";
 
@@ -15,18 +10,26 @@
      };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
     
-      nixosConfigurations.writer = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
             ./laptop/init.nix
-            inputs.home-manager.nixosModules.default
+	home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.pwn = import ./laptop/home.nix;
+
+          }
+
           ];
         };
 

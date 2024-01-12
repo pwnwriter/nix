@@ -5,7 +5,6 @@
     neovim
     git
     xdg-desktop-portal-hyprland
-    zsh
     brave
     alacritty
 
