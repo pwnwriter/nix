@@ -18,6 +18,7 @@
   just
   ripgrep
   grim
+  bat
   
   wofi
   wl-clipboard
