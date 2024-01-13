@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+        neovim
     git
     xdg-desktop-portal-hyprland
 
