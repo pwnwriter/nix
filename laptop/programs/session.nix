@@ -9,10 +9,6 @@
     TERMINAL = "alacritty";
     BROWSER = "brave";
 
-    XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
-    XDG_DATA_HOME = "${config.home.homeDirectory}/.local/share";
-    XDG_CACHE_HOME = "${config.home.homeDirectory}/.cache";
-
     NOTMUCH_CONFIG = "${config.xdg.configHome}/notmuch-config";
     GTK2_RC_FILES = "${config.xdg.configHome}/gtk-2.0/gtkrc-2.0";
     WGETRC = "${config.xdg.configHome}/wget/wgetrc";
@@ -33,6 +29,8 @@
     HISTFILE = "${config.xdg.cacheHome}/zsh/history";
     CARGO_TARGET_DIR = "${config.xdg.cacheHome}/target";
 
+    NIX_PATH = "${config.xdg.dataHome}/.local/share/nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels";
+
     LESS_TERMCAP_mb = "$(printf '%b' '[1;31m')";
     LESS_TERMCAP_md = "$(printf '%b' '[1;36m')";
     LESS_TERMCAP_me = "$(printf '%b' '[0m')";
@@ -46,10 +44,6 @@
     LESSOPEN = "| /usr/bin/highlight -O ansi %s 2>/dev/null";
     QT_QPA_PLATFORMTHEME = "gtk2";
     AWT_TOOLKIT = "MToolkit wmname LG3D";
-
-    if [ "$(tty)" = "/dev/tty1" ]; then
-      exec Hyprland
-    fi;
   };
 }
 
