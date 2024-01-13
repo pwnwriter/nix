@@ -5,41 +5,28 @@
     neovim
     git
     xdg-desktop-portal-hyprland
-    brave
-    alacritty
 
-    ripgrep
-    hyprpaper
     cmake
     pavucontrol
     unzip
     pstree
     pipewire
     libcamera
+    brave
 
 
-    zoxide
-    starship
     neofetch
-    bat
-    eza
     acpi
     doas
     pulseaudio
-    wl-clipboard
-    wofi
 
     wireplumber
     tmux
-    wf-recorder
     imagemagick
     mpv
-    just
 
     nsxiv
-    jq
     tree
-    grim
   ];
 }
 
