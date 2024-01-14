@@ -1,12 +1,7 @@
 { config, ... }:
 
 {
-  imports = [
-    ./git.nix
-    ./zsh.nix
-    ./starship.nix
-    ./zoxide.nix
-  ];
+  imports = [ ./git.nix ./zsh.nix ./starship.nix ./zoxide.nix ];
 
 }
 

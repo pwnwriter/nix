@@ -3,27 +3,27 @@
 let
   UserName = "pwn";
   HostName = "writer";
-in
 
-{
-  imports =
-    [
-      ./hardware.nix
-      ./pkgs.nix
-    ];
+in {
+  imports = [ ./hardware.nix ./pkgs.nix ];
 
   boot = {
     loader.systemd-boot.enable = true;
     initrd.verbose = false;
     consoleLogLevel = 0;
-    kernelParams = ["quiet" "udev.log_level=3" "nvidia_drm.fbdev=1" "nvidia_drm.modeset=1"];
+    kernelParams = [
+      "quiet"
+      "udev.log_level=3"
+      "nvidia_drm.fbdev=1"
+      "nvidia_drm.modeset=1"
+    ];
     loader.efi.canTouchEfiVariables = true;
-    kernelModules = ["coretemp" "cpuid" "v4l2loopback"];
+    kernelModules = [ "coretemp" "cpuid" "v4l2loopback" ];
   };
 
   networking.hostName = HostName;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.networkmanager.enable = true;
 
@@ -34,19 +34,16 @@ in
   users.users.${UserName} = {
     isNormalUser = true;
     description = "User space for ${UserName}";
-    extraGroups = ["networkmanager" "wheel" "video" "audio" "storage"];
-    packages = with pkgs; [];
+    extraGroups = [ "networkmanager" "wheel" "video" "audio" "storage" ];
+    packages = with pkgs; [ ];
   };
-
 
   programs.zsh.enable = true;
   nixpkgs.config.allowUnfree = true;
 
   programs.hyprland = {
     enable = true;
-    xwayland = {
-      enable = true;
-    };
+    xwayland = { enable = true; };
   };
 
   programs.nano.enable = false;
@@ -54,16 +51,15 @@ in
 
   programs.light.enable = true;
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
-  ];
+  fonts.packages = with pkgs;
+    [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
 
   users.defaultUserShell = pkgs.zsh;
 
   security.doas.enable = true;
   security.sudo.enable = false;
   security.doas.extraRules = [{
-    users = [UserName];
+    users = [ UserName ];
     keepEnv = true;
     persist = true;
   }];

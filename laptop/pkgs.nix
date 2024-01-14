@@ -13,6 +13,7 @@
     libcamera
     brave
 
+    file
 
     neofetch
     acpi

@@ -5,16 +5,10 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-    palette = "catppuccin_macchiato";
-      format = lib.concatStrings [
-        "$directory"
-        "$character"
-      ];
+      palette = "catppuccin_macchiato";
+      format = lib.concatStrings [ "$directory" "$character" ];
 
-      right_format = lib.concatStrings [
-        "$battery"
-        "$git_branch"
-      ];
+      right_format = lib.concatStrings [ "$battery" "$git_branch" ];
 
       character = {
         success_symbol = "[ ](red)";
@@ -45,7 +39,7 @@
         symbol = "󱐚 ";
         truncation_length = 10;
         truncation_symbol = "";
-        format = lib.concatStrings ["[ $symbol$branch]($style) "];
+        format = lib.concatStrings [ "[ $symbol$branch]($style) " ];
         style = " rosewater";
       };
 

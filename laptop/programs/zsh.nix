@@ -54,7 +54,7 @@
       wget = "wget --no-hsts";
       gcl = "git clone --depth=1 --filter=blob:none";
       sxiv = "nsxiv";
-      cdtmp = "cd \$(mktemp -d)";
+      cdtmp = "cd $(mktemp -d)";
 
       cd = "z";
       ".." = "cd ..";
