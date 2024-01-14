@@ -12,7 +12,6 @@ in
       ./pkgs.nix
     ];
 
-
   boot = {
     loader.systemd-boot.enable = true;
     initrd.verbose = false;
@@ -49,7 +48,6 @@ in
       enable = true;
     };
   };
-
 
   programs.nano.enable = false;
   programs.nano.syntaxHighlight = false;

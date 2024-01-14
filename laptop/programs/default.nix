@@ -1,6 +1,12 @@
+{ config, ... }:
+
 {
   imports = [
     ./git.nix
-    ./session.nix
+    ./zsh.nix
+    ./starship.nix
+    ./zoxide.nix
   ];
+
 }
+
