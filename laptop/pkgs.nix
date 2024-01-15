@@ -26,6 +26,8 @@
 
     nsxiv
     tree
+
+    gcc
   ];
 }
 

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, input, ... }:
 
 {
   home.username = "pwn";
@@ -17,7 +17,8 @@
     grim
     bat
     just
-    neovim
+
+    neovim-nightly
 
     rustup
 

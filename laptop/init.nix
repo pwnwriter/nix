@@ -39,7 +39,7 @@ in {
   };
 
   programs.zsh.enable = true;
-  nixpkgs.config.allowUnfree = true;
+  #nixpkgs.config.allowUnfree = true;
 
   programs.hyprland = {
     enable = true;

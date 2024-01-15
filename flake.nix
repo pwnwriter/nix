@@ -2,27 +2,23 @@
   description = "PwnWriter's NixOS configuration";
 
   inputs = {
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    neovim.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, neovim-nightly-overlay, ... }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
       UserName = "pwn";
       HostName = "writer";
+      pkgs = import nixpkgs { inherit system; overlays = [ neovim-nightly-overlay.overlay ]; };
     in
     {
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+        inherit pkgs;
         specialArgs = { inherit inputs UserName HostName; };
         modules = [
           ./laptop/init.nix
