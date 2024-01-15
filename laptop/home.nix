@@ -10,7 +10,6 @@
   home.packages = with pkgs; [
     git-cliff
     slurp
-    neovim
 
     eza
     zoxide
@@ -18,6 +17,7 @@
     grim
     bat
     just
+    neovim
 
     rustup
 

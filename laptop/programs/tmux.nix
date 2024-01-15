@@ -8,7 +8,7 @@
     newSession = true;
     escapeTime = 0;
     secureSocket = false;
-    extraConfig = builtins.readFile ./config/tmux.conf;
+    extraConfig = builtins.readFile ./config/tmux/tmux.conf;
   };
 }
 

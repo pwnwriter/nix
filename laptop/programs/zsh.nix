@@ -46,6 +46,7 @@
       cat = "bat --theme=Catppuccin-macchiato";
       ls = "eza --icons  -T -L 1 -x";
       ll = "eza --icons  -T -L 2 -x";
+      v = "nvim";
       cp = "cp -iv";
       bc = "bc -ql";
       yt = "yt-dlp --embed-metadata -i";
