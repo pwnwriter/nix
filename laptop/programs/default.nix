@@ -1,4 +1,4 @@
-{ config, ... }:
+{lib, config, pkgs, inputs, ... }:
 
 {
   imports = [ 
@@ -6,7 +6,6 @@
   ./zsh.nix 
   ./starship.nix 
   ./zoxide.nix
-  ./bat.nix
   ./tmux.nix
   ./dedicated.nix
   ];
