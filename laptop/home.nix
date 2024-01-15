@@ -19,6 +19,8 @@
     bat
     just
 
+    rustup
+
     wofi
     wl-clipboard
     wf-recorder
