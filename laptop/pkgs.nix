@@ -24,6 +24,8 @@
     imagemagick
     mpv
 
+    lua-language-server
+
     nsxiv
     tree
 

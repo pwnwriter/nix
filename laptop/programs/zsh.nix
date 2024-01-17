@@ -8,7 +8,6 @@
 
     sessionVariables = {
       EDITOR = "nvim";
-      VISUAL = "nvim";
       KEYTIMEOUT = 15;
 
       XDG_DATA_HOME = "${config.home.homeDirectory}/.local/share";
@@ -17,6 +16,8 @@
       XDG_CACHE_HOME = "${config.home.homeDirectory}/.cache";
 
       ZDOTDIR = "${config.xdg.configHome}/zsh";
+
+      NIX_PATH = "${config.home.homeDirectory}/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels";
 
       GNUPGHOME = "${config.xdg.dataHome}/gnupg";
       GOPATH = "${config.xdg.dataHome}/go";
