@@ -27,6 +27,8 @@
     nsxiv
     tree
 
+    lua
+
     gcc
   ];
 }

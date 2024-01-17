@@ -20,13 +20,15 @@
 
     neovim-nightly
 
-    rustup
 
     wofi
     wl-clipboard
     wf-recorder
     hyprpaper
     alacritty
+
+    rustup
+    #cargo-watch
   ];
 
   home.stateVersion = "23.11";

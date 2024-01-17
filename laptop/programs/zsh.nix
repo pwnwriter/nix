@@ -19,12 +19,14 @@
       ZDOTDIR = "${config.xdg.configHome}/zsh";
 
       GNUPGHOME = "${config.xdg.dataHome}/gnupg";
-      RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
       GOPATH = "${config.xdg.dataHome}/go";
       UNISON = "${config.xdg.dataHome}/unison";
       PASSWORD_STORE_DIR = "${config.xdg.dataHome}/pass";
 
+      RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
       CARGO_HOME = "${config.xdg.dataHome}/cargo";
+      CARGO_TARGET_DIR = "${config.xdg.cacheHome}/target";
+
       DOCKER_CONFIG = "${config.xdg.configHome}/docker";
       GRADLE_USER_HOME = "${config.xdg.configHome}/gradle";
       LESSHISTFILE = "${config.xdg.cacheHome}/less/history";
