@@ -10,7 +10,6 @@
 
   imports = [ 
     ./shell.nix 
-    ./starship.nix 
     ./apps.nix
   ];
 }
