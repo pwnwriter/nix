@@ -2,17 +2,15 @@
 
 {
   config.home.file = {
-    ".config/alacritty" = {source = ./config/alacritty;};
-    ".config/cava" = {source = ./config/cava;};
-    ".config/wofi" = {source = ./config/wofi;};
-    ".config/bat" = {source = ./config/bat;};
+    ".config/alacritty" = {source = ./configs/alacritty;};
+    ".config/cava" = {source = ./configs/cava;};
+    ".config/wofi" = {source = ./configs/wofi;};
+    ".config/bat" = {source = ./configs/bat;};
   };
 
   imports = [ 
-    ./git.nix 
     ./shell.nix 
     ./starship.nix 
-    ./zoxide.nix
-    ./tmux.nix
+    ./apps.nix
   ];
 }
