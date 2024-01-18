@@ -17,6 +17,8 @@
     grim
     bat
     just
+    stylua
+    pass
 
     neovim-nightly
 

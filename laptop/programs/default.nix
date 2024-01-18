@@ -3,7 +3,7 @@
 {
   imports = [ 
   ./git.nix 
-  ./zsh.nix 
+  ./shell.nix 
   ./starship.nix 
   ./zoxide.nix
   ./tmux.nix

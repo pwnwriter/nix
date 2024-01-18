@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+home.sessionPath = [
+    "/home/pwn/.local/bin"
+  ];
+
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
