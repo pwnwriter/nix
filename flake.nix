@@ -21,12 +21,12 @@
         inherit pkgs;
         specialArgs = { inherit inputs UserName HostName; };
         modules = [
-          ./laptop/init.nix
+          ./core
           home-manager.nixosModules.home-manager
           (config: {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.${UserName} = config.users.${UserName} or import ./laptop/home.nix;
+            home-manager.users.${UserName} = config.users.${UserName} or import ./home;
           })
         ];
       };

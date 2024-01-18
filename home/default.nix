@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/pwn";
   xdg.dataHome = "${config.home.homeDirectory}/.local/share";
 
-  imports = [ ./programs ];
+  imports = [ ./dedicated.nix ];
 
   home.packages = with pkgs; [
     git-cliff
