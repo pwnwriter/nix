@@ -15,10 +15,14 @@
     zoxide
     ripgrep
     grim
+
     bat
     just
     stylua
     pass
+    skim
+    nil
+    mdbook
 
     neovim-nightly
 

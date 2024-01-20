@@ -6,6 +6,7 @@
     ".config/cava" = {source = ./configs/cava;};
     ".config/wofi" = {source = ./configs/wofi;};
     ".config/bat" = {source = ./configs/bat;};
+    ".config/tmux" = {source = ./configs/tmux;};
   };
 
   imports = [ 
