@@ -1,45 +1,44 @@
 { config, pkgs, ... }:
 
 {
-home.sessionPath = [
+  home.sessionPath = [
     "/home/pwn/.local/bin"
   ];
 
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    KEYTIMEOUT = 15;
+
+    XDG_DATA_HOME = "${config.home.homeDirectory}/.local/share";
+    XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
+    XDG_STATE_HOME = "${config.home.homeDirectory}/.local/state";
+    XDG_CACHE_HOME = "${config.home.homeDirectory}/.cache";
+
+    ZDOTDIR = "${config.xdg.configHome}/zsh";
+
+    NIX_PATH = "${config.home.homeDirectory}/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels";
+
+    GNUPGHOME = "${config.xdg.dataHome}/gnupg";
+    GOPATH = "${config.xdg.dataHome}/go";
+    UNISON = "${config.xdg.dataHome}/unison";
+    PASSWORD_STORE_DIR = "${config.xdg.dataHome}/pass";
+
+    RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
+    CARGO_HOME = "${config.xdg.dataHome}/cargo";
+    CARGO_TARGET_DIR = "${config.xdg.cacheHome}/target";
+
+    DOCKER_CONFIG = "${config.xdg.configHome}/docker";
+    GRADLE_USER_HOME = "${config.xdg.configHome}/gradle";
+    LESSHISTFILE = "${config.xdg.cacheHome}/less/history";
+    NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
+    NODE_REPL_HISTORY = "${config.xdg.dataHome}/node/node_repl_history";
+    PYTHONSTARTUP = "${config.xdg.configHome}/python/pythonrc";
+  };
 
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     dotDir = ".config/zsh";
-
-    sessionVariables = {
-      EDITOR = "nvim";
-      KEYTIMEOUT = 15;
-
-      XDG_DATA_HOME = "${config.home.homeDirectory}/.local/share";
-      XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
-      XDG_STATE_HOME = "${config.home.homeDirectory}/.local/state";
-      XDG_CACHE_HOME = "${config.home.homeDirectory}/.cache";
-
-      ZDOTDIR = "${config.xdg.configHome}/zsh";
-
-      NIX_PATH = "${config.home.homeDirectory}/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels";
-
-      GNUPGHOME = "${config.xdg.dataHome}/gnupg";
-      GOPATH = "${config.xdg.dataHome}/go";
-      UNISON = "${config.xdg.dataHome}/unison";
-      PASSWORD_STORE_DIR = "${config.xdg.dataHome}/pass";
-
-      RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
-      CARGO_HOME = "${config.xdg.dataHome}/cargo";
-      CARGO_TARGET_DIR = "${config.xdg.cacheHome}/target";
-
-      DOCKER_CONFIG = "${config.xdg.configHome}/docker";
-      GRADLE_USER_HOME = "${config.xdg.configHome}/gradle";
-      LESSHISTFILE = "${config.xdg.cacheHome}/less/history";
-      NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
-      NODE_REPL_HISTORY = "${config.xdg.dataHome}/node/node_repl_history";
-      PYTHONSTARTUP = "${config.xdg.configHome}/python/pythonrc";
-    };
 
     history = {
       path = "${config.xdg.dataHome}/zsh/zsh_history";
@@ -106,4 +105,3 @@ home.sessionPath = [
     '';
   };
 }
-
