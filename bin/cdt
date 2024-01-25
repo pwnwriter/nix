@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+# Author: @pwnwriter
+
+check_commands() {
+    local required_commands=("zoxide" "sk" "tmux")
+
+    for cmd in "${required_commands[@]}"; do
+        command -v "$cmd" >/dev/null || {
+            echo "$cmd not found. Please install it."
+            exit 1
+        }
+    done
+}
+
+# Handle scenario when directory is specified
+handle_directory() {
+    local directory="$1"
+    local directory_path
+    local pane_name
+
+    if [ -n "$directory" ]; then
+        directory_path=$(zoxide query "$directory")
+        pane_name=$(basename "$directory_path")
+
+        if tmux has-session -t "$pane_name" 2>/dev/null && [ -n "$directory_path" ]; then
+            tmux switch-client -t "$pane_name"
+        else
+            if [ -d "$directory_path" ]; then
+                builtin cd "$directory_path" || echo "Couldn't change directory"
+                tmux new-session -s "$pane_name" -n "1" -c "$directory_path"
+            else
+                echo "Directory not found: $directory. Please check the path and try again."
+                exit 1
+            fi
+        fi
+    else
+        handle_no_directory
+    fi
+}
+
+# Handle scenario when no directory is specified
+handle_no_directory() {
+    available_sessions=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | sort)
+
+    if [ -z "$available_sessions" ]; then
+        echo "No sessions available. Specify a directory to open a new session."
+        return
+    fi
+
+    selected_session=$(echo "$available_sessions" | sk --prompt="  Available sessions " --height=35% --layout=reverse --border --exit-0)
+
+    if [ -z "$selected_session" ]; then
+        echo "No sessions selected."
+        return
+    fi
+
+    tmux attach-session -t "$selected_session"
+}
+
+main() {
+    check_commands
+    handle_directory "$1"
+}
+
+# Execute
+main "$@"
