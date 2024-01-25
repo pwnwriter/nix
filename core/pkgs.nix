@@ -1,37 +1,39 @@
+# System pkgs for all users
+
 { config, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
     git
-    xdg-desktop-portal-hyprland
-
     cmake
-    pavucontrol
     unzip
+    gcc
     pstree
-    pipewire
-    libcamera
-    brave
-
     file
+    nsxiv
+    tree
+
 
     acpi
     doas
+
+    xdg-desktop-portal-hyprland
+    brave
+
+    pavucontrol
+    pipewire
+    wireplumber
+
+
     pulseaudio
 
-    wireplumber
     tmux
     imagemagick
     mpv
 
     lua-language-server
-
-    nsxiv
-    tree
-
     lua
 
-    gcc
   ];
 }
 
