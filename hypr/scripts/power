@@ -9,10 +9,10 @@ pkill -9 $launcher
 
 case "$menu" in
     "reboot")
-    doas reboot
+    reboot
         ;;
     "shutdown")
-    doas poweroff 
+    poweroff 
         ;;
     *)
         echo "Invalid selection"
