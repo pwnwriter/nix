@@ -6,6 +6,7 @@
     ".config/cava" = {source = ./configs/cava;};
     ".config/bat" = {source = ./configs/bat;};
     ".config/tmux" = {source = ./configs/tmux;};
+    ".config/starship.toml" = {source = ./configs/starship.toml;};
   };
 
   imports = [ 
