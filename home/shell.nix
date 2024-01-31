@@ -18,7 +18,6 @@
 
     NIX_PATH = "${config.home.homeDirectory}/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels";
 
-    GNUPGHOME = "${config.xdg.dataHome}/gnupg";
     GOPATH = "${config.xdg.dataHome}/go";
     UNISON = "${config.xdg.dataHome}/unison";
     PASSWORD_STORE_DIR = "${config.xdg.dataHome}/pass";

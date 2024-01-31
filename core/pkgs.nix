@@ -12,6 +12,7 @@
     file
     nsxiv
     tree
+    fx
 
 
     acpi

@@ -20,4 +20,9 @@
     enable = true;
     enableZshIntegration = true;
    };
+
+   programs.gpg = {
+      enable = true;
+      homedir = "${config.xdg.dataHome}/gnupg";
+   };
 }
