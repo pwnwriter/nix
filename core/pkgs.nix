@@ -13,6 +13,7 @@
     nsxiv
     tree
     fx
+    aria2
 
 
     acpi
@@ -22,7 +23,6 @@
     brave
 
     pavucontrol
-    pipewire
     wireplumber
 
 
