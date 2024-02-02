@@ -20,7 +20,7 @@
 
     GOPATH = "${config.xdg.dataHome}/go";
     UNISON = "${config.xdg.dataHome}/unison";
-    PASSWORD_STORE_DIR = "${config.xdg.dataHome}/pass";
+    PASSWORD_STORE_DIR = "${config.xdg.dataHome}/password_store";
 
     RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
     CARGO_HOME = "${config.xdg.dataHome}/cargo";

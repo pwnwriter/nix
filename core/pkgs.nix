@@ -7,6 +7,7 @@
     git
     cmake
     unzip
+    zip
     gcc
     pstree
     file
