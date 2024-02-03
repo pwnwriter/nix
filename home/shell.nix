@@ -18,6 +18,8 @@
 
     NIX_PATH = "${config.home.homeDirectory}/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels";
 
+
+    GTK2_RC_FILES="${config.xdg.configHome}/gtk-2.0/gtkrc-2.0";
     GOPATH = "${config.xdg.dataHome}/go";
     UNISON = "${config.xdg.dataHome}/unison";
     PASSWORD_STORE_DIR = "${config.xdg.dataHome}/password_store";
@@ -69,6 +71,10 @@
     };
 
     profileExtra = ''
+      if [ -d ~/.gnupg ]; then
+        rm -rf ~/.gnupg
+      fi
+
       if [ "$TERM" = "linux" ]; then
         Hyprland
       fi

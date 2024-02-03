@@ -5,7 +5,7 @@ let
   HostName = "writer";
 
 in {
-  imports = [ ./hardware.nix ./pkgs.nix ];
+  imports = [ ./hardware.nix ./pkgs.nix];
 
   boot = {
     loader.systemd-boot.enable = true;

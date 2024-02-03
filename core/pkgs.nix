@@ -15,6 +15,7 @@
     tree
     fx
     aria2
+    whois
 
 
     acpi
