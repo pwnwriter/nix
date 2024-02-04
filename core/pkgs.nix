@@ -16,6 +16,7 @@
     fx
     aria2
     whois
+    shfmt
 
 
     acpi
