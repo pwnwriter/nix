@@ -17,6 +17,7 @@
     aria2
     whois
     shfmt
+    pkg-config
 
 
     acpi
