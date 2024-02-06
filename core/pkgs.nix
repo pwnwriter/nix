@@ -18,6 +18,7 @@
     whois
     shfmt
     pkg-config
+    wezterm
 
 
     acpi
