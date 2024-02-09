@@ -17,12 +17,11 @@
     stylua
     pass
 
-    skim
     nil
+    fzf
 
     mdbook
     neovim-nightly
-    kalker
 
 
     wofi

@@ -19,12 +19,12 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
-   };
+  };
 
-   programs.gpg = {
-      enable = true;
-      homedir = "${config.xdg.dataHome}/gnupg";
-   };
+  programs.gpg = {
+    enable = true;
+    homedir = "${config.xdg.dataHome}/gnupg";
+  };
   gtk = {
     enable = true;
     theme = {

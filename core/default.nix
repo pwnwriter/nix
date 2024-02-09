@@ -4,8 +4,9 @@ let
   UserName = "pwn";
   HostName = "writer";
 
-in {
-  imports = [ ./hardware.nix ./pkgs.nix];
+in
+{
+  imports = [ ./hardware.nix ./pkgs.nix ];
 
   boot = {
     loader.systemd-boot.enable = true;
