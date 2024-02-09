@@ -3,7 +3,7 @@
 # Author: @pwnwriter
 
 check_commands() {
-    local required_commands=("zoxide" "sk" "tmux")
+    local required_commands=("zoxide" "fzf" "tmux")
 
     for cmd in "${required_commands[@]}"; do
         command -v "$cmd" >/dev/null || {
@@ -48,7 +48,7 @@ handle_no_directory() {
         return
     fi
 
-    selected_session=$(echo "$available_sessions" | sk --prompt="  Available sessions " --height=35% --layout=reverse --border --exit-0)
+    selected_session=$(echo "$available_sessions" | fzf --prompt="  Available sessions " --height=35% --layout=reverse --border --exit-0)
 
     if [ -z "$selected_session" ]; then
         echo "No sessions selected."
