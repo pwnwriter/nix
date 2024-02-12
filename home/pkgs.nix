@@ -4,6 +4,8 @@
   home.packages = with pkgs; [
     git
     just
+	
+    tree
 
     eza
     zoxide
@@ -18,7 +20,6 @@
     bat
     stylua
     pass
-
 
     nil
     fzf
