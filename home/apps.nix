@@ -1,4 +1,4 @@
-{ config, pkgs, lib,  ... }:
+{ config, pkgs, lib, ... }:
 
 {
   programs.tmux.enable = true;
@@ -19,9 +19,17 @@
     enableZshIntegration = true;
   };
 
- programs.gpg = {
+  programs.gpg = {
     enable = true;
     homedir = "${config.xdg.dataHome}/gnupg";
+  };
+
+  nix = {
+    package = pkgs.nix;
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      auto-optimise-store = false; # https://github.com/NixOS/nix/issues/7273
+    };
   };
 
   home.file = {

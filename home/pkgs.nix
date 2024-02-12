@@ -8,10 +8,12 @@
     eza
     zoxide
     ripgrep
-    
-   #neovim-nightly
-   
+
+    #neovim-nightly
+
     htop
+
+    nixpkgs-fmt
 
     bat
     stylua
@@ -26,7 +28,7 @@
     rustup
     wezterm
 
-  (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
   ];
 }

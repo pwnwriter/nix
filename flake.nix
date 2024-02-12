@@ -9,16 +9,18 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager,  ... }@inputs : let
-    arch = "aarch64-darwin"; 
-  in {
-    defaultPackage.${arch} =
-      home-manager.defaultPackage.${arch};
-    homeConfigurations.pwnwriter =
-      home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${arch};
-        modules = [ ./home ];
-      };
+  outputs = { nixpkgs, home-manager, ... }@inputs:
+    let
+      arch = "aarch64-darwin";
+    in
+    {
+      defaultPackage.${arch} =
+        home-manager.defaultPackage.${arch};
+      homeConfigurations.pwnwriter =
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${arch};
+          modules = [ ./home ];
+        };
     };
 }
 
