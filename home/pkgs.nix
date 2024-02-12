@@ -1,36 +1,32 @@
-# Home per-user pkgs
-
 { config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
-    git-cliff
-    slurp
+    git
+    just
 
     eza
     zoxide
     ripgrep
-    grim
+    
+   #neovim-nightly
+   
+    htop
 
     bat
-    just
     stylua
     pass
+
 
     nil
     fzf
 
     mdbook
-    neovim-nightly
-
-
-    wofi
-    wl-clipboard
-    wf-recorder
-    hyprpaper
-    alacritty
 
     rustup
-    #cargo-watch
+    wezterm
+
+  (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+
   ];
 }

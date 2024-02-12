@@ -1,9 +1,7 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib,  ... }:
 
 {
-  programs.tmux = {
-    enable = true;
-  };
+  programs.tmux.enable = true;
 
   programs.git = {
     enable = true;
@@ -21,20 +19,14 @@
     enableZshIntegration = true;
   };
 
-  programs.gpg = {
+ programs.gpg = {
     enable = true;
     homedir = "${config.xdg.dataHome}/gnupg";
   };
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Catppuccin-Macchiato-Compact-Pink-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "pink" ];
-        size = "compact";
-        tweaks = [ "rimless" "black" ];
-        variant = "macchiato";
-      };
-    };
+
+  home.file = {
+    ".config/starship.toml" = { source = ./configs/starship.toml; };
+    ".config/wezterm" = { source = ./configs/wezterm; };
   };
 }
+

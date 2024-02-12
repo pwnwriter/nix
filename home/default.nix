@@ -1,12 +1,13 @@
 { config, pkgs, lib, input, ... }:
 
 {
-  home.username = "pwn";
-  home.homeDirectory = "/home/pwn";
+  home.username = "pwnwriter";
+  home.homeDirectory = "/Users/pwnwriter";
   xdg.dataHome = "${config.home.homeDirectory}/.local/share";
 
-  imports = [ ./dedicated.nix ./pkgs.nix ];
+  imports = [ ./pkgs.nix ./shell.nix  ./apps.nix ];
 
   home.stateVersion = "23.11";
   programs.home-manager.enable = true;
 }
+
