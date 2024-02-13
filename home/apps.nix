@@ -22,6 +22,21 @@
     enable = true;
     homedir = "${config.xdg.dataHome}/gnupg";
   };
+ 
+  programs.ssh = {
+    enable = true;
+    controlPath = "${config.xdg.dataHome}/ssh/master-%r@%n:%p";
+    userKnownHostsFile = "${config.xdg.dataHome}/ssh/known_hosts";
+    matchBlocks = {
+      "*" = {
+        identityFile = "${config.xdg.dataHome}/ssh/id_rsa";
+        extraOptions = {
+          AddKeysToAgent = "yes";
+          UseKeychain = "yes";
+        };
+      };
+    };
+  };
 
   nix = {
     package = pkgs.nix;

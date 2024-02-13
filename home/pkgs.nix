@@ -11,8 +11,6 @@
     zoxide
     ripgrep
 
-    #neovim-nightly
-
     htop
 
     nixpkgs-fmt
