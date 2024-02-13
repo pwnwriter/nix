@@ -22,10 +22,9 @@
     enable = true;
     homedir = "${config.xdg.dataHome}/gnupg";
   };
- 
+
   programs.ssh = {
     enable = true;
-    controlPath = "${config.xdg.dataHome}/ssh/master-%r@%n:%p";
     userKnownHostsFile = "${config.xdg.dataHome}/ssh/known_hosts";
     matchBlocks = {
       "*" = {
@@ -35,6 +34,14 @@
           UseKeychain = "yes";
         };
       };
+    };
+  };
+
+  programs.password-store = {
+    enable = true;
+    settings = {
+      PASSWORD_STORE_KEY = "pwned";
+      PASSWORD_STORE_CLIP_TIME = "30";
     };
   };
 

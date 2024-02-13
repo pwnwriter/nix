@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     git
     just
-	
+
     tree
 
     eza
@@ -15,12 +15,15 @@
 
     nixpkgs-fmt
 
+    neovim
+
     bat
     stylua
     pass
 
     nil
     fzf
+    gcc
 
     mdbook
 

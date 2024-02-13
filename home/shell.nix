@@ -19,7 +19,6 @@
     NIX_PATH = "${config.home.homeDirectory}/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels";
 
     GOPATH = "${config.xdg.dataHome}/go";
-    PASSWORD_STORE_DIR = "${config.xdg.dataHome}/password_store";
 
     RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
     CARGO_HOME = "${config.xdg.dataHome}/cargo";
@@ -31,6 +30,7 @@
     NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
     NODE_REPL_HISTORY = "${config.xdg.dataHome}/node/node_repl_history";
     PYTHONSTARTUP = "${config.xdg.configHome}/python/pythonrc";
+    SSH_HOME = "${config.xdg.configHome}/ssh/ssh_config";
   };
 
   programs.zsh = {
