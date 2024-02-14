@@ -55,7 +55,7 @@
 
   home.file = {
     ".config/starship.toml" = { source = ./configs/starship.toml; };
-    #".config/wezterm" = { source = ./configs/wezterm; };
+    ".config/wezterm" = { source = ./configs/wezterm; };
   };
 }
 
