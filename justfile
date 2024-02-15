@@ -5,5 +5,4 @@ nix-clean:
 	@nix-collect-garbage -d
 
 nix-rebuild: 
-	@home-manager switch --flake . --extra-experimental-features nix-command --extra-experimental-features flakes
-
+	@nix run nix-darwin -- switch --flake .#pwnwriter && darwin-rebuild switch --flake .#pwnwriter

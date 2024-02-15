@@ -3,6 +3,7 @@
 {
   home.sessionPath = [
     "/usr/local/bin"
+    "/run/current-system/sw/bin"
   ];
 
   home.sessionVariables = {

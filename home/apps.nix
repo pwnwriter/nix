@@ -45,14 +45,6 @@
     };
   };
 
-  nix = {
-    package = pkgs.nix;
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      auto-optimise-store = false; # https://github.com/NixOS/nix/issues/7273
-    };
-  };
-
   home.file = {
     ".config/starship.toml" = { source = ./configs/starship.toml; };
     ".config/wezterm" = { source = ./configs/wezterm; };
