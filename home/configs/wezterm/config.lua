@@ -14,7 +14,7 @@ config.tab_bar_at_bottom = true
 config.check_for_updates = false
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
-config.tab_max_width = 3
+config.tab_max_width = 4
 config.font_size = 12
 config.color_scheme = "Catppuccin Macchiato"
 config.cursor_blink_rate = 0
@@ -26,5 +26,39 @@ config.bold_brightens_ansi_colors = true
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
 config.window_padding = { left = 15, right = 10, top = 10, bottom = 10 }
+
+config.colors = {
+  tab_bar = {
+    background = 'None',
+    active_tab = {
+      bg_color = 'None',
+      fg_color = '#c0c0c0',
+      intensity = 'Normal',
+      underline = 'None',
+      italic = false,
+      strikethrough = false,
+    },
+
+    inactive_tab = {
+      bg_color = 'None',
+      fg_color = '#808080',
+    },
+    inactive_tab_hover = {
+      bg_color = 'None',
+      fg_color = '#909090',
+      italic = true,
+    },
+
+    new_tab = {
+      bg_color = 'None',
+      fg_color = '#808080',
+    },
+    new_tab_hover = {
+      bg_color = '#494d64',
+      fg_color = '#909090',
+      italic = true,
+    },
+  },
+}
 
 return config
