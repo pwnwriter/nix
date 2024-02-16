@@ -40,14 +40,19 @@
   programs.password-store = {
     enable = true;
     settings = {
-      PASSWORD_STORE_KEY = "pwned";
+      PASSWORD_STORE_KEY = "0xC14F852608E47657";
       PASSWORD_STORE_CLIP_TIME = "30";
     };
   };
 
+  programs.yazi = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   home.file = {
     ".config/starship.toml" = { source = ./configs/starship.toml; };
-    ".config/wezterm" = { source = ./configs/wezterm; };
+    #".config/wezterm" = { source = ./configs/wezterm; };
   };
 }
 
