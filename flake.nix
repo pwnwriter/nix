@@ -1,5 +1,5 @@
 {
-  description = "John's darwin system";
+  description = "pwnwriter's macos config";
 
   inputs = {
 

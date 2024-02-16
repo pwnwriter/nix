@@ -34,8 +34,9 @@
     nixpkgs-fmt
     nil
     lua-language-server
-    yazi
     mdbook
+    yazi
+    presenterm
   ];
 
   environment.shells = with pkgs; [
