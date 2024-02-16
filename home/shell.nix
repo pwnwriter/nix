@@ -76,6 +76,8 @@
       bindkey '^e' edit-command-line;
       bindkey -M vicmd '^e' edit-command-line;
       bindkey -M viins 'jj' vi-cmd-mode;
+      bindkey -s '^o' '^uyazi\n'
+
 
       function zle-keymap-select() {
         case $KEYMAP in
