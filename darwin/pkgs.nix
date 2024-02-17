@@ -1,42 +1,44 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    # Development Tools:
+    # Development Tools
     gcc
     rustup
+    go
 
-    # Editors:
+    # Editors
     neovim
 
-    # Terminal Emulators:
+    # Terminal Emulators
     wezterm
 
-    # File and Text Search:
+    # File and Text Search
     ripgrep
     fzf
 
-    # Version Control and Encryption:
+    # Version Control and Encryption
     gnupg
     pass
 
-    # File Navigation:
+    # File Navigation
     tree
+    just
+    bat
     zoxide
     eza
+    yazi
+    presenterm
 
-    # System Monitoring:
+    # System Monitoring
     htop
     neofetch
 
-    # Utilities:
-    just
-    bat
+    # Utilities
     stylua
     nixpkgs-fmt
     nil
     lua-language-server
     mdbook
-    yazi
-    presenterm
+    gopls
   ];
 
   environment.shells = with pkgs; [
