@@ -16,7 +16,7 @@
 
   };
 
-  outputs = inputs@{ self, nixpkgs, darwin, home-manager, ... }: {
+  outputs = { self, nixpkgs, darwin, home-manager, ... }: {
     darwinConfigurations.pwnwriter = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
