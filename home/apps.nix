@@ -8,6 +8,10 @@
     userEmail = "hey@pwnwriter.xyz";
   };
 
+  programs.zsh = {
+    enable = true;
+  };
+
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
