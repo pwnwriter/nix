@@ -1,9 +1,13 @@
 { config
+, pkgs
 , ...
 }: {
-  home.username = "pwnwriter";
-  home.homeDirectory = "/Users/pwnwriter";
-  xdg.dataHome = "${config.home.homeDirectory}/.local/share";
+
+  home = {
+    username = "pwnwriter";
+    homeDirectory = "/Users/pwnwriter";
+    stateVersion = "23.05";
+  };
 
   imports =
     [
@@ -12,7 +16,6 @@
       ./apps.nix
     ];
 
-  home.stateVersion = "23.05";
-
+  xdg.dataHome = "${config.home.homeDirectory}/.local/share";
   programs.home-manager.enable = true;
 }
