@@ -8,6 +8,7 @@
     userEmail = "hey@pwnwriter.xyz";
   };
 
+
   programs.zsh = {
     enable = true;
   };

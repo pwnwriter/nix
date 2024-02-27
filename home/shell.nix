@@ -2,7 +2,6 @@
 
 {
   home.sessionPath = [
-    "/usr/local/bin"
     "/run/current-system/sw/bin"
     "/Users/pwnwriter/.nix-profile/bin"
   ];
