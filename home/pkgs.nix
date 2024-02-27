@@ -31,6 +31,8 @@
     lua-language-server
     mdbook
     gopls
+    lazygit
+
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 }
