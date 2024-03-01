@@ -2,9 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    gcc
+    clang
     rustup
     go
+    trunk
 
     neovim
     wezterm
@@ -32,6 +33,7 @@
     mdbook
     gopls
     lazygit
+    jq
 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
