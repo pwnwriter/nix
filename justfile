@@ -1,8 +1,12 @@
 _default:
 	@just -l
 
-nix-clean:
+gens:
+        @home-manager generations 
+
+clean:
 	@nix-collect-garbage -d
 
-nix-rebuild: 
-	@nix run github:nix-community/home-manager -- switch --flake .#pwnwriter 
+rebuild *ARGS: 
+	@nix run github:nix-community/home-manager -- switch --flake .#{{ARGS}}
+
