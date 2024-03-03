@@ -13,8 +13,14 @@
     homeConfigurations = {
       "pwnwriter" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-        modules = [ ./modules ];
+        modules = [ ./modules/mac.nix ];
       };
+
+      "wood" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-linux;
+        modules = [ ./modules/server.nix ];
+      };
+
     };
   };
 }

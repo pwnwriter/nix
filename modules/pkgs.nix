@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -34,7 +34,6 @@
     gopls
     lazygit
     jq
-
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 }
