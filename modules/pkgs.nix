@@ -35,9 +35,6 @@
     lazygit
     jq
 
-    darwin.apple_sdk.frameworks.SystemConfiguration
-    pkg-config
-    openssl
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 }

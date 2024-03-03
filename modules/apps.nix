@@ -8,22 +8,14 @@
     userEmail = "hey@pwnwriter.xyz";
   };
 
-#  nix = {
-#    package = pkgs.nixFlakes;
-#    settings = {
-#      experimental-features = [ "nix-command" "flakes" ];
-#      auto-optimise-store = false;
-#      warn-dirty = false;
-#    };
-#    gc = {
-#      automatic = lib.mkDefault true;
-#      options = lib.mkDefault "--delete-older-than 1w";
-#    };
-#  };
-
-
   programs.zsh = {
     enable = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
   };
 
   programs.zoxide = {
