@@ -2,10 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    clang
-    rustup
+    gcc
     go
     trunk
+    rustup
 
     neovim
     wezterm
@@ -35,6 +35,9 @@
     lazygit
     jq
 
+    darwin.apple_sdk.frameworks.SystemConfiguration
+    pkg-config
+    openssl
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 }
