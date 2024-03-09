@@ -4,6 +4,9 @@ _default:
 gens:
         @home-manager generations 
 
+format: 
+        @nixpkgs-fmt ./
+
 clean:
 	@nix-collect-garbage -d
 
