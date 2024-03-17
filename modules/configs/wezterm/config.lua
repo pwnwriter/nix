@@ -25,7 +25,7 @@ config.bold_brightens_ansi_colors = true
 -- Window settings
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
-config.window_padding = { left = 15, right = 10, top = 10, bottom = 10 }
+config.window_padding = { left = 25, right = 25, top = 30, bottom = 30 }
 
 config.colors = {
 	tab_bar = {

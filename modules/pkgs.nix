@@ -7,6 +7,9 @@
     trunk
     rustup
 
+    zig
+    zls
+
     neovim
     wezterm
 
@@ -35,6 +38,7 @@
     lazygit
     jq
     aria2
+
     darwin.apple_sdk.frameworks.Security
     darwin.apple_sdk.frameworks.CoreFoundation
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
