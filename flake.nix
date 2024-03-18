@@ -14,13 +14,13 @@
       "macos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
         modules = [ ./modules/mac.nix ];
-        extraSpecialArgs = {username = "pwnwriter"; home_dir = "/Users/pwnwriter" ;};
+        extraSpecialArgs = { username = "pwnwriter"; home_dir = "/Users/pwnwriter"; };
       };
 
       "server" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-linux;
         modules = [ ./modules/server.nix ];
-        extraSpecialArgs = {username = "wood"; home_dir = "/home/wood" ;};
+        extraSpecialArgs = { username = "wood"; home_dir = "/home/wood"; };
       };
 
     };
