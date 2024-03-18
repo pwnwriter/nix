@@ -1,11 +1,13 @@
 { config
-, pkgs
+, username
+, home_dir
 , ...
-}: {
+}:
 
+{
   home = {
-    username = "pwnwriter";
-    homeDirectory = "/Users/pwnwriter";
+    username = "${username}";
+    homeDirectory = "${home_dir}";
     stateVersion = "23.05";
   };
 

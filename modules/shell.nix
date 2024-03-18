@@ -47,7 +47,7 @@
     };
 
     shellAliases = {
-      cat = "bat --theme=Catppuccin-macchiato";
+      cat = "bat";
       ls = "eza --icons  -T -L 1 -x";
       ll = "eza --icons  -T -L 2 -x";
       v = "nvim";

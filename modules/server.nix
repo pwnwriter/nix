@@ -1,11 +1,13 @@
 { config
-, pkgs
+, username
+, home_dir
 , ...
-}: {
+}:
 
+{
   home = {
-    username = "wood";
-    homeDirectory = "/home/wood";
+    username = "${username}";
+    homeDirectory = "${home_dir}";
     stateVersion = "23.05";
   };
 
