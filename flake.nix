@@ -1,5 +1,5 @@
 {
-  description = "pwnwriter's mac(server)os config";
+  description = "pwnwriter's unix config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -11,16 +11,28 @@
 
   outputs = { nixpkgs, home-manager, ... }: {
     homeConfigurations = {
-      "macos" = home-manager.lib.homeManagerConfiguration {
+      macos = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-        modules = [ ./modules/mac.nix ];
-        extraSpecialArgs = { username = "pwnwriter"; home_dir = "/Users/pwnwriter"; };
+        modules = [
+          ./modules
+          {
+            home.username = "pwnwriter";
+            home.stateVersion = "23.11";
+            home.homeDirectory = "/Users/pwnwriter";
+          }
+        ];
       };
 
-      "server" = home-manager.lib.homeManagerConfiguration {
+      server = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-linux;
-        modules = [ ./modules/server.nix ];
-        extraSpecialArgs = { username = "wood"; home_dir = "/home/wood"; };
+        modules = [
+          ./modules
+          {
+            home.username = "wood";
+            home.stateVersion = "23.11";
+            home.homeDirectory = "/home/wood";
+          }
+        ];
       };
 
     };

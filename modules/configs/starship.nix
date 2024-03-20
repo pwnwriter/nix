@@ -16,7 +16,7 @@
       character = {
         error_symbol =
           lib.concatStrings [
-            "[ ](rosewater)"
+            "[ ](red)"
           ];
         vimcmd_symbol =
           lib.concatStrings [
@@ -24,7 +24,7 @@
           ];
         success_symbol =
           lib.concatStrings [
-            "[ ](red)"
+            "[ ](rosewater)"
           ];
       };
 

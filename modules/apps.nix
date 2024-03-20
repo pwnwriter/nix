@@ -8,6 +8,11 @@
     userEmail = "hey@pwnwriter.xyz";
   };
 
+  programs.bat = {
+    enable = true;
+    config.theme = "Nord";
+  };
+
   programs.zsh = {
     enable = true;
   };

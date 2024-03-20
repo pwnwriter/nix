@@ -1,15 +1,8 @@
 { config
-, username
-, home_dir
 , ...
 }:
 
 {
-  home = {
-    username = "${username}";
-    homeDirectory = "${home_dir}";
-    stateVersion = "23.05";
-  };
 
   imports =
     [
