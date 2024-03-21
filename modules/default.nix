@@ -1,9 +1,6 @@
-{ config
-, ...
-}:
+{ config, ...}:
 
 {
-
   imports =
     [
       ./pkgs.nix
