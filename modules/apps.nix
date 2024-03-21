@@ -40,7 +40,6 @@
         identityFile = "${config.xdg.dataHome}/ssh/id_rsa";
         extraOptions = {
           AddKeysToAgent = "yes";
-          UseKeychain = "yes";
         };
       };
     };
