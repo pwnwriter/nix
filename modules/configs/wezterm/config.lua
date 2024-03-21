@@ -25,7 +25,7 @@ config.bold_brightens_ansi_colors = true
 -- Window settings
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
-config.window_padding = { left = 50, right = 10, top = 50, bottom = 50 }
+config.window_padding = { left = 50, right = 50, top = 50, bottom = 50 }
 
 wezterm.on("gui-startup", function(cmd)
   local active_screen = wezterm.gui.screens()["active"]

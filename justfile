@@ -1,15 +1,19 @@
 _default:
-	@just -l
+    @just -l
+
+alias g := gens
+alias f := format
+alias c := clean
+alias r := rebuild
 
 gens:
-        @home-manager generations 
+    @home-manager generations 
 
-format: 
-        @nixpkgs-fmt ./
+format:
+    @nixpkgs-fmt ./
 
 clean:
-	@nix-collect-garbage -d
+    @nix-collect-garbage -d
 
-rebuild *ARGS: 
-	@nix run github:nix-community/home-manager -- switch --flake .#{{ARGS}}
-
+rebuild *ARGS:
+    @nix run github:nix-community/home-manager -- switch --flake .#{{ ARGS }}

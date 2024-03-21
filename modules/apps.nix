@@ -61,6 +61,7 @@
 
   home.file = {
     ".config/wezterm" = { source = ./configs/wezterm; };
+    ".config/tmux/tmux.conf" = { source = ./configs/tmux.conf; };
   };
 
   imports =

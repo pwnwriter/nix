@@ -43,12 +43,12 @@ let
     lua-language-server
     gopls
     go
-
   ];
 
   server = with pkgs; [
     yazi
     presenterm
+    tmux
   ];
 
 in
