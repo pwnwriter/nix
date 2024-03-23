@@ -29,8 +29,8 @@ config.window_padding = { left = 50, right = 50, top = 50, bottom = 50 }
 
 wezterm.on("gui-startup", function(cmd)
   local active_screen = wezterm.gui.screens()["active"]
-  local width = active_screen.width * 0.75 -- Adjust the width as needed (e.g., 75% of the screen width)
-  local height = active_screen.height * 0.75 -- Adjust the height as needed (e.g., 75% of the screen height)
+  local width = active_screen.width * 0.90
+  local height = active_screen.height * 0.80
   local x = (active_screen.width - width) / 2 -- Center horizontally
   local y = (active_screen.height - height) / 2 -- Center vertically
 
