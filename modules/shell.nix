@@ -2,7 +2,7 @@
 
 {
   home.sessionPath = [
-    "/Users/pwnwriter/.nix-profile/bin"
+    "$HOME/.nix-profile/bin"
   ];
 
   home.sessionVariables = {

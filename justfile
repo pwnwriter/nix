@@ -10,7 +10,7 @@ gens:
     @home-manager generations 
 
 format:
-    @nixpkgs-fmt ./
+    @nixpkgs-fmt $(find ./ -type f -name '*.nix')
 
 clean:
     @nix-collect-garbage -d

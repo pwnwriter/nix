@@ -63,12 +63,5 @@
     ".config/tmux/tmux.conf" = { source = ./configs/tmux.conf; };
   };
 
-  imports =
-    [
-      ./configs/starship.nix
-    ];
-
-
-
-}
-
+}       
+        

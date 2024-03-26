@@ -26,7 +26,6 @@ let
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
 
-
   development = with pkgs; [
     gcc
     trunk
