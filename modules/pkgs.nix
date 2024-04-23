@@ -48,6 +48,7 @@ let
     yazi
     presenterm
     tmux
+    bun
   ];
 
 in

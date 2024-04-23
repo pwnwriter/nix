@@ -1,5 +1,37 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
+let
+  macos_prompt = {
+    error_symbol =
+      lib.concatStrings [
+        "[ ](red)"
+      ];
+    vimcmd_symbol =
+      lib.concatStrings [
+        "[ ](green)"
+      ];
+    success_symbol =
+      lib.concatStrings [
+        "[ ](rosewater)"
+      ];
+  };
+
+  linux_prompt = {
+    error_symbol =
+      lib.concatStrings [
+        "[ ](red)"
+      ];
+    vimcmd_symbol =
+      lib.concatStrings [
+        "[ ](green)"
+      ];
+    success_symbol =
+      lib.concatStrings [
+        "[ ](rosewater)"
+      ];
+  };
+
+in
 {
   programs.starship = {
     enable = true;
@@ -13,20 +45,7 @@
         "$directory$character"
       ];
 
-      character = {
-        error_symbol =
-          lib.concatStrings [
-            "[ ](red)"
-          ];
-        vimcmd_symbol =
-          lib.concatStrings [
-            "[ ](green)"
-          ];
-        success_symbol =
-          lib.concatStrings [
-            "[ ](rosewater)"
-          ];
-      };
+      character = if pkgs.stdenv.isDarwin then macos_prompt else linux_prompt;
 
       directory = {
         style = "bold pink";
@@ -45,3 +64,4 @@
     };
   };
 }
+
