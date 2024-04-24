@@ -49,6 +49,9 @@ let
     presenterm
     tmux
     bun
+
+    yarn
+    nodejs_21
   ];
 
 in
