@@ -15,5 +15,10 @@ format:
 clean:
     @nix-collect-garbage -d
 
-rebuild *ARGS:
-    @nix run github:nix-community/home-manager -- switch --flake .#{{ ARGS }}
+[macos]
+rebuild:
+    @nix run github:nix-community/home-manager -- switch --flake .#macos
+
+[linux]
+rebuild:
+    @nix run github:nix-community/home-manager -- switch --flake .#server
