@@ -8,7 +8,6 @@ let
     eza
     ripgrep
     fzf
-    neovim
     jq
     aria2
     htop
