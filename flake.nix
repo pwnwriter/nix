@@ -28,9 +28,9 @@
         modules = [
           ./modules
           {
-            home.username = "wood";
+            home.username = "wolf";
             home.stateVersion = "23.11";
-            home.homeDirectory = "/home/wood";
+            home.homeDirectory = "/home/wolf";
           }
         ];
       };

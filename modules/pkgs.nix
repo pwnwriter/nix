@@ -51,6 +51,8 @@ let
 
     yarn
     nodejs_21
+    docker-compose
+
   ];
 
 in
