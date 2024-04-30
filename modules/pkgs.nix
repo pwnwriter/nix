@@ -50,7 +50,7 @@ let
     bun
 
     yarn
-    nodejs_21
+    nodejs_20
     docker-compose
 
   ];
