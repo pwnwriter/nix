@@ -14,7 +14,7 @@ config.tab_bar_at_bottom = true
 config.check_for_updates = false
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
-config.tab_max_width = 4
+--- config.tab_max_width = 4
 config.font_size = 12
 config.color_scheme = "Catppuccin Mocha"
 config.cursor_blink_rate = 0
@@ -26,19 +26,6 @@ config.bold_brightens_ansi_colors = true
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
 config.window_padding = { left = 50, right = 50, top = 50, bottom = 50 }
-
-wezterm.on("gui-startup", function(cmd)
-  local active_screen = wezterm.gui.screens()["active"]
-  local width = active_screen.width * 0.90
-  local height = active_screen.height * 0.80
-  local x = (active_screen.width - width) / 2 -- Center horizontally
-  local y = (active_screen.height - height) / 2 -- Center vertically
-
-  local _, _, window = wezterm.mux.spawn_window(cmd or {})
-
-  window:gui_window():set_position(x, y)
-  window:gui_window():set_inner_size(width, height)
-end)
 
 config.colors = {
   tab_bar = {
@@ -73,5 +60,63 @@ config.colors = {
     },
   },
 }
+
+wezterm.on("gui-startup", function(cmd)
+  local active_screen = wezterm.gui.screens()["active"]
+  local width = active_screen.width * 0.90
+  local height = active_screen.height * 0.80
+  local x = (active_screen.width - width) / 2 -- Center horizontally
+  local y = (active_screen.height - height) / 2 -- Center vertically
+
+  local _, _, window = wezterm.mux.spawn_window(cmd or {})
+
+  window:gui_window():set_position(x, y)
+  window:gui_window():set_inner_size(width, height)
+end)
+
+local process_icons = {
+  ["psql"] = "󱤢",
+  ["usql"] = "󱤢",
+  ["nvim"] = " ",
+  ["make"] = "",
+  ["just"] = "",
+  ["vim"] = " ",
+  ["go"] = "",
+  ["python3"] = "",
+  ["zsh"] = " ",
+  ["bash"] = " ",
+  ["htop"] = "󱋊",
+  ["cargo"] = "󱘗",
+  ["sudo"] = "",
+  ["git"] = "",
+  ["lua"] = "󰢱",
+}
+
+local function get_current_working_dir(tab)
+  if not tab.active_pane or tab.active_pane.current_working_dir == nil then
+    return ""
+  end
+end
+
+local function get_process(tab)
+  if not tab.active_pane or tab.active_pane.foreground_process_name == "" then
+    return nil
+  end
+
+  local process_name = string.gsub(tab.active_pane.foreground_process_name, "(.*[/\\])(.*)", "%2")
+  if string.find(process_name, "kubectl") then
+    process_name = "kubectl"
+  end
+
+  return process_icons[process_name]
+end
+
+wezterm.on("format-tab-title", function(tab)
+  local process = get_process(tab)
+  local title = process and string.format(" %s  ", process) or "   " 
+  return {
+    { Text = title },
+  }
+end)
 
 return config
