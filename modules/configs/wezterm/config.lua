@@ -113,7 +113,7 @@ end
 
 wezterm.on("format-tab-title", function(tab)
   local process = get_process(tab)
-  local title = process and string.format(" %s  ", process) or "   " 
+  local title = process and string.format(" %s  ", process) or "   "
   return {
     { Text = title },
   }
