@@ -1,3 +1,5 @@
+set shell := ["zsh", "-c"]
+
 _default:
     @just -l
 
@@ -7,26 +9,30 @@ alias c := clean
 alias r := rebuild
 
 gens:
-    @echo "Listing home-manager generations"
-    @home-manager generations
+    @echo "🏠🏠🏠 Listing home-manager generations 🏠🏠🏠"
+    home-manager generations
 
-format:
-    @echo "Formatting nix files"
-    @nixpkgs-fmt $(find ./ -type f -name '*.nix')
-    @echo "Formatting wezterm lua files"
-    @stylua $(find ./ -type f -name '.stylua.toml') $(find ./ -type f -name '*.lua')
+# Format all files
+format: format-nix format-wezterm
+    @echo "🍦🍦🍦Formatted wezterm and nix files 🍦🍦🍦" 
 
 clean:
     @echo "Cleaning up unused Nix store items"
-    @nix-collect-garbage -d
+    nix-collect-garbage -d
+
+@format-wezterm:
+    stylua $(find ./ -type f -name '.stylua.toml') $(find ./ -type f -name '*.lua')
+
+@format-nix: 
+    nixpkgs-fmt $(find ./ -type f -name '*.nix')
 
 [macos]
 rebuild:
-    @echo "Rebuilding macOS configuration"
-    @nix run github:nix-community/home-manager -- switch --flake .#macos
+    @echo "🍎🍎🍎 Rebuilding macOS configuration 🍎🍎🍎"
+    nix run github:nix-community/home-manager -- switch --flake .#macos
 
 [linux]
 rebuild:
-    @echo "Rebuilding Linux server configuration"
-    @nix run github:nix-community/home-manager -- switch --flake .#server
+    @echo "🧊🧊🧊 Rebuilding Linux server configuration 🧊🧊🧊"
+    nix run github:nix-community/home-manager -- switch --flake .#server
 
