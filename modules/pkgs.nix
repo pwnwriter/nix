@@ -11,7 +11,7 @@ let
     jq
     aria2
     htop
-    neofetch
+    fastfetch
     pass
   ];
 

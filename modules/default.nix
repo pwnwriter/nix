@@ -4,7 +4,7 @@
   imports =
     [
       ./pkgs.nix
-      ./shell.nix
+      ./zsh.nix
       ./apps.nix
       ./starship.nix
     ];
