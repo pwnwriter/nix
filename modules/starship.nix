@@ -52,6 +52,14 @@ in
         truncation_length = 1;
       };
 
+      nix_shell = {
+        disabled = false;
+        heuristic = false;
+        impure_msg = "[impure-shell](red)";
+        pure_msg = "[pure-shell](green)";
+        unknown_msg = "[unknown-shell](yellow)";
+      };
+
       palettes.catppuccin_macchiato = {
         flamingo = "#f0c6c6";
         maroon = "#ee99a0";

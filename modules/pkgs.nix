@@ -52,6 +52,7 @@ let
     yarn
     nodejs_20
     docker-compose
+    nodePackages_latest.typescript-language-server
   ];
 
 in
