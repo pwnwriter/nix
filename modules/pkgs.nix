@@ -52,7 +52,6 @@ let
     yarn
     nodejs_20
     docker-compose
-
   ];
 
 in
