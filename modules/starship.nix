@@ -42,7 +42,11 @@ in
       palette = "catppuccin_macchiato";
 
       format = lib.concatStrings [
-        "$directory$character"
+        "$directory$character "
+      ];
+
+      right_format = lib.concatStrings [
+        "$nix_shell"
       ];
 
       character = if pkgs.stdenv.isDarwin then macos_prompt else linux_prompt;
@@ -52,12 +56,11 @@ in
         truncation_length = 1;
       };
 
-      nix_shell = {
-        disabled = false;
-        heuristic = false;
-        impure_msg = "[impure-shell](red)";
-        pure_msg = "[pure-shell](green)";
-        unknown_msg = "[unknown-shell](yellow)";
+        nix_shell = {
+        impure_msg = "";
+        symbol = " ";
+        heuristic = true;
+        format = "[](fg:#f5bde6 bg:none)[dev $symbol](fg:#131313 bg:#f5bde6)[](fg:#f5bde6 bg:none)";
       };
 
       palettes.catppuccin_macchiato = {

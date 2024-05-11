@@ -16,8 +16,6 @@
 
     ZDOTDIR = "${config.xdg.configHome}/zsh";
 
-    NIX_PATH = "${config.home.homeDirectory}/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels";
-
     GOPATH = "${config.xdg.dataHome}/go";
 
     RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
