@@ -23,16 +23,23 @@ clean:
 @format-wezterm:
     stylua $(find ./ -type f -name '.stylua.toml') $(find ./ -type f -name '*.lua')
 
-@format-nix: 
+@format-nix:
     nixpkgs-fmt $(find ./ -type f -name '*.nix')
 
 [macos]
 rebuild:
     @echo "🍎🍎🍎 Rebuilding macOS configuration 🍎🍎🍎"
-    nix run github:nix-community/home-manager -- switch --flake .#macos
+    if ! which home-manager >/dev/null 2>&1; then \
+        home-manager switch --flake .#macos; \
+    else \
+        nix run github:nix-community/home-manager -- switch --flake .#macos; \
+    fi
 
 [linux]
 rebuild:
     @echo "🧊🧊🧊 Rebuilding Linux server configuration 🧊🧊🧊"
-    nix run github:nix-community/home-manager -- switch --flake .#server
-
+    if ! which home-manager >/dev/null 2>&1; then \
+        home-manager switch --flake .#server; \
+    else \
+        nix run github:nix-community/home-manager -- switch --flake .#server; \
+    fi

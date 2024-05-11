@@ -56,7 +56,7 @@ in
         truncation_length = 1;
       };
 
-        nix_shell = {
+      nix_shell = {
         impure_msg = "";
         symbol = " ";
         heuristic = true;
