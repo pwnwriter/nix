@@ -29,7 +29,7 @@ clean:
 [macos]
 rebuild:
     @echo "🍎🍎🍎 Rebuilding macOS configuration 🍎🍎🍎"
-    if ! which home-manager >/dev/null 2>&1; then \
+    if  which home-manager >/dev/null 2>&1; then \
         home-manager switch --flake .#macos; \
     else \
         nix run github:nix-community/home-manager -- switch --flake .#macos; \
@@ -38,7 +38,7 @@ rebuild:
 [linux]
 rebuild:
     @echo "🧊🧊🧊 Rebuilding Linux server configuration 🧊🧊🧊"
-    if ! which home-manager >/dev/null 2>&1; then \
+    if  which home-manager >/dev/null 2>&1; then \
         home-manager switch --flake .#server; \
     else \
         nix run github:nix-community/home-manager -- switch --flake .#server; \

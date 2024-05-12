@@ -42,7 +42,7 @@ in
       palette = "catppuccin_macchiato";
 
       format = lib.concatStrings [
-        "$directory$character "
+        "$directory$character"
       ];
 
       right_format = lib.concatStrings [
