@@ -13,6 +13,7 @@ let
     htop
     fastfetch
     pass
+    neovim
   ];
 
   darwin =
