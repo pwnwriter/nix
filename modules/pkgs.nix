@@ -50,10 +50,13 @@ let
     tmux
     bun
 
+    nodePackages.bash-language-server
+
     yarn
-    nodejs_20
+    nodejs_22
     docker-compose
     nodePackages_latest.typescript-language-server
+    nodePackages_latest.pnpm
   ];
 
 in
