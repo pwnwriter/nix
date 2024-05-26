@@ -29,9 +29,9 @@ clean:
 [macos]
 rebuild:
     @echo "🍎🍎🍎 Rebuilding macOS configuration 🍎🍎🍎"
-    which home-manager && home-manager switch --flake .#macos || nix run github:nix-community/home-manager -- switch --flake .#macos
+    which home-manager > /dev/null 2>&1 && home-manager switch --flake .#macos || nix run github:nix-community/home-manager -- switch --flake .#macos
 
 [linux]
 rebuild:
     @echo "🧊🧊🧊 Rebuilding Linux server configuration 🧊🧊🧊"
-    which home-manager && home-manager switch --flake .#server || nix run github:nix-community/home-manager -- switch --flake .#server
+    which home-manager > /dev/null 2>&1 && home-manager switch --flake .#server || nix run github:nix-community/home-manager -- switch --flake .#server
