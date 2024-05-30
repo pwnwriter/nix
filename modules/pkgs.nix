@@ -51,12 +51,13 @@ let
     bun
 
     nodePackages.bash-language-server
+    nodejs_22
+    pnpm
+    nodePackages_latest.pnpm
+    nodePackages_latest.typescript-language-server
 
     yarn
-    nodejs_22
     docker-compose
-    nodePackages_latest.typescript-language-server
-    nodePackages_latest.pnpm
   ];
 
 in
