@@ -3,14 +3,17 @@ let
   core = with pkgs; [
     tree
     just
+
     bat
     zoxide
     eza
     ripgrep
+
     fzf
     jq
     aria2
     htop
+
     fastfetch
     pass
     neovim
@@ -27,21 +30,11 @@ let
     ];
 
   development = with pkgs; [
-    gcc
-    trunk
-    rustup
-    mdbook
-    lazygit
-
-    zig
-    zls
-
+    clang
     stylua
     nixpkgs-fmt
     nil
     lua-language-server
-    gopls
-    go
   ];
 
   server = with pkgs; [

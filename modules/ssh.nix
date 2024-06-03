@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ config, ... }: {
   programs.ssh = {
     enable = true;
     userKnownHostsFile = "${config.xdg.dataHome}/ssh/known_hosts";
