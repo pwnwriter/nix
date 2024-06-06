@@ -17,6 +17,7 @@ let
     fastfetch
     pass
     neovim
+
   ];
 
   darwin =

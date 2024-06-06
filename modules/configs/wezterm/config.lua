@@ -92,12 +92,6 @@ local process_icons = {
   ["lua"] = "󰢱",
 }
 
-local function get_current_working_dir(tab)
-  if not tab.active_pane or tab.active_pane.current_working_dir == nil then
-    return ""
-  end
-end
-
 local function get_process(tab)
   if not tab.active_pane or tab.active_pane.foreground_process_name == "" then
     return nil
