@@ -1,7 +1,6 @@
 { pkgs, ... }:
 let
   core = with pkgs; [
-    tree
     just
 
     bat
