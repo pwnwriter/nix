@@ -1,12 +1,21 @@
+{ pkgs, ... }:
+let
+  name = "pwnwriter";
+  email = "hey@pwnwriter.xyz";
+in
 {
   programs.git = {
     enable = true;
-    userName = "pwnwriter";
-    userEmail = "hey@pwnwriter.xyz";
+    userName = name;
+    userEmail = email;
     ignores = [ ".DS_Store" ];
 
     extraConfig = {
       pull.rebase = true;
+      credential.helper =
+        if pkgs.stdenv.isDarwin
+        then "osxkeychain"
+        else "cache";
     };
 
     signing = {
