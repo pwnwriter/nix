@@ -2,11 +2,11 @@
 let
   core = with pkgs; [
     just
-
     bat
     zoxide
     eza
     ripgrep
+
 
     fzf
     jq
@@ -14,9 +14,7 @@ let
     htop
 
     fastfetch
-    pass
     neovim
-
   ];
 
   darwin =
@@ -39,7 +37,6 @@ let
 
   server = with pkgs; [
     yazi
-    presenterm
     tmux
     bun
 
@@ -49,7 +46,6 @@ let
     nodePackages_latest.pnpm
     nodePackages_latest.typescript-language-server
 
-    yarn
     docker-compose
   ];
 
