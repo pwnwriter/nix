@@ -42,7 +42,6 @@ let
 
     nodePackages.bash-language-server
     nodejs_22
-    pnpm
     nodePackages_latest.pnpm
     nodePackages_latest.typescript-language-server
 
