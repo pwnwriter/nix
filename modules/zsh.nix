@@ -21,11 +21,8 @@
     RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
     CARGO_HOME = "${config.xdg.dataHome}/cargo";
 
-    DOCKER_CONFIG = "${config.xdg.configHome}/docker";
-    GRADLE_USER_HOME = "${config.xdg.configHome}/gradle";
     LESSHISTFILE = "${config.xdg.cacheHome}/less/history";
     NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
-    NODE_REPL_HISTORY = "${config.xdg.dataHome}/node/node_repl_history";
     PYTHONSTARTUP = "${config.xdg.configHome}/python/pythonrc";
     SSH_HOME = "${config.xdg.configHome}/ssh/ssh_config";
   };
@@ -44,13 +41,16 @@
     };
 
     shellAliases = {
+      vi = "vi -i NONE";
+      v = "nvim";
+      vim = "nvim";
+
       cat = "bat";
       ls = "eza --icons  -T -L 1 -x";
       ll = "eza --icons  -T -L 2 -x";
-      v = "nvim";
-      vim = "nvim";
       cp = "cp -iv";
       bc = "bc -ql";
+
       yt = "yt-dlp --embed-metadata -i";
       yta = "yt -x -f bestaudio/best";
       ffmpeg = "ffmpeg -hide_banner";
@@ -64,13 +64,10 @@
 
     initExtra = ''
       stty -ixon
-      zle -N edit-command-line;
       zle -N up-line-or-beginning-search;
       zle -N down-line-or-beginning-search;
 
       bindkey -v '^?' backward-delete-char;
-      bindkey '^e' edit-command-line;
-      bindkey -M vicmd '^e' edit-command-line;
       bindkey -M viins 'jj' vi-cmd-mode;
       bindkey -s '^y' '^uyazi\n'
 
