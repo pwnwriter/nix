@@ -15,7 +15,8 @@ let
 
     fastfetch
     neovim
-  ];
+  ]
+  ++ (import ./dev.nix {pkgs = pkgs;});
 
   darwin =
     with pkgs;
