@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  core = with pkgs; [
+  shared = with pkgs; [
     just
     bat
     zoxide
@@ -15,8 +15,7 @@ let
 
     fastfetch
     neovim
-  ]
-  ++ (import ./dev.nix {pkgs = pkgs;});
+  ];
 
   darwin =
     with pkgs;
@@ -34,25 +33,28 @@ let
     nixpkgs-fmt
     nil
     lua-language-server
-  ];
+  ] ++ (import ./dev.nix { pkgs = pkgs; });
 
-  server = with pkgs; [
-    yazi
-    tmux
-    bun
 
-    nodePackages.bash-language-server
-    nodejs_22
-    nodePackages_latest.pnpm
-    nodePackages_latest.typescript-language-server
+  server =
+    with pkgs;
+    with pkgs.nodePackages_latest; [
+      yazi
+      tmux
+      bun
 
-    docker-compose
-  ];
+      docker-compose
+
+      nodejs_22
+      pnpm
+      bash-language-server
+      typescript-language-server
+    ];
 
 in
 {
   home.packages =
-    core
+    shared
     ++ development
     ++ (
       if pkgs.stdenv.isDarwin
