@@ -15,6 +15,7 @@
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
         modules = [
           ./modules
+          ./scripts
           {
             home.username = "pwnwriter";
             home.stateVersion = "23.11";
@@ -27,6 +28,7 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
           ./modules
+          ./scripts
           {
             home.username = "wolf";
             home.stateVersion = "23.11";

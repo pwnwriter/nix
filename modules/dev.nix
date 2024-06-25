@@ -2,5 +2,6 @@
 with pkgs;
 [
   rustup
+  go
 
 ]
