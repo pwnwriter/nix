@@ -1,9 +1,12 @@
 { pkgs, ... }:
 
 let
-  src = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/catppuccin/yazi/main/themes/mocha.toml";
-    sha256 = "1s66068fjyd03hfzg8sb24lxk0n3ix5mgsaynw59rqcwyj3ix3p3";
+  src = pkgs.fetchFromGitHub {
+    owner = "catppuccin";
+    repo = "yazi";
+    rev = "main";
+    sha256 = "sha256-a2X9WToZmctD1HZVqN9A512iPd+3dtjRloBEifgteF4=";
+    fetchSubmodules = false;
   };
 in
 {
@@ -12,5 +15,6 @@ in
     enableZshIntegration = true;
   };
 
-home.file.".config/yazi/theme.toml".source = src;
+  home.file.".config/yazi/theme.toml".source = "${src}/themes/mocha.toml";
 }
+
