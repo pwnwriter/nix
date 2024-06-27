@@ -20,7 +20,7 @@ in
 
     signing = {
       key = "B681763F9B5BDF279A139E0C0544A89BC51920AA";
-      signByDefault = true;
+      signByDefault = pkgs.stdenv.isDarwin; # enable gpg signing on darwin only
     };
 
     aliases = {
