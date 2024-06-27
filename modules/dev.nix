@@ -2,6 +2,9 @@
 with pkgs;
 [
   rustup
-  go
+  cargo-shuttle
+  cargo-watch
 
+
+  go
 ]
