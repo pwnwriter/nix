@@ -6,7 +6,7 @@ let
       echo "Usages: $0 <filename>"
       exit 1
     fi
-    ${pkgs.curl}/bin/curl -s -F "file=@$file" https://0x0.st
+    ${pkgs.curl}/bin/curl -s -F "file=@$file" https://null.pwnwriter.xyz
   '';
 in
 {
