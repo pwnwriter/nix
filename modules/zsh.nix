@@ -1,10 +1,6 @@
 { config, ... }:
 
 {
-  home.sessionPath = [
-    "$HOME/.nix-profile/bin"
-  ];
-
   home.sessionVariables = {
     EDITOR = "nvim";
     KEYTIMEOUT = 15;
