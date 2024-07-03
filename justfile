@@ -34,4 +34,4 @@ rebuild:
 [linux]
 rebuild:
     @echo "🧊🧊🧊 Rebuilding Linux server configuration 🧊🧊🧊"
-    which home-manager > /dev/null 2>&1 && home-manager switch --flake .#server || nix run github:nix-community/home-manager -- switch --flake .#server
+    sudo nixos-rebuild switch --flake .#wolf

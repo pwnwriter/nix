@@ -18,8 +18,7 @@
       system = "x86_64-linux";
       modules = [
         disko.nixosModules.disko
-        ./configuration.nix
-        ./disk-config.nix
+        ./server
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -30,13 +29,9 @@
             home.stateVersion = "23.11";
 
             programs.home-manager.enable = true;
-            services.gpg-agent = {
-              enable = true;
-              pinentryFlavor = "tty";
-            };
 
             imports = [
-              ./modules
+              ./home-manager
             ];
           };
         }
@@ -46,7 +41,7 @@
     homeConfigurations.macos = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-darwin;
       modules = [
-        ./modules
+        ./home-manager
         ./scripts
         {
           home.username = "pwnwriter";

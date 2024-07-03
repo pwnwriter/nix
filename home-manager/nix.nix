@@ -2,7 +2,7 @@
 
 { pkgs, ... }:
 {
-  nix.package = pkgs.nixVersions.latest;
+  #nix.package = pkgs.nixVersions.latest;
   nix.settings = {
     use-xdg-base-directories = true;
     build-users-group = "nixbld";
