@@ -25,20 +25,20 @@
 
   system.stateVersion = "23.11";
 
-programs.zsh.enable = true;
+  programs.zsh.enable = true;
 
-users.users.wolf = {
+  users.users.wolf = {
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "User space for";
-    extraGroups = [ "networkmanager" "wheel" "video" "audio" "storage" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "video" "audio" "storage" "docker" ];
     packages = with pkgs; [ ];
   };
 
-virtualisation.docker.enable = true;
+  virtualisation.docker.enable = true;
 
-virtualisation.docker.rootless = {
-   enable = true;
-   setSocketVariable = true;
-};
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 }
