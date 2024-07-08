@@ -9,6 +9,10 @@
           AddKeysToAgent = "yes";
         };
       };
+      "Host wolf.pwnwriter.xyz" = {
+        user = "wolf";
+        hostname = "wolf.pwnwriter.xyz";
+      };
     };
   };
 }
