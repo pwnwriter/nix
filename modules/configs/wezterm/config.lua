@@ -77,7 +77,7 @@ end)
 local process_icons = {
   ["psql"] = "󱤢",
   ["usql"] = "󱤢",
-  ["nvim"] = " ",
+  ["nvim"] = "",
   ["make"] = "",
   ["just"] = "",
   ["vim"] = " ",
@@ -90,6 +90,7 @@ local process_icons = {
   ["sudo"] = "",
   ["git"] = "",
   ["lua"] = "󰢱",
+  ["nix"] = "",
 }
 
 local function get_process(tab)
