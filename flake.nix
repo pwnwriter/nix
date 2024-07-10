@@ -18,7 +18,7 @@
           ./scripts
           {
             home.username = "pwnwriter";
-            home.stateVersion = "23.11";
+            home.stateVersion = "24.05";
             home.homeDirectory = "/Users/pwnwriter";
           }
         ];
@@ -31,7 +31,7 @@
           ./scripts
           {
             home.username = "wolf";
-            home.stateVersion = "23.11";
+            home.stateVersion = "24.05";
             home.homeDirectory = "/home/wolf";
           }
         ];
