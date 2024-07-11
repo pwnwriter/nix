@@ -10,6 +10,7 @@ let
 
     fzf
     jq
+    jnv
     aria2
     htop
 
