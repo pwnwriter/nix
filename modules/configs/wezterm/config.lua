@@ -78,8 +78,8 @@ local process_icons = {
   ["psql"] = "󱤢",
   ["usql"] = "󱤢",
   ["nvim"] = "",
-  ["make"] = "",
-  ["just"] = "",
+  ["make"] = "󱂟",
+  ["just"] = "󱂟",
   ["vim"] = " ",
   ["go"] = "",
   ["python3"] = "",
@@ -88,9 +88,10 @@ local process_icons = {
   ["htop"] = "󱋊",
   ["cargo"] = "󱘗",
   ["sudo"] = "",
-  ["git"] = "",
+  ["git"] = "",
   ["lua"] = "󰢱",
-  ["nix"] = "",
+  ["zola"] = "󰘯 ",
+  ["zig"] = "",
 }
 
 local function get_process(tab)
@@ -108,7 +109,7 @@ end
 
 wezterm.on("format-tab-title", function(tab)
   local process = get_process(tab)
-  local title = process and string.format(" %s  ", process) or "   "
+  local title = process and string.format(" %s  ", process) or "   "
   return {
     { Text = title },
   }
