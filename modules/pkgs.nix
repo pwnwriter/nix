@@ -18,7 +18,6 @@ let
     neovim
 
     bash-language-server
-   nmap
   ];
 
   darwin =
