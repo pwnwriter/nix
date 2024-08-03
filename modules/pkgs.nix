@@ -16,6 +16,9 @@ let
 
     fastfetch
     neovim
+
+    bash-language-server
+   nmap
   ];
 
   darwin =
