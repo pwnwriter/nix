@@ -5,6 +5,5 @@ with pkgs;
   cargo-shuttle
   cargo-watch
 
-
   go
 ]

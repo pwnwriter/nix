@@ -1,5 +1,1 @@
-{
-  imports = [
-    ./upnull.nix
-  ];
-}
+{ imports = [ ./upnull.nix ]; }

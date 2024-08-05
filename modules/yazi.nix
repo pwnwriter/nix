@@ -17,4 +17,3 @@ in
 
   home.file.".config/yazi/theme.toml".source = "${src}/themes/mocha.toml";
 }
-

@@ -12,10 +12,7 @@ in
 
     extraConfig = {
       pull.rebase = true;
-      credential.helper =
-        if pkgs.stdenv.isDarwin
-        then "osxkeychain"
-        else "cache";
+      credential.helper = if pkgs.stdenv.isDarwin then "osxkeychain" else "cache";
     };
 
     signing = {

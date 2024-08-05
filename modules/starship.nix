@@ -2,33 +2,15 @@
 
 let
   macos_prompt = {
-    error_symbol =
-      lib.concatStrings [
-        "[ ](red)"
-      ];
-    vimcmd_symbol =
-      lib.concatStrings [
-        "[ ](green)"
-      ];
-    success_symbol =
-      lib.concatStrings [
-        "[ ](rosewater)"
-      ];
+    error_symbol = lib.concatStrings [ "[ ](red)" ];
+    vimcmd_symbol = lib.concatStrings [ "[ ](green)" ];
+    success_symbol = lib.concatStrings [ "[ ](rosewater)" ];
   };
 
   linux_prompt = {
-    error_symbol =
-      lib.concatStrings [
-        "[ ](red)"
-      ];
-    vimcmd_symbol =
-      lib.concatStrings [
-        "[ ](green)"
-      ];
-    success_symbol =
-      lib.concatStrings [
-        "[ ](rosewater)"
-      ];
+    error_symbol = lib.concatStrings [ "[ ](red)" ];
+    vimcmd_symbol = lib.concatStrings [ "[ ](green)" ];
+    success_symbol = lib.concatStrings [ "[ ](rosewater)" ];
   };
 
 in
@@ -41,13 +23,9 @@ in
       scan_timeout = 10;
       palette = "catppuccin_macchiato";
 
-      format = lib.concatStrings [
-        "$directory$git_branch$character"
-      ];
+      format = lib.concatStrings [ "$directory$git_branch$character" ];
 
-      right_format = lib.concatStrings [
-        "$nix_shell"
-      ];
+      right_format = lib.concatStrings [ "$nix_shell" ];
 
       character = if pkgs.stdenv.isDarwin then macos_prompt else linux_prompt;
 
@@ -84,4 +62,3 @@ in
     };
   };
 }
-

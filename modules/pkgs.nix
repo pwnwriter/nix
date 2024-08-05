@@ -7,7 +7,6 @@ let
     eza
     ripgrep
 
-
     fzf
     jq
     jnv
@@ -30,18 +29,21 @@ let
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
 
-  development = with pkgs; [
-    clang
-    stylua
-    nixpkgs-fmt
-    nil
-    lua-language-server
-  ] ++ (import ./dev.nix { pkgs = pkgs; });
-
+  development =
+    with pkgs;
+    [
+      clang
+      stylua
+      nixfmt-rfc-style
+      nil
+      lua-language-server
+    ]
+    ++ (import ./dev.nix { pkgs = pkgs; });
 
   server =
     with pkgs;
-    with pkgs.nodePackages_latest; [
+    with pkgs.nodePackages_latest;
+    [
       yazi
       tmux
       bun
@@ -56,13 +58,6 @@ let
 
 in
 {
-  home.packages =
-    shared
-    ++ development
-    ++ (
-      if pkgs.stdenv.isDarwin
-      then darwin
-      else server
-    );
+  home.packages = shared ++ development ++ (if pkgs.stdenv.isDarwin then darwin else server);
 
 }

@@ -12,4 +12,3 @@
     extra-nix-path = "nixpkgs=flake:nixpkgs";
   };
 }
-
