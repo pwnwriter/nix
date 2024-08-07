@@ -1,44 +1,41 @@
 {
-  description = "pwnwriter's unix config";
+  description = "pwnwriter's macos config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    home-manager = {
+
+    hm = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    { darwin, hm, ... }:
     {
-      homeConfigurations = {
-        macos = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+      darwinConfigurations = {
+        wood = darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
           modules = [
-            ./modules
-            ./scripts
+            ./modules/darwin.nix
+            hm.darwinModules.home-manager
             {
-              home.username = "pwnwriter";
-              home.stateVersion = "24.05";
-              home.homeDirectory = "/Users/pwnwriter";
+              home-manager.users = {
+                pwnwriter = import ./modules;
+              };
+              users.users.pwnwriter = {
+                name = "pwnwriter";
+                home = "/Users/pwnwriter";
+              };
             }
           ];
         };
-
-        server = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.aarch64-linux;
-          modules = [
-            ./modules
-            ./scripts
-            {
-              home.username = "wolf";
-              home.stateVersion = "24.05";
-              home.homeDirectory = "/home/wolf";
-            }
-          ];
-        };
-
       };
     };
 }

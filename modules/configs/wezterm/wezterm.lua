@@ -1,5 +1,5 @@
-local config = require "config"
-local keybindings = require "keys"
+local config = require("config")
+local keybindings = require("keys")
 
 config.keys = keybindings
 

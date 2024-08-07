@@ -22,4 +22,5 @@ in
 
   xdg.dataHome = "${config.home.homeDirectory}/.local/share";
   programs.home-manager.enable = true;
+  home.stateVersion = "24.05";
 }

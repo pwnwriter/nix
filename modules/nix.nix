@@ -1,8 +1,8 @@
 # let nix manage itself
 
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
-  nix.package = pkgs.nixVersions.latest;
+  nix.package = lib.mkForce pkgs.nixVersions.latest;
   nix.settings = {
     use-xdg-base-directories = true;
     build-users-group = "nixbld";
