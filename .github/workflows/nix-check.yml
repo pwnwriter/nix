@@ -3,7 +3,7 @@ name: Check flake configuration
 on:
   push:
     branches:
-      - main
+      - macOs
 
 jobs:
   build:
