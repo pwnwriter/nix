@@ -47,13 +47,9 @@
       cp = "cp -iv";
       bc = "bc -ql";
 
-      yt = "yt-dlp --embed-metadata -i";
-      yta = "yt -x -f bestaudio/best";
-      ffmpeg = "ffmpeg -hide_banner";
       wget = "wget --no-hsts";
       gcl = "git clone --depth=1 --filter=blob:none";
 
-      cd = "z";
       ".." = "cd ..";
       "..." = "cd ../../";
     };
