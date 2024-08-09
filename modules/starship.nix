@@ -19,9 +19,14 @@ in
     enable = true;
     enableZshIntegration = true;
 
+    catppuccin = {
+      enable = true;
+      flavor = "mocha";
+
+    };
+
     settings = {
       scan_timeout = 10;
-      palette = "catppuccin_macchiato";
 
       format = lib.concatStrings [ "$directory$git_branch$character" ];
 
@@ -48,16 +53,6 @@ in
         truncation_length = 4;
         truncation_symbol = "…/";
         style = "bold green";
-      };
-
-      palettes.catppuccin_macchiato = {
-        flamingo = "#f0c6c6";
-        maroon = "#ee99a0";
-        mauve = "#c6a0f6";
-        peach = "#f5a97f";
-        pink = "#f5bde6";
-        red = "#ed8796";
-        rosewater = "#f4dbd6";
       };
     };
   };

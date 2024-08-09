@@ -14,10 +14,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    catppuccin.url = "github:catppuccin/nix";
+
   };
 
   outputs =
-    { darwin, hm, ... }:
+    {
+      darwin,
+      hm,
+      catppuccin,
+      ...
+    }:
     {
       darwinConfigurations = {
         wood = darwin.lib.darwinSystem {
@@ -26,8 +33,13 @@
             ./modules/darwin.nix
             hm.darwinModules.home-manager
             {
-              home-manager.users = {
-                pwnwriter = import ./modules;
+              home-manager.users.pwnwriter = {
+                imports = [
+                  ./modules
+                  ./scripts
+                  catppuccin.homeManagerModules.catppuccin
+                ];
+
               };
               users.users.pwnwriter = {
                 name = "pwnwriter";

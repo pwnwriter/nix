@@ -5,6 +5,8 @@
 
   security.pam.enableSudoTouchIdAuth = true;
 
+  networking.computerName = "earlymoon";
+
   system.defaults = {
     dock = {
       orientation = "left";
