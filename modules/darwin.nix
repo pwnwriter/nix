@@ -15,8 +15,8 @@
 
     NSGlobalDomain = {
       _HIHideMenuBar = true;
-      InitialKeyRepeat = 5;
-      KeyRepeat = 5;
+      InitialKeyRepeat = 10;
+      KeyRepeat = 1;
     };
 
     screencapture = {
