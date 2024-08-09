@@ -27,5 +27,7 @@
     trackpad = {
       Clicking = true;
     };
+
+   loginwindow.LoginwindowText = "Have you been pwned?";
   };
 }
