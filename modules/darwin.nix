@@ -28,6 +28,6 @@
       Clicking = true;
     };
 
-   loginwindow.LoginwindowText = "Have you been pwned?";
+    loginwindow.LoginwindowText = "Have you been pwned?";
   };
 }
