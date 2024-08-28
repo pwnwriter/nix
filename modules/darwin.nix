@@ -13,15 +13,19 @@
       autohide = true;
     };
 
-    NSGlobalDomain = {
-      _HIHideMenuBar = true;
-      InitialKeyRepeat = 10;
-      KeyRepeat = 1;
-    };
-
-    screencapture = {
+    CustomUserPreferences."com.apple.screencapture" = {
       location = "~/Documents/screenshots";
       type = "png";
+    };
+
+    NSGlobalDomain = {
+      _HIHideMenuBar = true;
+      InitialKeyRepeat = 15;
+      KeyRepeat = 2;
+    };
+
+    SoftwareUpdate = {
+      AutomaticallyInstallMacOSUpdates = false;
     };
 
     trackpad = {
