@@ -14,6 +14,7 @@ let
     ./starship.nix
     ./dedicated.nix
     ./direnv.nix
+    ./fzf.nix
     ./nix.nix
   ];
 in

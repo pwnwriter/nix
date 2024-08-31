@@ -7,7 +7,6 @@ let
     eza
     ripgrep
 
-    fzf
     jq
     jnv
     aria2
