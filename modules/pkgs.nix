@@ -22,6 +22,7 @@ let
     with pkgs;
     with pkgs.darwin.apple_sdk;
     [
+      arc-browser
       wezterm
       frameworks.Security
       frameworks.CoreFoundation

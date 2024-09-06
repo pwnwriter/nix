@@ -15,7 +15,6 @@
     };
 
     catppuccin.url = "github:catppuccin/nix";
-
   };
 
   outputs =
@@ -39,7 +38,7 @@
                   ./scripts
                   catppuccin.homeManagerModules.catppuccin
                 ];
-
+                nixpkgs.config.allowUnfree = true;
               };
               users.users.pwnwriter = {
                 name = "pwnwriter";
