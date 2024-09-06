@@ -21,6 +21,7 @@ config.cursor_blink_rate = 0
 config.use_cap_height_to_scale_fallback_fonts = true
 config.default_cursor_style = "BlinkingUnderline"
 config.bold_brightens_ansi_colors = true
+config.front_end = "WebGpu"
 
 -- Window settings
 config.window_close_confirmation = "NeverPrompt"

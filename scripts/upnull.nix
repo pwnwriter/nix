@@ -9,9 +9,9 @@ let
       exit 1
     fi
 
-    upload_url="https://null.pwnwriter.xyz"
+    upload_url="https://0x0.st"
 
-    response=$(${pkgs.curl}/bin/curl -s -F "file=@$file" -H "Authorization: $(${pkgs.pass}/bin/pass personal/null)" $upload_url)
+    response=$(${pkgs.curl}/bin/curl -s -F "file=@$file" $upload_url)
 
     echo "$response" | ${clip}
 
