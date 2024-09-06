@@ -1,6 +1,5 @@
 local wezterm = require "wezterm"
 local act = wezterm.action
-local act_cb = wezterm.action_callback
 
 local keybindings = {
 
@@ -26,20 +25,12 @@ local keybindings = {
   { key = "l", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection "Right" },
   { key = "k", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection "Up" },
   { key = "j", mods = "SHIFT|CTRL", action = act.ActivatePaneDirection "Down" },
+  { key = "z", mods = "SHIFT|CTRL", action = "TogglePaneZoomState" },
 
-  --- rename tab
-  -- {
-  --   key = "R",
-  --   mods = "CTRL|SHIFT",
-  --   action = act.PromptInputLine {
-  --     description = "Enter new name for tab",
-  --     action = wezterm.action_callback(function(window, _, line)
-  --       if line then
-  --         window:active_tab():set_title(line)
-  --       end
-  --     end),
-  --   },
-  -- },
+  { key = "h", mods = "SHIFT|ALT", action = wezterm.action { AdjustPaneSize = { "Left", 5 } } },
+  { key = "j", mods = "SHIFT|ALT", action = wezterm.action { AdjustPaneSize = { "Down", 5 } } },
+  { key = "k", mods = "SHIFT|ALT", action = wezterm.action { AdjustPaneSize = { "Up", 5 } } },
+  { key = "l", mods = "SHIFT|ALT", action = wezterm.action { AdjustPaneSize = { "Right", 5 } } },
 }
 
 return keybindings
