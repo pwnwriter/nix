@@ -26,7 +26,7 @@
     }:
     {
       darwinConfigurations = {
-        wood = darwin.lib.darwinSystem {
+        earlymoon = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           modules = [
             ./modules/darwin.nix
