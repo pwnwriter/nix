@@ -3,6 +3,5 @@ with pkgs;
 [
   rustup
   cargo-watch
-
-  go
+  cargo-generate
 ]

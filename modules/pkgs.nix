@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  shared = with pkgs; [
+  utils = with pkgs; [
     just
     bat
     zoxide
@@ -14,8 +14,6 @@ let
 
     fastfetch
     neovim
-
-    bash-language-server
   ];
 
   darwin =
@@ -24,8 +22,11 @@ let
     [
       arc-browser
       wezterm
+      raycast
+
       frameworks.Security
       frameworks.CoreFoundation
+
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
 
@@ -35,29 +36,14 @@ let
       clang
       stylua
       nixfmt-rfc-style
+
       nil
       lua-language-server
-    ]
-    ++ (import ./dev.nix { pkgs = pkgs; });
-
-  server =
-    with pkgs;
-    with pkgs.nodePackages_latest;
-    [
-      yazi
-      tmux
-      bun
-
-      docker-compose
-
-      nodejs_22
-      pnpm
       bash-language-server
-      typescript-language-server
-    ];
-
+    ]
+    ++ (import ./rust.nix { pkgs = pkgs; });
 in
 {
-  home.packages = shared ++ development ++ (if pkgs.stdenv.isDarwin then darwin else server);
+  home.packages = utils ++ development ++ darwin;
 
 }
