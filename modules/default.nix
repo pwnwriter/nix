@@ -16,6 +16,7 @@ let
     ./direnv.nix
     ./fzf.nix
     ./nix.nix
+    ./eza.nix
   ];
 in
 {

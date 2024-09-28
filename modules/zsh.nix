@@ -42,8 +42,6 @@
       vim = "nvim";
 
       cat = "bat";
-      ls = "eza --icons  -T -L 1 -x";
-      ll = "eza --icons  -T -L 2 -x";
       cp = "cp -iv";
       bc = "bc -ql";
 
