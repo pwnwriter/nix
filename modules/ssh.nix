@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   programs.ssh = {
     enable = true;
@@ -8,6 +8,7 @@
         identityFile = "${config.xdg.dataHome}/ssh/id_rsa";
         extraOptions = {
           AddKeysToAgent = "yes";
+          UseKeychain = if pkgs.stdenv.isDarwin then "yes" else "no";
         };
       };
       "Host fawn" = {
