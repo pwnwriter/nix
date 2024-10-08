@@ -34,6 +34,8 @@
       ignoreSpace = false;
       save = 15000;
       share = true;
+      append = true;
+      ignoreAllDups = true;
     };
 
     shellAliases = {

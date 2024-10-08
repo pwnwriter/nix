@@ -11,6 +11,7 @@
 
   system.defaults = {
     dock = {
+      tilesize = 20;
       orientation = "left";
       autohide = true;
     };
