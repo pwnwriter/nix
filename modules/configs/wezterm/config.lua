@@ -23,6 +23,9 @@ config.default_cursor_style = "BlinkingUnderline"
 config.bold_brightens_ansi_colors = true
 config.front_end = "WebGpu"
 
+config.window_background_opacity = 0.8
+config.macos_window_background_blur = 100
+
 -- Window settings
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
