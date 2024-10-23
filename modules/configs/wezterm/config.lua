@@ -69,7 +69,7 @@ wezterm.on("gui-startup", function(cmd)
   local active_screen = wezterm.gui.screens()["active"]
   local width = active_screen.width * 0.90
   local height = active_screen.height * 0.85
-  local x = (active_screen.width - width) / 2 -- Center horizontally
+  local x = (active_screen.width - width) / 2   -- Center horizontally
   local y = (active_screen.height - height) / 2 -- Center vertically
 
   local _, _, window = wezterm.mux.spawn_window(cmd or {})
