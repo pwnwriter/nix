@@ -14,6 +14,7 @@ let
 
     fastfetch
     neovim
+    neovide
   ];
 
   darwin =
