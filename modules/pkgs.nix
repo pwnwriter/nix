@@ -41,6 +41,7 @@ let
       nil
       lua-language-server
       bash-language-server
+      nixd
     ]
     ++ (import ./rust.nix { pkgs = pkgs; });
 in
