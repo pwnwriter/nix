@@ -8,6 +8,8 @@ local font_config = wezterm.font_with_fallback {
 
 local config = wezterm.config_builder() or {}
 
+max_fps = 120
+
 -- General configuration
 config.font = font_config
 config.tab_bar_at_bottom = true
