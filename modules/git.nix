@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   name = "pwnwriter";
-  email = "hey@pwnwriter.xyz";
+  email = "hi@pwnwriter.me";
 in
 {
   programs.git = {
@@ -16,7 +16,7 @@ in
     };
 
     signing = {
-      key = "B681763F9B5BDF279A139E0C0544A89BC51920AA";
+      key = "A52411EC5582DE3A";
       signByDefault = pkgs.stdenv.isDarwin; # enable gpg signing on darwin only
     };
 
