@@ -27,9 +27,9 @@ let
 
       frameworks.Security
       frameworks.CoreFoundation
+    ]
 
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    ];
+    ++ (import ./fonts.nix { pkgs = pkgs; });
 
   development =
     with pkgs;
@@ -37,13 +37,9 @@ let
       clang
       stylua
       nixfmt-rfc-style
-
-      nil
-      lua-language-server
-      bash-language-server
-      nixd
     ]
-    ++ (import ./rust.nix { pkgs = pkgs; });
+    ++ (import ./rust.nix { pkgs = pkgs; })
+    ++ (import ./lsp.nix { pkgs = pkgs; });
 in
 {
   home.packages = utils ++ development ++ darwin;
