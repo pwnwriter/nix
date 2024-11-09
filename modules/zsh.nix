@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   home.sessionVariables = {
@@ -48,7 +48,8 @@
       bc = "bc -ql";
 
       wget = "wget --no-hsts";
-      gcl = "git clone --depth=1 --filter=blob:none";
+
+      glg = "${pkgs.serie}/bin/serie";
 
       ".." = "cd ..";
       "..." = "cd ../../";
