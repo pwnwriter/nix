@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
-    hm = {
+    home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -19,8 +19,8 @@
 
   outputs =
     {
+      home-manager,
       darwin,
-      hm,
       catppuccin,
       ...
     }:
@@ -30,15 +30,16 @@
           system = "aarch64-darwin";
           modules = [
             ./modules/darwin.nix
-            hm.darwinModules.home-manager
+            home-manager.darwinModules.home-manager
             {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
               home-manager.users.pwnwriter = {
                 imports = [
                   ./modules
                   ./scripts
                   catppuccin.homeManagerModules.catppuccin
                 ];
-                nixpkgs.config.allowUnfree = true;
               };
               users.users.pwnwriter = {
                 name = "pwnwriter";

@@ -9,6 +9,10 @@
 
   networking.computerName = "earlymoon";
 
+  nix.settings.trusted-users = [ "pwnwriter" ];
+
+  programs.zsh.enable = true;
+
   system.defaults = {
     dock = {
       tilesize = 20;

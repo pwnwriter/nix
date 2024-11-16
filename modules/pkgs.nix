@@ -14,16 +14,13 @@ let
 
     fastfetch
     neovim
-    neovide
   ];
 
   darwin =
     with pkgs;
     with pkgs.darwin.apple_sdk;
     [
-      arc-browser
       wezterm
-      raycast
 
       frameworks.Security
       frameworks.CoreFoundation
