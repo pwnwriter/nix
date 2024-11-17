@@ -12,11 +12,12 @@ let
     ./yazi.nix
     ./zoxide.nix
     ./starship.nix
-    ./dedicated.nix
+    ./fastfetch.nix
     ./direnv.nix
     ./fzf.nix
     ./nix.nix
     ./eza.nix
+    ./wezterm.nix
   ];
 in
 {

@@ -17,10 +17,8 @@ let
   ];
 
   darwin =
-    with pkgs;
     with pkgs.darwin.apple_sdk;
     [
-      wezterm
 
       frameworks.Security
       frameworks.CoreFoundation
@@ -36,7 +34,8 @@ let
       nixfmt-rfc-style
     ]
     ++ (import ./rust.nix { pkgs = pkgs; })
-    ++ (import ./lsp.nix { pkgs = pkgs; });
+    ++ (import ./lsp.nix { pkgs = pkgs; })
+    ++ (import ./go.nix { pkgs = pkgs; });
 in
 {
   home.packages = utils ++ development ++ darwin;
