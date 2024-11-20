@@ -40,10 +40,6 @@
                   catppuccin.homeManagerModules.catppuccin
                 ];
               };
-              users.users.pwnwriter = {
-                name = "pwnwriter";
-                home = "/Users/pwnwriter";
-              };
             }
           ];
         };

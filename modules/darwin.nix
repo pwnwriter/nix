@@ -3,6 +3,11 @@
 {
   system.stateVersion = 5;
 
+  users.users.pwnwriter = {
+    name = "pwnwriter";
+    home = "/Users/pwnwriter";
+  };
+
   services.nix-daemon.enable = true;
 
   security.pam.enableSudoTouchIdAuth = true;
