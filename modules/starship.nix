@@ -28,7 +28,8 @@ in
     settings = {
       scan_timeout = 10;
 
-      format = lib.concatStrings [ "$directory$git_branch$git_status$character" ];
+      #format = lib.concatStrings [ "$directory$git_branch$git_status$character" ];
+      format = lib.concatStrings [ "$directory$git_branch$character" ];
 
       right_format = lib.concatStrings [ "$nix_shell" ];
 
