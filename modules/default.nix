@@ -17,7 +17,7 @@ let
     ./fzf.nix
     ./nix.nix
     ./eza.nix
-    ./wezterm.nix
+    ./ghostty.nix
   ];
 in
 {
