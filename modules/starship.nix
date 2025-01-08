@@ -15,22 +15,15 @@ let
 
 in
 {
+
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
 
-    catppuccin = {
-      enable = true;
-      flavor = "mocha";
-
-    };
-
     settings = {
       scan_timeout = 10;
 
-      #format = lib.concatStrings [ "$directory$git_branch$git_status$character" ];
       format = lib.concatStrings [ "$directory$git_branch$character" ];
-
       right_format = lib.concatStrings [ "$nix_shell" ];
 
       character = if pkgs.stdenv.isDarwin then macos_prompt else linux_prompt;
@@ -73,5 +66,10 @@ in
       };
 
     };
+  };
+
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
   };
 }

@@ -7,11 +7,13 @@
       pager = "less -FR";
     };
 
-    catppuccin = {
-      enable = true;
-      flavor = "mocha";
-    };
   };
+
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+  };
+
   home.sessionVariables = {
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
     MANROFFOPT = "-c";
