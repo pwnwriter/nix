@@ -18,6 +18,7 @@ let
     ./nix.nix
     ./eza.nix
     ./ghostty.nix
+    # ./neovide.nix
   ];
 in
 {
