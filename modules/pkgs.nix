@@ -15,6 +15,8 @@ let
     fastfetch
     neovim
     fd
+    tmux
+    uv
   ];
 
   darwin =
@@ -36,7 +38,8 @@ let
     ]
     ++ (import ./rust.nix { pkgs = pkgs; })
     ++ (import ./lsp.nix { pkgs = pkgs; })
-    ++ (import ./go.nix { pkgs = pkgs; });
+    ++ (import ./go.nix { pkgs = pkgs; })
+    ++ (import ./zig.nix { pkgs = pkgs; });
 in
 {
   home.packages = utils ++ development ++ darwin;
