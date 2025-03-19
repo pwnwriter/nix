@@ -8,9 +8,7 @@
     home = "/Users/pwnwriter";
   };
 
-  services.nix-daemon.enable = true;
-
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   networking.computerName = "earlymoon";
 
