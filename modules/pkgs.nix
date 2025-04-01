@@ -11,12 +11,16 @@ let
     jnv
     aria2
     htop
+    curlie
 
     fastfetch
     neovim
     fd
     tmux
     uv
+
+    openssl
+    pkg-config
   ];
 
   darwin =
@@ -25,6 +29,7 @@ let
 
       frameworks.Security
       frameworks.CoreFoundation
+      frameworks.SystemConfiguration
     ]
 
     ++ (import ./fonts.nix { pkgs = pkgs; });
