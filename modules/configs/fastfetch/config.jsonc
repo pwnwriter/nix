@@ -1,0 +1,97 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "~/.config/fastfetch/nix.png",
+        "type": "kitty",
+        "padding": {
+            "top": 3
+        }
+    },
+    "display": {
+        "separator": " "
+    },
+    "modules": [
+        "break",
+        "break",
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m"
+        },
+        "break",
+        {
+            "type": "title",
+            "keyWidth": 10
+        },
+        "break",
+        {
+            "type": "os",
+            "key": " ",
+            "keyColor": "34", // Blue color
+        },
+        {
+            "type": "kernel",
+            "key": " ",
+            "keyColor": "35", // Magenta color
+        },
+        {
+            "type": "packages",
+            "format": "{} (nix)",
+            "key": " ",
+            "keyColor": "36", // Cyan color
+        },
+        {
+            "type": "shell",
+            "key": " ",
+            "keyColor": "31", // Red color
+        },
+        {
+            "type": "terminal",
+            "key": " ",
+            "keyColor": "32", // Green color
+        },
+        {
+            "type": "wm",
+            "key": " ",
+            "keyColor": "33", // Yellow color
+        },
+        {
+            "type": "cursor",
+            "key": " ",
+            "keyColor": "36", // Cyan color
+        },
+        {
+            "type": "terminalfont",
+            "key": " ",
+            "keyColor": "35", // Magenta color
+        },
+        {
+            "type": "uptime",
+            "key": " ",
+            "keyColor": "31", // Red color
+        },
+        {
+            "type": "datetime",
+            "format": "{1}-{3}-{11}",
+            "key": " ",
+            "keyColor": "32", // Green color
+        },
+        {
+            "type": "media",
+            "key": "󰝚 ",
+            "keyColor": "33", // Yellow color
+        },
+        {
+            "type": "player",
+            "key": " ",
+            "keyColor": "34", // Blue color
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m"
+        },
+        "break",
+        "break"
+    ]
+}
