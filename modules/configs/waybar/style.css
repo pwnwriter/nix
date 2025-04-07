@@ -1,0 +1,197 @@
+
+* {
+    border: none;
+    border-radius: 10px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(21, 18, 27, 0);
+    color: #cdd6f4;
+}
+
+tooltip {
+    background: #000000;
+    border-radius: 7px;
+    border-width: 2.5px;
+    border-style: solid;
+    border-color: #8aadf4;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+
+#workspaces button {
+    color: #313244;
+    margin-right: 5px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+#workspaces button.active {
+    color: #89b4fa;
+}
+
+#workspaces button.focused {
+    color: #a6adc8;
+    background: #eba0ac;
+    border-radius: 13px;
+}
+
+
+
+#workspaces button.persistent {
+    color: #f9e2af;
+}
+
+
+#workspaces button.empty {
+    color: #313244;
+}
+
+#workspaces button.active,
+#workspaces button.visible {
+    color: #89b4fa;
+    box-shadow: inset 0 -1px #1e1e2e;
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+}
+#battery,
+#battery,
+#language,
+#cpu,
+#window,
+#clock,
+#pulseaudio,
+#pulseaudio.microphone,
+#workspaces,
+#tray,
+#memory,
+#custom-wallpaper,
+#backlight-slider,
+#disk,
+#cava,
+#tray {
+    background: #1e1e2e;
+    opacity: 1.0;
+    padding: 1.5px 7px 1.5px 7px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 13px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#workspaces {
+    background: #1e1e2e;
+    border-radius: 13px;
+    margin-left: 5px;
+    padding-right: 0px;
+}
+
+#window {
+    border-radius: 7px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+#clock {
+    color: #a6e3a1;
+    border-radius: 0px 13px 13px 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#network {
+    color: #f9e2af;
+    border-radius: 7px 7px 7px 7px;
+    margin-right: 5px;
+}
+
+#custom-notifications {
+    color: #f9e2af;
+    border-radius: 7px 7px 7px 7px;
+    padding-left: 9px;
+    padding-right: 15px;
+    margin-left:  2px;
+    margin-right: 2px;
+
+}
+
+#custom-updates {
+    color: #89b4fa;
+    border-radius: 7px 7px 7px 7px;
+    border-left:  0px;
+    border-right: 0px;
+    margin-left:  2px;
+    margin-right: 2px;
+}
+
+#custom-player {
+ color: #cba6f7;
+ border-radius: 7px 7px 7px 7px;
+ padding-left: 4px;
+ margin-left:  5px;
+ margin-right: 5px;
+}
+
+#memory {
+    color: #89b4fa;
+    border-radius: 0px 0px 0px 0px;
+    margin-left: 0px;
+    margin-right:0px;
+}
+
+#disk {
+    color: #f9e2af;
+    border-radius: 0px 13px 13px 0px;
+    margin-left: 0px;
+}
+
+
+#bluetooth {
+  color: #89b4fa;
+  border-radius: 0px 13px 13px 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+} 
+
+#pulseaudio {
+  color: #89b4fa;
+  border-radius: 0px 0px 0px 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+#pulseaudio.microphone {
+    color: #cba6f7;
+    border-radius: 0px 0px 0px 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#language {
+   border-radius: 13px 0px 0px 13px;
+   margin-right:0px;
+}
+
+#cpu {
+   border-radius: 13px 0px 0px 13px;
+   padding-left:10px;
+   margin-right:0px;
+   margin-left: 0px;
+}
+
+#cava {
+   border-radius: 13px 13px 13px 13px;
+   margin-right: 0px
+   
+}

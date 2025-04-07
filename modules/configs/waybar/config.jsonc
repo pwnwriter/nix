@@ -1,0 +1,186 @@
+{
+  "position": "top",
+  "exlusive": "true",
+  "passthrough": "true",
+  "gtk-layer-shell": "true",
+  "margin-top": 10,
+  "margin-left": 10,
+  "margin-right": 15,
+  "height": 41,
+  "modules-left": [
+    "cava",
+    "cpu",
+    "memory",
+    "disk",
+    "hyprland/workspaces",
+  ],
+  "modules-center": [
+    "hyprland/window",
+  ],
+  "modules-right": [
+    "custom/wallpaper",
+    "backlight/slider",
+    "pulseaudio",
+    "pulseaudio#microphone",
+    "battery",
+    "clock",
+    "tray"
+  ],
+
+"backlight/slider": {
+  "min": 20,
+  "max": 100,
+  "orientation": "horizontal",
+  "device": "intel_backlight",
+  "reverse-scrolling": true,
+  "scroll-step": 20,
+  "format": "<span color='#a6e3a1'>󰃠 </span><span color='#cdd6f4'>{percent}%</span>",
+  "tooltip": false
+},
+
+  "tray": {
+    "icon-size": 16,
+    "icon-theme": "Adwaita",
+    "spacing": 2
+  },
+  "custom/spacer": {
+    "format": " ",
+    "tooltip": false
+  },
+  "separator": {
+    "format": " | "
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 35,
+    "rewrite": {
+      "": "pwn"
+    },
+    "separate-outputs": true
+  },
+
+"hyprland/workspaces": {
+  "format": "{icon}",
+  "on-click": "activate",
+  "format-icons": {
+    "1": "<span color='#f38ba8'>󰲠</span>",
+    "2": "<span color='#fab387'>󰲢</span>",
+    "3": "<span color='#f9e2af'>󰲤</span>",
+    "4": "<span color='#a6e3a1'>󰲦</span>",
+    "5": "<span color='#89b4fa'>󰲨</span>",
+    "active": "<span color='#cba6f7'></span>",
+    "urgent": "<span color='#f38ba8'></span>",
+    "persistent": "<span color='#cdd6f4'></span>",
+    "focused": "<span color='#ffffff'></span>",
+    "default": "<span color='#585b70'></span>",
+  },
+  "sort-by-number": true,
+  "persistent-workspaces": {
+    "*": 5,
+    "eDP-1": 5
+  }
+},
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "<span color='#89b4fa'>󰥔 </span><span color='#cdd6f4'>{:%H:%M | %a %d %b}</span>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+
+  "cpu": {
+    "format": "<span color='#89b4fa'>󰍛</span> <span color='#cdd6f4'>{usage}%</span>",
+    "interval": 1,
+    "format-alt-click": "click",
+    "format-alt": "<span color='#00FF00'>{icon0}{icon1}{icon2}{icon3}</span> <span color='#FFFFFF'>{usage:>2}%</span> <span color='#00FF00'>󰍛</span>",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "on-click": "gnome-system-monitor"
+  },
+  "memory": {
+    "interval": 3,
+    "format": "<span color='#f38ba8'> </span> <span color='#cdd6f4'>{used:0.1f}G</span>"
+  },
+
+
+    "custom/wallpaper": {
+        "interval": "once",
+      "format": "<span color='#f38ba8'> 󰊠 </span>",
+        "on-click": "/home/pwn/.config/hypr/scripts/wall  /home/pwn/.config/hypr/wallpapers/collections",
+    }, 
+
+  "cava": {
+      "cava_config": "/home/pwn/.config/cava/config",
+        "framerate": 15,
+        "autosens": 1,
+        "sensitivity": 100,
+        "bars": 10,
+        "lower_cutoff_freq": 1,
+        "higher_cutoff_freq": 100,
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": true,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+                "on-click-right": "mode"
+        }
+    },
+
+  "pulseaudio": {
+    "format": "<span color='#a6e3a1'>{icon} </span><span color='#cdd6f4'>{volume}%</span>",
+    "format-bluetooth": "<span color='#a6e3a1'>{icon}</span>  <span color='#cdd6f4'>{volume}%</span>",
+    "tooltip": false,
+    "format-muted": "<span color='#f38ba8'>󰝟</span>",
+    "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 10%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 10%-",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        " ",
+        " ",
+        " "
+      ]
+    }
+  },
+
+"battery": {
+  "states": {
+    "warning": 30,
+    "critical": 15
+  },
+  "format": "<span color='#a6e3a1'>󰁹 </span><span color='#cdd6f4'>{capacity}%</span>",
+  "format-charging": "<span color='#a6e3a1'>󰂄 </span><span color='#cdd6f4'>{capacity}%</span>",
+  "format-plugged": "<span color='#a6e3a1'>󱤓 </span><span color='#cdd6f4'>{capacity}%</span>",
+  "format-full": "<span color='#a6e3a1'>󰁹 </span><span color='#cdd6f4'>{capacity}%</span>",
+  "format-alt": "<span color='#cdd6f4'>{time}</span> <span color='#a6e3a1'>{icon}</span>",
+  "format-icons": [
+    "󰁺", "󰁼", "󰁾", "󰂀", "󰂂"
+  ]
+},
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "<span color='#f38ba8'> </span><span color='#cdd6f4'>{volume}%</span>",
+    "format-source-muted": "󰍭 ",
+    "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-"
+  },
+
+  "disk": {
+    "interval": 3,
+    "path": "/home",
+    "format": "<span color='#a6e3a1'> </span><span color='#cdd6f4'>{free}</span>",
+    "unit": "GB"
+  }
+}
