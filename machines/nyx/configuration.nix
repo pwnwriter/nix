@@ -24,6 +24,12 @@
   # Set your time zone.
   time.timeZone = "America/New_York";
 
+  programs.nix-ld.enable = true;
+
+  programs.nix-ld.libraries = with pkgs; [
+    python3
+  ];
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -100,6 +106,12 @@
       slurp
       papirus-icon-theme
       gh
+      bc
+      wf-recorder
+      mpv
+      light
+      caido
+      libcava
     ];
   };
 

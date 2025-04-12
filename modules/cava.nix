@@ -2,9 +2,9 @@
 {
   programs.cava = {
     enable = true;
-    catppuccin = {
-      enable = true;
-      flavor = "mocha";
-    };
+  };
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
   };
 }

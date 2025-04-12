@@ -58,6 +58,7 @@
               imports = [
                 ./modules
                 catppuccin.homeModules.catppuccin
+                ./machines/nyx/bottom.nix
               ];
 
             };

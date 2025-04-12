@@ -106,52 +106,41 @@
       "format": "<span color='#f38ba8'> 󰊠 </span>",
         "on-click": "/home/pwn/.config/hypr/scripts/wall  /home/pwn/.config/hypr/wallpapers/collections",
     }, 
+"cava": {
+    "framerate": 120,
+    "autosens": 1,
+    "bars": 12,
+    "method": "pipewire",
+    "source": "auto",
+    "bar_delimiter": 0,
+    "input_delay": 2,
+    "sleep_timer": 2,
+    "hide_on_silence": true,
+    "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ]
+},
 
-  "cava": {
-      "cava_config": "/home/pwn/.config/cava/config",
-        "framerate": 15,
-        "autosens": 1,
-        "sensitivity": 100,
-        "bars": 10,
-        "lower_cutoff_freq": 1,
-        "higher_cutoff_freq": 100,
-        "method": "pulse",
-        "source": "auto",
-        "stereo": true,
-        "reverse": false,
-        "bar_delimiter": 0,
-        "monstercat": false,
-        "waves": true,
-        "noise_reduction": 0.77,
-        "input_delay": 2,
-        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-        "actions": {
-                "on-click-right": "mode"
-        }
-    },
-
-  "pulseaudio": {
-    "format": "<span color='#a6e3a1'>{icon} </span><span color='#cdd6f4'>{volume}%</span>",
-    "format-bluetooth": "<span color='#a6e3a1'>{icon}</span>  <span color='#cdd6f4'>{volume}%</span>",
-    "tooltip": false,
-    "format-muted": "<span color='#f38ba8'>󰝟</span>",
-    "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
-    "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 10%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 10%-",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        " ",
-        " ",
-        " "
-      ]
-    }
-  },
+"pulseaudio": {
+  "format": "<span color='#a6e3a1'>{icon}</span> <span color='#cdd6f4'>{volume}%</span>",
+  "format-bluetooth": "<span color='#a6e3a1'>{icon}</span> <span color='#cdd6f4'>{volume}%</span>",
+  "tooltip": false,
+  "format-muted": "<span color='#f38ba8'>󰝟 </span>",
+  "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+  "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+",
+  "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-",
+  "format-icons": {
+    "headphone": "",
+    "hands-free": "",
+    "headset": "",
+    "phone": "",
+    "portable": "",
+    "car": "",
+    "default": [
+      " ",
+      " ",
+      " "
+    ]
+  }
+},
 
 "battery": {
   "states": {
@@ -168,14 +157,14 @@
   ]
 },
 
-  "pulseaudio#microphone": {
-    "format": "{format_source}",
-    "format-source": "<span color='#f38ba8'> </span><span color='#cdd6f4'>{volume}%</span>",
-    "format-source-muted": "󰍭 ",
-    "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
-    "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-"
-  },
+"pulseaudio#microphone": {
+  "format": "{format_source}",
+  "format-source": "<span color='#f38ba8'> </span><span color='#cdd6f4'>{volume}%</span>",
+  "format-source-muted": "<span color='#f38ba8'>󰍭</span>",
+  "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+  "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+",
+  "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-"
+},
 
   "disk": {
     "interval": 3,

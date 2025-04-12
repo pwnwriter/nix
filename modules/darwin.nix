@@ -16,6 +16,7 @@
   nix.settings.trusted-users = [
     "root"
     "pwnwriter"
+    "pwn"
   ];
 
   programs.zsh.enable = true;
