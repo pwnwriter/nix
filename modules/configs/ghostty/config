@@ -23,8 +23,12 @@ keybind = cmd+s>z=toggle_split_zoom
 
 keybind = cmd+shift+o=toggle_quick_terminal
 
+keybind = alt+c=copy_to_clipboard
+keybind = alt+v=paste_from_clipboard
+
 
 keybind = cmd+s>j=goto_split:bottom
+
 keybind = cmd+s>k=goto_split:top
 keybind = cmd+s>h=goto_split:left
 keybind = cmd+s>l=goto_split:right
