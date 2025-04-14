@@ -21,6 +21,8 @@ let
 
     openssl
     pkg-config
+
+    superfile
   ];
 
   darwin =

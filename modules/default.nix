@@ -9,7 +9,6 @@ let
     ./zsh.nix
     ./pass.nix
     ./pkgs.nix
-    ./yazi.nix
     ./zoxide.nix
     ./starship.nix
     ./fastfetch.nix

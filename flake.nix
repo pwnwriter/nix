@@ -28,9 +28,10 @@
         earlymoon = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           modules = [
-            ./modules/darwin.nix
+            ./machines/earlymoon
             home-manager.darwinModules.home-manager
             {
+              home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.pwnwriter = {
                 imports = [
@@ -44,23 +45,21 @@
         };
       };
 
-      nixosConfigurations.nyx = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.fuyu = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./machines/nyx/configuration.nix
+          ./machines/fuyu/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.pwn = {
-              home.stateVersion = "25.05";
-              programs.home-manager.enable = true;
               imports = [
                 ./modules
+                ./scripts
+                ./machines/fuyu
                 catppuccin.homeModules.catppuccin
-                ./machines/nyx/bottom.nix
               ];
-
             };
           }
         ];
