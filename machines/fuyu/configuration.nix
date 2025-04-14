@@ -93,14 +93,15 @@
 
       wf-recorder
       mpv
-      light
-      caido
+      brightnessctl
       libcava
 
       code-cursor
       google-chrome
       bottom
       swayimg
+      cosmic-files
+      catppuccin-gtk
     ];
   };
 

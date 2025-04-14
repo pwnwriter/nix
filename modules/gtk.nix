@@ -10,6 +10,7 @@
 
   gtk = {
     enable = true;
+    # cursorTheme.name= pkgs.Catppuccin-Mocha-Light-Cursors;
     iconTheme = {
       name = "Papirus";
       package = pkgs.papirus-icon-theme;

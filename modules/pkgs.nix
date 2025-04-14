@@ -51,5 +51,5 @@ let
 in
 {
   home.packages = utils ++ development ++ darwin;
-
+  fonts.fontconfig.enable = true;
 }

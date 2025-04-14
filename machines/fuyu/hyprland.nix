@@ -138,11 +138,11 @@
       bind = $mainMod,TAB,workspace,previous
 
       ## Utilities
-      bind = , XF86MonBrightnessUp,    exec,   light -A 5
-      bind = , XF86MonBrightnessDown,  exec,   light -U 10
-      bind = , XF86AudioLowerVolume,   exec,  pactl set-sink-volume @DEFAULT_SINK@ -5%
-      bind = , XF86AudioMute,          exec,  pactl set-sink-mute @DEFAULT_SINK@ toggle
-      bind = , XF86AudioRaiseVolume,   exec,  pactl set-sink-volume @DEFAULT_SINK@ +5%
+      bind = , XF86MonBrightnessUp,    exec,   brightnessctl set +10%
+      bind = , XF86MonBrightnessDown,  exec,   brightnessctl set 10%-
+      bind = , XF86AudioLowerVolume,   exec,  wpctl set-volume @DEFAULT_SINK@ 5%-
+      bind = , XF86AudioMute,          exec,  wpctl set-mute @DEFAULT_SINK@ toggle
+      bind = , XF86AudioRaiseVolume,   exec,  wpctl set-volume @DEFAULT_SINK@ 5%+
       bind = , Print,   exec,  bash sst no_selection
 
       bind =  SHIFT, Print,   exec,  bash sst selection

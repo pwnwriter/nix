@@ -97,7 +97,7 @@ let
         "format-alt-click": "click",
         "format-alt": "<span color='#00FF00'>{icon0}{icon1}{icon2}{icon3}</span> <span color='#FFFFFF'>{usage:>2}%</span> <span color='#00FF00'>󰍛</span>",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-        "on-click": "gnome-system-monitor"
+        "on-click":"ghostty -e /etc/profiles/per-user/pwn/bin/zsh -c 'htop'"
       },
       "memory": {
         "interval": 3,
