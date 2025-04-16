@@ -4,6 +4,7 @@ let
   modules = [
     ./hyprland.nix
     ./waybar.nix
+    ./theme.nix
   ];
 in
 {

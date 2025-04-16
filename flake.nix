@@ -11,6 +11,8 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix.url = "github:danth/stylix";
   };
 
   outputs =
@@ -18,6 +20,7 @@
       nixpkgs,
       home-manager,
       darwin,
+      stylix,
       ...
     }:
     {
@@ -32,6 +35,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.pwnwriter = {
                 imports = [
+                  stylix.homeManagerModules.stylix
                   ./modules
                   ./scripts
                 ];
@@ -54,6 +58,7 @@
                 ./modules
                 ./scripts
                 ./machines/fuyu
+                stylix.homeManagerModules.stylix
               ];
             };
           }
