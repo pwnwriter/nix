@@ -4,8 +4,7 @@ window-padding-y = 20,30
 shell-integration = zsh
 auto-update = off
 
-#theme = dark:catppuccin-mocha,light:catppuccin-latte
-theme = catppuccin-mocha
+theme = dark:catppuccin-mocha,light:rose-pine-dawn
 mouse-hide-while-typing = true
 
 background-opacity = 99

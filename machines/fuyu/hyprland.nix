@@ -151,5 +151,4 @@
           
     '';
   };
-  catppuccin.hyprland.enable = true;
 }

@@ -7,8 +7,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    catppuccin.url = "github:catppuccin/nix";
-
     darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,7 +17,6 @@
     {
       nixpkgs,
       home-manager,
-      catppuccin,
       darwin,
       ...
     }:
@@ -37,7 +34,6 @@
                 imports = [
                   ./modules
                   ./scripts
-                  catppuccin.homeManagerModules.catppuccin
                 ];
               };
             }
@@ -58,7 +54,6 @@
                 ./modules
                 ./scripts
                 ./machines/fuyu
-                catppuccin.homeModules.catppuccin
               ];
             };
           }
