@@ -3,17 +3,17 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./openssh.nix
+    ./gnome.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "fuyu"; # Define your hostname.
-  programs.hyprland.enable = true;
+  networking.hostName = "fuyu";
 
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "America/New_York";
 
   programs.nix-ld.enable = true;
@@ -42,13 +42,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.openssh.enable = true;
-
-  # services.xserver.xkb = {
-  #   layout = "us";
-  #   variant = "";
-  # };
-
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -60,7 +53,6 @@
 
   services.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.pwn = {
     isNormalUser = true;
     description = "pwn";
@@ -73,35 +65,28 @@
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      waybar
       gcc
       zig
       wl-clipboard
       wofi
-      swww
       obsidian
 
       grim
       slurp
-      papirus-icon-theme
       gh
       bc
 
-      gnome-calculator
-      gnome-calendar
-
-
       wf-recorder
       mpv
-      brightnessctl
       libcava
 
       code-cursor
       google-chrome
       bottom
-      swayimg
       cosmic-files
       catppuccin-gtk
+
+      nsxiv
     ];
   };
 
@@ -109,13 +94,11 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # environment.systemPackages = with pkgs; [
-  # ];
-
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
   };
   system.stateVersion = "24.11"; # Did you read the comment?
+
 }

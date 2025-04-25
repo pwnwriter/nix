@@ -2,8 +2,7 @@
 
 let
   modules = [
-    ./hyprland.nix
-    ./waybar.nix
+    ./extentions.nix
   ];
 in
 {

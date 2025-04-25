@@ -12,5 +12,7 @@
     "root"
     "pwnwriter"
     "pwn"
+    "@wheel"
+    "nix-builder"
   ];
 }

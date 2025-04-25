@@ -17,10 +17,10 @@ let
     ./nix.nix
     ./eza.nix
     ./ghostty.nix
-    ./gtk.nix
     ./cava.nix
     ./tmux.nix
-    # ./neovide.nix
+    ./yazi.nix
+    ./rofi.nix
   ];
 in
 {

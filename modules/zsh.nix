@@ -62,7 +62,7 @@
 
       bindkey -v '^?' backward-delete-char;
       bindkey -M viins 'jj' vi-cmd-mode;
-      bindkey -s '^y' '^\nsuperfile\n'
+
       bindkey -s '^z' '^ufg\n'
 
 

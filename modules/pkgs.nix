@@ -22,19 +22,14 @@ let
     openssl
     pkg-config
 
-    superfile
   ];
 
-  darwin =
-    with pkgs.darwin.apple_sdk;
-    [
+  darwin = with pkgs.darwin.apple_sdk; [
 
-      frameworks.Security
-      frameworks.CoreFoundation
-      frameworks.SystemConfiguration
-    ]
-
-    ++ (import ./fonts.nix { pkgs = pkgs; });
+    frameworks.Security
+    frameworks.CoreFoundation
+    frameworks.SystemConfiguration
+  ];
 
   development =
     with pkgs;
@@ -47,9 +42,12 @@ let
     ++ (import ./rust.nix { pkgs = pkgs; })
     ++ (import ./lsp.nix { pkgs = pkgs; })
     ++ (import ./go.nix { pkgs = pkgs; })
-    ++ (import ./zig.nix { pkgs = pkgs; });
+    ++ (import ./zig.nix { pkgs = pkgs; })
+    ++ (import ./fonts.nix { pkgs = pkgs; });
 in
 {
-  home.packages = utils ++ development ++ darwin;
+  # No packages for if the system isn't darwin
+  home.packages = utils ++ development ++ (if pkgs.stdenv.isDarwin then darwin else [ ]);
+
   fonts.fontconfig.enable = true;
 }
