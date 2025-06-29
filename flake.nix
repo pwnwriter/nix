@@ -38,7 +38,7 @@
                 imports = [
                   ./modules
                   ./scripts
-                  catppuccin.homeManagerModules.catppuccin
+                  catppuccin.homeModules.catppuccin
                 ];
               };
             }

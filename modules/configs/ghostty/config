@@ -4,7 +4,8 @@ window-padding-y = 20,30
 shell-integration = zsh
 auto-update = off
 
-theme = dark:catppuccin-mocha,light:catppuccin-latte
+theme = dark:catppuccin-mocha,light:rose-pine-dawn
+#theme = dark:tokyonight,light:tokyonight-day
 mouse-hide-while-typing = true
 
 background-opacity = 99
@@ -31,3 +32,5 @@ keybind = cmd+s>l=goto_split:right
 # split
 keybind = cmd+s>\=new_split:right
 keybind = cmd+s>-=new_split:down
+
+custom-shader = shaders/cursor.glsl

@@ -33,6 +33,6 @@ flake-update:
 [macos]
 rebuild:
     @echo "🍎🍎🍎 Rebuilding macOS configuration 🍎🍎🍎"
-    @nix run nix-darwin -- switch --flake .#earlymoon --show-trace
+    @sudo nix run nix-darwin -- switch --flake .#earlymoon --show-trace
 
 

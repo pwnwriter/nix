@@ -15,10 +15,8 @@ let
     ./fastfetch.nix
     ./direnv.nix
     ./fzf.nix
-    ./nix.nix
     ./eza.nix
     ./ghostty.nix
-    # ./neovide.nix
   ];
 in
 {

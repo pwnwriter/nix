@@ -7,6 +7,7 @@
   };
     catppuccin = {
       enable = true;
-      flavor = "mocha";
+      accent = "maroon";
+      flavor = "latte";
     };
 }

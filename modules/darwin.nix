@@ -2,21 +2,24 @@
 
 {
   system.stateVersion = 5;
+  system.primaryUser = "pwnwriter";
 
   users.users.pwnwriter = {
     name = "pwnwriter";
     home = "/Users/pwnwriter";
   };
 
+   nix.enable = false;
+
   security.pam.services.sudo_local.touchIdAuth = true;
 
   networking.computerName = "earlymoon";
 
-  nixpkgs.hostPlatform = "aarch64-darwin";
-  nix.settings.trusted-users = [
-    "root"
-    "pwnwriter"
-  ];
+  # nixpkgs.hostPlatform = "aarch64-darwin";
+  # nix.settings.trusted-users = [
+  #   "root"
+  #   "pwnwriter"
+  # ];
 
   programs.zsh.enable = true;
 

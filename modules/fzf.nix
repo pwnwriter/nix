@@ -6,6 +6,6 @@
   };
   catppuccin = {
     enable = true;
-    flavor = "mocha";
+    flavor = "latte";
   };
 }
