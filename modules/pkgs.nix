@@ -18,6 +18,7 @@ let
     fd
     tmux
     uv
+    typst
 
     openssl
     pkg-config
