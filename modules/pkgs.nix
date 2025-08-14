@@ -10,7 +10,7 @@ let
     jq
     jnv
     aria2
-    htop
+    bottom
     curlie
 
     fastfetch
