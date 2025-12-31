@@ -1,5 +1,5 @@
 {
-  description = "pwnwriter's macos config";
+  description = "👻";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -15,35 +15,25 @@
     };
 
     catppuccin.url = "github:catppuccin/nix";
-
   };
 
   outputs =
-    {
+    inputs@{
+      nixpkgs,
       home-manager,
       darwin,
       catppuccin,
       ...
     }:
     {
+      # macOS (nix-darwin)
       darwinConfigurations = {
-        earlymoon = darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
-          modules = [
-            ./modules/darwin.nix
-            home-manager.darwinModules.home-manager
-            {
-              home-manager.useUserPackages = true;
-              home-manager.users.pwnwriter = {
-                imports = [
-                  ./modules
-                  ./scripts
-                  catppuccin.homeModules.catppuccin
-                ];
-              };
-            }
-          ];
-        };
+        earlymoon = import ./machines/earlymoon.nix { inherit inputs; };
+      };
+
+      # home-manager (pop-os)
+      homeConfigurations = {
+        wolf = import ./machines/wolf.nix { inherit inputs; };
       };
     };
 }
