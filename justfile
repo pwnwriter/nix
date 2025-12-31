@@ -36,3 +36,8 @@ rebuild:
     @sudo nix run nix-darwin -- switch --flake .#earlymoon --show-trace
 
 
+[linux]
+rebuild:
+    @echo "🍎🍎🍎 Rebuilding linux configuration 🍎🍎🍎"
+    @nix run home-manager/master -- switch --flake .#wolf
+
