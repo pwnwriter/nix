@@ -17,23 +17,15 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs =
-    inputs@{
-      nixpkgs,
-      home-manager,
-      darwin,
-      catppuccin,
-      ...
-    }:
-    {
-      # macOS (nix-darwin)
-      darwinConfigurations = {
-        earlymoon = import ./machines/earlymoon.nix { inherit inputs; };
-      };
-
-      # home-manager (pop-os)
-      homeConfigurations = {
-        wolf = import ./machines/wolf.nix { inherit inputs; };
-      };
+  outputs = inputs: {
+    # macOS (nix-darwin)
+    darwinConfigurations = {
+      earlymoon = import ./machines/earlymoon.nix { inherit inputs; };
     };
+
+    # home-manager (pop-os)
+    homeConfigurations = {
+      wolf = import ./machines/wolf.nix { inherit inputs; };
+    };
+  };
 }
