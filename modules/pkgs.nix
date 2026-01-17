@@ -1,27 +1,26 @@
 { pkgs, ... }:
 let
   utils = with pkgs; [
-    just
-    bat
-    zoxide
-    eza
-    ripgrep
-
-    jq
-    jnv
     aria2
+    bat
     bottom
+    claude-code
     curlie
-
+    eza
     fastfetch
-    neovim
     fd
-    tmux
-    uv
-    typst
-
+    gemini-cli-bin
+    jnv
+    jq
+    just
+    neovim
     openssl
     pkg-config
+    ripgrep
+    tmux
+    typst
+    uv
+    zoxide
   ];
 
   # darwin =
@@ -39,8 +38,8 @@ let
     with pkgs;
     [
       clang
-      stylua
       nixfmt-rfc-style
+      stylua
     ]
     ++ (import ./rust.nix { pkgs = pkgs; })
     ++ (import ./lsp.nix { pkgs = pkgs; })
