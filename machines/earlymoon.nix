@@ -10,17 +10,25 @@ darwin.lib.darwinSystem {
   system = "aarch64-darwin";
 
   modules = [
+    # allow unfree packages
+    {
+      nixpkgs.config.allowUnfree = true;
+    }
+
     ./../modules/darwin.nix
     home-manager.darwinModules.home-manager
 
     {
       home-manager.useUserPackages = true;
+      home-manager.useGlobalPkgs = true;
 
       home-manager.users.pwnwriter = {
         imports = [
           ./../modules
           catppuccin.homeModules.catppuccin
         ];
+
+        home.stateVersion = "24.05";
       };
     }
   ];
