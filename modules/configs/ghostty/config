@@ -34,3 +34,4 @@ keybind = cmd+s>\=new_split:right
 keybind = cmd+s>-=new_split:down
 
 custom-shader = shaders/cursor.glsl
+gtk-titlebar = false
