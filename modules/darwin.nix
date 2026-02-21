@@ -9,7 +9,7 @@
     home = "/Users/pwnwriter";
   };
 
-   nix.enable = false;
+  nix.enable = false;
 
   security.pam.services.sudo_local.touchIdAuth = true;
 

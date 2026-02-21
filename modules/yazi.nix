@@ -5,9 +5,9 @@
     enable = true;
     enableZshIntegration = true;
   };
-    catppuccin = {
-      enable = true;
-      accent = "maroon";
-      flavor = "latte";
-    };
+  catppuccin = {
+    enable = true;
+    accent = "maroon";
+    flavor = "latte";
+  };
 }

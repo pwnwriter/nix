@@ -9,35 +9,42 @@ alias c := clean
 alias r := rebuild
 alias u := flake-update
 
-# List all generations
+# --- helpers -------------------------------------------------
+
+# Pretty header (private helper)
+_banner os flake:
+    @host="$$(hostname -s 2>/dev/null || hostname)"; \
+    printf "\n"; \
+    printf "╭──────────────────────────────────────────────╮\n"; \
+    printf "│  %-44s│\n" "$$host :: {{os}}"; \
+    printf "│  %-44s│\n" "flake: {{flake}}"; \
+    printf "╰──────────────────────────────────────────────╯\n\n"
+
+# --- tasks ---------------------------------------------------
+
 gens:
     @echo "🏠🏠🏠 Listing home-manager generations 🏠🏠🏠"
     @nix-env --list-generations
 
-# Cleans up garbage
 clean:
     @echo "Cleaning up unused Nix store items"
     @nix-collect-garbage -d
 
-# Format all files
 format:
     @nixfmt $(find ./ -type f -name '*.nix')
-    @stylua -f $(find . -type f -name '.stylua.toml') $(find . -type f  -name '*.lua')
+    @stylua -f $(find . -type f -name '.stylua.toml') $(find . -type f -name '*.lua')
 
-# Update flake git revision
 flake-update:
     @echo "Syncing latest git rev"
     @nix flake update
 
 # Rebuild configuration
 [macos]
-rebuild:
-    @echo "🍎🍎🍎 Rebuilding macOS configuration 🍎🍎🍎"
-    @sudo nix run nix-darwin -- switch --flake .#earlymoon --show-trace
-
+rebuild *args:
+    @just _banner "macOS" ".#earlymoon"
+    @sudo -H nix run nix-darwin -- switch --flake .#earlymoon --show-trace {{args}}
 
 [linux]
-rebuild:
-    @echo "🍎🍎🍎 Rebuilding linux configuration 🍎🍎🍎"
-    @nix run home-manager/master -- switch --flake .#wolf
-
+rebuild *args:
+    @just _banner "Linux" ".#wolf"
+    @nix run home-manager/master -- switch --flake .#wolf {{args}}
