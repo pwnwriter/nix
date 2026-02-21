@@ -17,7 +17,7 @@ home-manager.lib.homeManagerConfiguration {
     {
       home.username = "pwn";
       home.homeDirectory = "/home/pwn";
-      home.stateVersion = "24.05";
+      home.stateVersion = "26.05";
     }
   ];
 }

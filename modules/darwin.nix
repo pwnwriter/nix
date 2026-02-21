@@ -13,8 +13,6 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  networking.computerName = "earlymoon";
-
   # nixpkgs.hostPlatform = "aarch64-darwin";
   # nix.settings.trusted-users = [
   #   "root"
