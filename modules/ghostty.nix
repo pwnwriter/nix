@@ -16,8 +16,8 @@
 
       mouse-hide-while-typing = true;
 
-      macos-titlebar-style = "transparent";
-      gtk-titlebar = false;
+      macos-titlebar-style = "tabs";
+      window-subtitle = "false";
 
       quick-terminal-position = "center";
       shell-integration-features = "no-cursor,sudo,no-title";
@@ -25,7 +25,7 @@
       custom-shader = "shaders/cursor.glsl";
 
       keybind = [
-        "cmd+shift+o=toggle_quick_terminal"
+        "global:cmd+shift+o=toggle_quick_terminal"
         "cmd+s>z=toggle_split_zoom"
         "cmd+s>j=goto_split:bottom"
         "cmd+s>k=goto_split:top"
