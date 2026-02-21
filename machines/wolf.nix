@@ -1,6 +1,6 @@
 { inputs }:
 let
-  inherit (inputs) nixpkgs home-manager stylix;
+  inherit (inputs) nixpkgs home-manager;
 
   system = "x86_64-linux";
   pkgs = import nixpkgs {
@@ -13,7 +13,6 @@ home-manager.lib.homeManagerConfiguration {
 
   modules = [
     ./../modules
-    stylix.nixosModules.stylix
 
     {
       home.username = "pwn";
