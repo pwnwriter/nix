@@ -8,10 +8,10 @@ theme = dark:Catppuccin Mocha,light:Rose Pine Dawn
 #theme = dark:tokyonight,light:tokyonight-day
 mouse-hide-while-typing = true
 
-background-opacity = 99
-background-blur-radius = 100
+background-opacity = 0.80
 
-macos-titlebar-style = hidden
+macos-titlebar-style = transparent
+quick-terminal-position = center
 
 shell-integration-features = no-cursor,sudo,no-title
 
@@ -20,8 +20,6 @@ window-colorspace = "display-p3"
 keybind = cmd+shift+o=toggle_quick_terminal
 
 keybind = cmd+s>z=toggle_split_zoom
-
-keybind = cmd+shift+o=toggle_quick_terminal
 
 
 keybind = cmd+s>j=goto_split:bottom
