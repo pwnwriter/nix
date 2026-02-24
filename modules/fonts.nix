@@ -1,5 +1,5 @@
 { pkgs, ... }:
 with pkgs;
 [
-  nerd-fonts.jetbrains-mono
+  nerd-fonts.lilex
 ]

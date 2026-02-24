@@ -1,4 +1,7 @@
+{ pkgs, ... }:
 {
+  home.packages = [ pkgs.nerd-fonts.lilex ];
+
   programs.ghostty = {
     enable = true;
     package = null; # installed manually
@@ -7,12 +10,13 @@
       shell-integration = "zsh";
       auto-update = "off";
 
-      theme = "dark:Catppuccin Mocha,light:Rose Pine Dawn";
+      theme = "dark:catppuccin mocha,light:rose pine dawn";
       background-opacity = 0.80;
 
       window-padding-x = "40,40";
       window-padding-y = "20,30";
       window-colorspace = "display-p3";
+      font-family = "Lilex Nerd Font Mono Medium";
 
       mouse-hide-while-typing = true;
 
