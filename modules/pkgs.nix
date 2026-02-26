@@ -38,7 +38,7 @@ let
     with pkgs;
     [
       clang
-      nixfmt-rfc-style
+      nixfmt
       stylua
     ]
     ++ (import ./rust.nix { pkgs = pkgs; })
