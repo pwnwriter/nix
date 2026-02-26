@@ -12,6 +12,7 @@
 
       theme = "dark:catppuccin mocha,light:rose pine dawn";
       background-opacity = 0.80;
+      background-blur-radius = 30;
 
       window-padding-x = "40,40";
       window-padding-y = "20,30";
