@@ -1,0 +1,41 @@
+{ inputs }:
+let
+  inherit (inputs)
+    darwin
+    home-manager
+    catppuccin
+    ;
+in
+darwin.lib.darwinSystem {
+  system = "aarch64-darwin";
+
+  modules = [
+    # allow unfree packages
+    {
+      nixpkgs.config.allowUnfree = true;
+    }
+
+    # Mac Mini specific settings
+    {
+      system.keyboard.enableKeyMapping = true;
+      system.keyboard.swapLeftCommandAndLeftAlt = true;
+    }
+
+    ./../modules/darwin.nix
+    home-manager.darwinModules.home-manager
+
+    {
+      home-manager.useUserPackages = true;
+      home-manager.useGlobalPkgs = true;
+
+      home-manager.users.pwnwriter = {
+        imports = [
+          ./../modules
+          catppuccin.homeModules.catppuccin
+        ];
+
+        home.stateVersion = "26.05";
+      };
+    }
+  ];
+}

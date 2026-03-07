@@ -21,6 +21,7 @@
     # macOS (nix-darwin)
     darwinConfigurations = {
       earlymoon = import ./machines/earlymoon.nix { inherit inputs; };
+      phantom = import ./machines/phantom.nix { inherit inputs; };
     };
 
     # home-manager (pop-os)

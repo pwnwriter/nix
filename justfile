@@ -2,6 +2,15 @@ set shell := ["zsh", "-c"]
 
 _default:
     @just -l
+    @printf "\n"
+    @printf "╭──────────────────────────────────────────────╮\n"
+    @printf "│  machines                                    │\n"
+    @printf "├──────────────────────────────────────────────┤\n"
+    @printf "│  phantom    macOS  (Mac Mini)                │\n"
+    @printf "│  earlymoon  macOS  (MacBook Air)             │\n"
+    @printf "│  wolf       Linux  (Pop OS)                  │\n"
+    @printf "╰──────────────────────────────────────────────╯\n"
+    @printf "\n  usage: just r <machine>\n\n"
 
 alias g := gens
 alias f := format
@@ -38,13 +47,20 @@ flake-update:
     @echo "Syncing latest git rev"
     @nix flake update
 
-# Rebuild configuration
-[macos]
-rebuild *args:
-    @just _banner "macOS" ".#earlymoon"
-    @sudo -H nix run nix-darwin -- switch --flake .#earlymoon --show-trace {{args}}
-
-[linux]
-rebuild *args:
-    @just _banner "Linux" ".#wolf"
-    @nix run home-manager/master -- switch --flake .#wolf {{args}}
+# Rebuild a machine: just rebuild <phantom|earlymoon|wolf>
+rebuild machine *args:
+    @case "{{machine}}" in \
+        phantom) \
+            just _banner "macOS" ".#phantom"; \
+            sudo -H nix run nix-darwin -- switch --flake ".#phantom" --show-trace {{args}} ;; \
+        earlymoon) \
+            just _banner "macOS" ".#earlymoon"; \
+            sudo -H nix run nix-darwin -- switch --flake ".#earlymoon" --show-trace {{args}} ;; \
+        wolf) \
+            just _banner "Linux" ".#wolf"; \
+            nix run home-manager/master -- switch --flake ".#wolf" {{args}} ;; \
+        *) \
+            echo "Unknown machine: {{machine}}"; \
+            echo "Available: phantom, earlymoon, wolf"; \
+            exit 1 ;; \
+    esac
