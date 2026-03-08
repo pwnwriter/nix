@@ -50,8 +50,6 @@
 
       wget = "wget --no-hsts";
 
-      glg = "${pkgs.serie}/bin/serie";
-
       ".." = "cd ..";
       "..." = "cd ../../";
     };
