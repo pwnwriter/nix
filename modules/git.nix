@@ -1,7 +1,6 @@
 { pkgs, ... }:
 let
-  name = "pwnwriter";
-  email = "hi@pwnwriter.me";
+  identity = import ./identity.nix;
 in
 {
   programs.git = {
@@ -9,11 +8,10 @@ in
 
     ignores = [ ".DS_Store" ];
 
-    # old: userName/userEmail/extraConfig/aliases -> settings.*
     settings = {
       user = {
-        name = name;
-        email = email;
+        name = identity.name;
+        email = identity.email;
       };
 
       pull.rebase = true;
@@ -28,8 +26,8 @@ in
     };
 
     signing = {
-      key = "A52411EC5582DE3A";
-      signByDefault = pkgs.stdenv.isDarwin; # enable gpg signing on darwin only
+      key = identity.signingKey;
+      signByDefault = pkgs.stdenv.isDarwin;
     };
   };
 }
