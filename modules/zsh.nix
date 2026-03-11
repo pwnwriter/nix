@@ -55,32 +55,38 @@
     };
 
     initContent = ''
-      stty -ixon
-      zle -N up-line-or-beginning-search;
-      zle -N down-line-or-beginning-search;
+      autoload -Uz edit-command-line
+      zle -N edit-command-line
 
-      bindkey -v '^?' backward-delete-char;
-      bindkey -M viins 'jk' vi-cmd-mode;
+      stty -ixon
+      zle -N up-line-or-beginning-search
+      zle -N down-line-or-beginning-search
+
+      bindkey -v '^?' backward-delete-char
+      bindkey -M viins 'jk' vi-cmd-mode
+      bindkey -M viins '^E' edit-command-line
+      bindkey -M vicmd '^E' edit-command-line
+
       bindkey -s '^y' '^uyazi\n'
       bindkey -s '^z' '^ufg\n'
 
-
       function zle-keymap-select() {
         case $KEYMAP in
-          vicmd) echo -ne '\e[1 q' ;;        # block
-          viins | main) echo -ne '\e[5 q' ;; # beam
+          vicmd) echo -ne '\e[1 q' ;;
+          viins|main) echo -ne '\e[5 q' ;;
         esac
-      };
+      }
+
       zle-line-init() {
         zle -K viins
         echo -ne "\e[5 q"
-      };
+      }
 
-      zle -N zle-keymap-select;
-      zle -N zle-line-init;
+      zle -N zle-keymap-select
+      zle -N zle-line-init
 
-      echo -ne '\e[5 q';
-      preexec() { echo -ne '\e[5 q'; };
+      echo -ne '\e[5 q'
+      preexec() { echo -ne '\e[5 q'; }
     '';
   };
 }
