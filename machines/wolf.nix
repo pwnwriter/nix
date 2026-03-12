@@ -1,6 +1,6 @@
 { inputs }:
 let
-  inherit (inputs) nixpkgs home-manager;
+  inherit (inputs) nixpkgs home-manager catppuccin;
 
   system = "x86_64-linux";
   pkgs = import nixpkgs {
@@ -12,7 +12,9 @@ home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
 
   modules = [
+    catppuccin.homeModules.catppuccin
     ./../modules
+    ./../modules/tmux.nix
 
     {
       home.username = "pwn";
