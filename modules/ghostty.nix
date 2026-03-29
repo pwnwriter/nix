@@ -3,7 +3,7 @@
   home.packages = [ pkgs.nerd-fonts.lilex ];
 
   programs.ghostty = {
-    enable = false;
+    enable = true;
     package = null; # installed manually
 
     settings = {
