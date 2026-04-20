@@ -17,9 +17,11 @@ home-manager.lib.homeManagerConfiguration {
     ./../modules/tmux.nix
 
     {
-      home.username = "pwn";
-      home.homeDirectory = "/home/pwn";
-      home.stateVersion = "26.05";
+      home = {
+        username = "pwn";
+        homeDirectory = "/home/pwn";
+        stateVersion = "26.05";
+      };
     }
   ];
 }

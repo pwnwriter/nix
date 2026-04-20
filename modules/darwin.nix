@@ -1,8 +1,6 @@
-{ ... }:
+_:
 
 {
-  system.stateVersion = 5;
-  system.primaryUser = "pwnwriter";
 
   users.users.pwnwriter = {
     name = "pwnwriter";
@@ -22,6 +20,9 @@
   programs.zsh.enable = true;
 
   system = {
+    stateVersion = 5;
+    primaryUser = "pwnwriter";
+
     defaults = {
       dock = {
         tilesize = 20;

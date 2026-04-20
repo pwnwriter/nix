@@ -21,6 +21,8 @@ let
     typst
     uv
     zoxide
+    tree-sitter
+    statix
   ];
 
   # darwin =
@@ -32,7 +34,7 @@ let
   #     frameworks.SystemConfiguration
   #   ]
   #
-  #   ++ (import ./fonts.nix { pkgs = pkgs; });
+  #   ++ (import ./fonts.nix { inherit pkgs; });
 
   development =
     with pkgs;
@@ -41,11 +43,11 @@ let
       nixfmt
       stylua
     ]
-    ++ (import ./rust.nix { pkgs = pkgs; })
-    ++ (import ./lsp.nix { pkgs = pkgs; })
-    ++ (import ./go.nix { pkgs = pkgs; })
-    ++ (import ./zig.nix { pkgs = pkgs; })
-    ++ (import ./fonts.nix { pkgs = pkgs; });
+    ++ (import ./rust.nix { inherit pkgs; })
+    ++ (import ./lsp.nix { inherit pkgs; })
+    ++ (import ./go.nix { inherit pkgs; })
+    ++ (import ./zig.nix { inherit pkgs; })
+    ++ (import ./fonts.nix { inherit pkgs; });
 in
 {
   home.packages = utils ++ development;

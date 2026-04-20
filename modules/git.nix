@@ -10,8 +10,7 @@ in
 
     settings = {
       user = {
-        name = identity.name;
-        email = identity.email;
+        inherit (identity) name email;
       };
 
       pull.rebase = true;

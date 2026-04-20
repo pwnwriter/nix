@@ -14,6 +14,7 @@ _default:
 
 alias g := gens
 alias f := format
+alias s := statix
 alias c := clean
 alias r := rebuild
 alias u := flake-update
@@ -41,7 +42,10 @@ clean:
 
 format:
     @nixfmt $(find ./ -type f -name '*.nix')
-    @stylua -f $(find . -type f -name '.stylua.toml') $(find . -type f -name '*.lua')
+
+statix:
+    @statix check .
+
 
 flake-update:
     @echo "Syncing latest git rev"

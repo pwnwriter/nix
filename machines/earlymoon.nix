@@ -19,16 +19,18 @@ darwin.lib.darwinSystem {
     home-manager.darwinModules.home-manager
 
     {
-      home-manager.useUserPackages = true;
-      home-manager.useGlobalPkgs = true;
+      home-manager = {
+        useUserPackages = true;
+        useGlobalPkgs = true;
 
-      home-manager.users.pwnwriter = {
-        imports = [
-          ./../modules
-          catppuccin.homeModules.catppuccin
-        ];
+        users.pwnwriter = {
+          imports = [
+            ./../modules
+            catppuccin.homeModules.catppuccin
+          ];
 
-        home.stateVersion = "26.05";
+          home.stateVersion = "26.05";
+        };
       };
     }
   ];

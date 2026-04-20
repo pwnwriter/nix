@@ -8,8 +8,7 @@ in
 
     settings = {
       user = {
-        name = identity.name;
-        email = identity.email;
+        inherit (identity) name email;
       };
 
       signing = {
@@ -34,10 +33,24 @@ in
       aliases = {
         d = [ "diff" ];
         s = [ "status" ];
-        l = [ "log" "-r" "::@" ];
-        la = [ "log" "-r" "all()" ];
-        f = [ "git" "fetch" ];
-        p = [ "git" "push" ];
+        l = [
+          "log"
+          "-r"
+          "::@"
+        ];
+        la = [
+          "log"
+          "-r"
+          "all()"
+        ];
+        f = [
+          "git"
+          "fetch"
+        ];
+        p = [
+          "git"
+          "push"
+        ];
       };
     };
   };
