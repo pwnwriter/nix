@@ -18,6 +18,7 @@ let
     ./eza.nix
     ./ghostty.nix
     ./jj.nix
+    ./agenix.nix
   ];
 in
 {

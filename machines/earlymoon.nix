@@ -4,6 +4,7 @@ let
     darwin
     home-manager
     catppuccin
+    agenix
     ;
 in
 darwin.lib.darwinSystem {
@@ -27,6 +28,7 @@ darwin.lib.darwinSystem {
           imports = [
             ./../modules
             catppuccin.homeModules.catppuccin
+            agenix.homeManagerModules.default
           ];
 
           home.stateVersion = "26.05";

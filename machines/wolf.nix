@@ -1,6 +1,6 @@
 { inputs }:
 let
-  inherit (inputs) nixpkgs home-manager catppuccin;
+  inherit (inputs) nixpkgs home-manager catppuccin agenix;
 
   system = "x86_64-linux";
   pkgs = import nixpkgs {
@@ -13,6 +13,7 @@ home-manager.lib.homeManagerConfiguration {
 
   modules = [
     catppuccin.homeModules.catppuccin
+    agenix.homeManagerModules.default
     ./../modules
     ./../modules/tmux.nix
 
