@@ -24,7 +24,7 @@
       macos-titlebar-style = "tabs";
       window-subtitle = "false";
 
-      quick-terminal-position = "center";
+      quick-terminal-position = "left";
       shell-integration-features = "no-cursor,sudo,no-title,ssh-terminfo";
 
       custom-shader = "shaders/cursor.glsl";
