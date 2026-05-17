@@ -25,13 +25,14 @@
   outputs = inputs: {
     # macOS (nix-darwin)
     darwinConfigurations = {
-      earlymoon = import ./machines/earlymoon.nix { inherit inputs; };
-      phantom = import ./machines/phantom.nix { inherit inputs; };
+      darlene = import ./machines/darlene.nix { inherit inputs; };
+      whiterose = import ./machines/whiterose.nix { inherit inputs; };
     };
 
-    # home-manager (pop-os)
+    # home-manager (linux)
     homeConfigurations = {
-      wolf = import ./machines/wolf.nix { inherit inputs; };
+      elliot = import ./machines/elliot.nix { inherit inputs; };
+      fsoc = import ./machines/fsoc.nix { inherit inputs; };
     };
   };
 }

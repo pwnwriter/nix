@@ -6,9 +6,10 @@ _default:
     @printf "╭──────────────────────────────────────────────╮\n"
     @printf "│  machines                                    │\n"
     @printf "├──────────────────────────────────────────────┤\n"
-    @printf "│  phantom    macOS  (Mac Mini)                │\n"
-    @printf "│  earlymoon  macOS  (MacBook Air)             │\n"
-    @printf "│  wolf       Linux  (Pop OS)                  │\n"
+    @printf "│  darlene    macOS  (Mac Mini)                │\n"
+    @printf "│  whiterose  macOS  (MacBook M4)              │\n"
+    @printf "│  elliot     Linux  (Pop OS)                  │\n"
+    @printf "│  fsoc       Linux  (ThinkCenter)             │\n"
     @printf "╰──────────────────────────────────────────────╯\n"
     @printf "\n  usage: just r <machine>\n\n"
 
@@ -51,20 +52,23 @@ flake-update:
     @echo "Syncing latest git rev"
     @nix flake update
 
-# Rebuild a machine: just rebuild <phantom|earlymoon|wolf>
+# Rebuild a machine: just rebuild <darlene|whiterose|elliot|fsoc>
 rebuild machine *args:
     @case "{{machine}}" in \
-        phantom) \
-            just _banner "macOS" ".#phantom"; \
-            sudo -H nix run nix-darwin -- switch --flake ".#phantom" --show-trace {{args}} ;; \
-        earlymoon) \
-            just _banner "macOS" ".#earlymoon"; \
-            sudo -H nix run nix-darwin -- switch --flake ".#earlymoon" --show-trace {{args}} ;; \
-        wolf) \
-            just _banner "Linux" ".#wolf"; \
-            nix run home-manager/master -- switch --flake ".#wolf" {{args}} ;; \
+        darlene) \
+            just _banner "macOS" ".#darlene"; \
+            sudo -H nix run nix-darwin -- switch --flake ".#darlene" --show-trace {{args}} ;; \
+        whiterose) \
+            just _banner "macOS" ".#whiterose"; \
+            sudo -H nix run nix-darwin -- switch --flake ".#whiterose" --show-trace {{args}} ;; \
+        elliot) \
+            just _banner "Linux" ".#elliot"; \
+            nix run home-manager/master -- switch --flake ".#elliot" {{args}} ;; \
+        fsoc) \
+            just _banner "Linux" ".#fsoc"; \
+            nix run home-manager/master -- switch --flake ".#fsoc" {{args}} ;; \
         *) \
             echo "Unknown machine: {{machine}}"; \
-            echo "Available: phantom, earlymoon, wolf"; \
+            echo "Available: darlene, whiterose, elliot, fsoc"; \
             exit 1 ;; \
     esac
