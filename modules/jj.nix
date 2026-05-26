@@ -26,9 +26,9 @@ in
         merge-editor = ":builtin";
       };
 
-      git = {
-        auto-local-bookmark = true;
-      };
+      # git = {
+      #   auto-local-bookmark = true;
+      # };
 
       aliases = {
         d = [ "diff" ];
