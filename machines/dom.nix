@@ -22,7 +22,13 @@ nixpkgs.lib.nixosSystem {
     {
       imports = [ (nixpkgs + "/nixos/modules/installer/scan/not-detected.nix") ];
 
-      boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+      boot.initrd.availableKernelModules = [
+        "xhci_pci"
+        "nvme"
+        "usb_storage"
+        "sd_mod"
+        "rtsx_pci_sdmmc"
+      ];
       boot.kernelModules = [ "kvm-intel" ];
 
       fileSystems."/" = {
@@ -33,7 +39,10 @@ nixpkgs.lib.nixosSystem {
       fileSystems."/boot" = {
         device = "/dev/disk/by-uuid/86CA-0396";
         fsType = "vfat";
-        options = [ "fmask=0077" "dmask=0077" ];
+        options = [
+          "fmask=0077"
+          "dmask=0077"
+        ];
       };
 
       nixpkgs.hostPlatform = "x86_64-linux";
@@ -58,7 +67,11 @@ nixpkgs.lib.nixosSystem {
       users.users.pwn = {
         isNormalUser = true;
         description = "pwn";
-        extraGroups = [ "networkmanager" "wheel" "docker" ];
+        extraGroups = [
+          "networkmanager"
+          "wheel"
+          "docker"
+        ];
         openssh.authorizedKeys.keys = [
           "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC93QOhzNoYLf4HFhGrqzUpvKMETibptGagxZTD73h5f3i2kPIebwZX3qtkVa84b4JCH419HzzCs1w8B9dH3rOPd+y2UHZB1oterJDPSp4lQcyV8jkS9gp49A16AQQf7SGFkgG/xKUxPulTKAc5CqMtLNz67TEyi61Q4t8ASO31xfOWdJyBnGaUcQyhckuZn5hMIQgKOqfFpgJosUENzR4F6Osml5SBuToNcCXlPQqx5cECCUDCtE7i+xQtv77Q5t2h5/UbJq2YKW0uBbc4ZMtwOBKYhyx4DYV9ecEPNTgjotaO37xUBQqFuIgEo6lfd151n7MkUBe5seJzwO8HeBsZ hi@pwnwriter.me"
         ];
@@ -72,8 +85,14 @@ nixpkgs.lib.nixosSystem {
     # --- nix settings --------------------------------------------
     {
       nix.settings = {
-        experimental-features = [ "nix-command" "flakes" ];
-        trusted-users = [ "root" "pwn" ];
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
+        trusted-users = [
+          "root"
+          "pwn"
+        ];
       };
 
       # auto garbage-collect old generations
@@ -166,7 +185,7 @@ nixpkgs.lib.nixosSystem {
             agenix.homeManagerModules.default
           ];
 
-          home.stateVersion = "25.11";
+          home.stateVersion = "26.05";
         };
       };
     }
