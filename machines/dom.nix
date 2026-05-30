@@ -5,6 +5,7 @@ let
     home-manager
     catppuccin
     agenix
+    determinate
     ;
 in
 nixpkgs.lib.nixosSystem {
@@ -12,6 +13,10 @@ nixpkgs.lib.nixosSystem {
 
   modules = [
     { nixpkgs.config.allowUnfree = true; }
+
+    # determinate nix
+    determinate.nixosModules.default
+    { determinate.enable = true; }
 
     # --- hardware ------------------------------------------------
     {
