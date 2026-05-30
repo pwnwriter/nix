@@ -29,6 +29,11 @@
       whiterose = import ./machines/whiterose.nix { inherit inputs; };
     };
 
+    # NixOS
+    nixosConfigurations = {
+      dom = import ./machines/dom.nix { inherit inputs; };
+    };
+
     # home-manager (linux)
     homeConfigurations = {
       elliot = import ./machines/elliot.nix { inherit inputs; };

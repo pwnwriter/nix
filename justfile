@@ -10,6 +10,7 @@ _default:
     @printf "│  whiterose  macOS  (MacBook M4)              │\n"
     @printf "│  elliot     Linux  (Pop OS)                  │\n"
     @printf "│  fsoc       Linux  (ThinkCenter)             │\n"
+    @printf "│  dom        NixOS  (Precision 7740)          │\n"
     @printf "╰──────────────────────────────────────────────╯\n"
     @printf "\n  usage: just r <machine>\n\n"
 
@@ -67,8 +68,11 @@ rebuild machine *args:
         fsoc) \
             just _banner "Linux" ".#fsoc"; \
             nix run home-manager/master -- switch --flake ".#fsoc" {{args}} ;; \
+        dom) \
+            just _banner "NixOS" ".#dom"; \
+            sudo nixos-rebuild switch --flake ".#dom" --show-trace {{args}} ;; \
         *) \
             echo "Unknown machine: {{machine}}"; \
-            echo "Available: darlene, whiterose, elliot, fsoc"; \
+            echo "Available: darlene, whiterose, elliot, fsoc, dom"; \
             exit 1 ;; \
     esac
