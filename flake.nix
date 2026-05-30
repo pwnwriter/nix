@@ -33,7 +33,7 @@
 
     # NixOS
     nixosConfigurations = {
-      dom = import ./machines/dom.nix { inherit inputs; };
+      dom = import ./machines/dom { inherit inputs; };
     };
 
     # home-manager (linux)
