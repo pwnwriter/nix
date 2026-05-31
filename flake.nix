@@ -27,8 +27,8 @@
   outputs = inputs: {
     # macOS (nix-darwin)
     darwinConfigurations = {
-      darlene = import ./machines/darlene.nix { inherit inputs; };
-      whiterose = import ./machines/whiterose.nix { inherit inputs; };
+      darlene = import ./machines/darlene { inherit inputs; };
+      whiterose = import ./machines/whiterose { inherit inputs; };
     };
 
     # NixOS
@@ -38,8 +38,8 @@
 
     # home-manager (linux)
     homeConfigurations = {
-      elliot = import ./machines/elliot.nix { inherit inputs; };
-      fsoc = import ./machines/fsoc.nix { inherit inputs; };
+      elliot = import ./machines/elliot { inherit inputs; };
+      fsoc = import ./machines/fsoc { inherit inputs; };
     };
   };
 }

@@ -22,7 +22,7 @@ darwin.lib.darwinSystem {
       system.keyboard.swapLeftCommandAndLeftAlt = true;
     }
 
-    ./../modules/darwin.nix
+    ./../../modules/darwin.nix
     home-manager.darwinModules.home-manager
 
     {
