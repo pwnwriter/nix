@@ -14,8 +14,8 @@ home-manager.lib.homeManagerConfiguration {
   modules = [
     catppuccin.homeModules.catppuccin
     agenix.homeManagerModules.default
-    ./../modules
-    ./../modules/tmux.nix
+    ./../../modules
+    ./../../modules/tmux.nix
 
     {
       home = {

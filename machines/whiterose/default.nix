@@ -16,7 +16,7 @@ darwin.lib.darwinSystem {
       nixpkgs.config.allowUnfree = true;
     }
 
-    ./../modules/darwin.nix
+    ./../../modules/darwin.nix
     home-manager.darwinModules.home-manager
 
     {
@@ -26,7 +26,7 @@ darwin.lib.darwinSystem {
 
         users.pwnwriter = {
           imports = [
-            ./../modules
+            ./../../modules
             catppuccin.homeModules.catppuccin
             agenix.homeManagerModules.default
           ];

@@ -32,7 +32,7 @@ darwin.lib.darwinSystem {
 
         users.pwnwriter = {
           imports = [
-            ./../modules
+            ./../../modules
             catppuccin.homeModules.catppuccin
             agenix.homeManagerModules.default
           ];
