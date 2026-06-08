@@ -2,20 +2,18 @@
 
 let
   macos_prompt = {
-    error_symbol = lib.concatStrings [ "[ ](red)" ];
-    vimcmd_symbol = lib.concatStrings [ "[ ](green)" ];
-    success_symbol = lib.concatStrings [ "[ ](rosewater)" ];
+    error_symbol = "[ ](red)";
+    vimcmd_symbol = "[ ](green)";
+    success_symbol = "[ ](rosewater)";
   };
 
   linux_prompt = {
-    error_symbol = lib.concatStrings [ "[ ](red)" ];
-    vimcmd_symbol = lib.concatStrings [ "[ ](green)" ];
-    success_symbol = lib.concatStrings [ "[ ](rosewater)" ];
+    error_symbol = "[ ](red)";
+    vimcmd_symbol = "[ ](green)";
+    success_symbol = "[ ](rosewater)";
   };
-
 in
 {
-
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
@@ -23,22 +21,18 @@ in
     settings = {
       scan_timeout = 10;
 
-      format = lib.concatStrings [ "$directory$git_branch$character" ];
-      right_format = lib.concatStrings [ "$nix_shell" ];
+      format = ''
+        $directory$git_branch$git_status
+        $character
+      '';
+
+      right_format = "$nix_shell";
 
       character = if pkgs.stdenv.isDarwin then macos_prompt else linux_prompt;
 
       directory = {
         style = "bold pink";
         truncation_length = 1;
-      };
-
-      nix_shell = {
-        impure_msg = "impure";
-        pure_msg = "pure";
-        unknown_msg = "unknown";
-        format = "[$symbol$state]($style)";
-        symbol = "󱄅 ";
       };
 
       git_branch = {
@@ -52,7 +46,7 @@ in
       git_status = {
         format = "[\\($all_status$ahead_behind\\)]($style) ";
         style = "bold green";
-        conflicted = "󱃞";
+        conflicted = "󱣮";
         up_to_date = " ";
         untracked = " ";
         ahead = "⇡\${count}";
@@ -65,6 +59,13 @@ in
         deleted = " ";
       };
 
+      nix_shell = {
+        impure_msg = "impure";
+        pure_msg = "pure";
+        unknown_msg = "unknown";
+        format = "[$symbol$state]($style)";
+        symbol = " ";
+      };
     };
   };
 
