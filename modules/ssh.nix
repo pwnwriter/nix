@@ -22,8 +22,8 @@
       };
 
       "fawn" = {
-        user = "fawn";
-        hostname = "fawn.pwnwriter.xyz";
+        user = "pwn";
+        hostname = "192.168.1.174";
       };
 
       "dom" = {

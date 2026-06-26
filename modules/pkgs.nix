@@ -4,7 +4,12 @@ let
     aria2
     bat
     bottom
+
+    # coding agents
+
     claude-code
+    codex
+
     curlie
     eza
     fastfetch
