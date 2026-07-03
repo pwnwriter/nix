@@ -25,7 +25,7 @@
       window-subtitle = "false";
 
       quick-terminal-position = "left";
-      shell-integration-features = "no-cursor,sudo,no-title,ssh-terminfo";
+      shell-integration-features = "no-cursor,sudo,no-title";
 
       custom-shader = "shaders/cursor.glsl";
 
