@@ -1,46 +1,48 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
-  home.packages = [ pkgs.nerd-fonts.lilex ];
+  config = lib.mkIf pkgs.stdenv.isDarwin {
+    home.packages = [ pkgs.nerd-fonts.lilex ];
 
-  programs.ghostty = {
-    enable = true;
-    package = null; # installed manually
+    programs.ghostty = {
+      enable = true;
+      package = null; # installed manually
 
-    settings = {
-      shell-integration = "zsh";
-      auto-update = "off";
+      settings = {
+        shell-integration = "zsh";
+        auto-update = "off";
 
-      theme = "dark:catppuccin mocha,light:rose pine dawn";
-      background-opacity = 0.80;
-      background-blur-radius = 30;
+        theme = "dark:catppuccin mocha,light:rose pine dawn";
+        background-opacity = 0.80;
+        background-blur-radius = 30;
 
-      window-padding-x = "40,40";
-      window-padding-y = "20,30";
-      window-colorspace = "display-p3";
-      font-family = "Lilex Nerd Font Mono Medium";
+        window-padding-x = "40,40";
+        window-padding-y = "20,30";
+        window-colorspace = "display-p3";
+        font-family = "Lilex Nerd Font Mono Medium";
 
-      mouse-hide-while-typing = true;
+        mouse-hide-while-typing = true;
 
-      macos-titlebar-style = "tabs";
-      window-subtitle = "false";
+        macos-titlebar-style = "tabs";
+        window-subtitle = "false";
 
-      quick-terminal-position = "left";
-      shell-integration-features = "no-cursor,sudo,no-title";
+        quick-terminal-position = "left";
+        shell-integration-features = "no-cursor,sudo,no-title";
 
-      custom-shader = "shaders/cursor.glsl";
+        custom-shader = "shaders/cursor.glsl";
 
-      keybind = [
-        "global:cmd+shift+o=toggle_quick_terminal"
-        "cmd+s>z=toggle_split_zoom"
-        "cmd+s>j=goto_split:bottom"
-        "cmd+s>k=goto_split:top"
-        "cmd+s>h=goto_split:left"
-        "cmd+s>l=goto_split:right"
-        "cmd+s>\\=new_split:right"
-        "cmd+s>-=new_split:down"
-      ];
+        keybind = [
+          "global:cmd+shift+o=toggle_quick_terminal"
+          "cmd+s>z=toggle_split_zoom"
+          "cmd+s>j=goto_split:bottom"
+          "cmd+s>k=goto_split:top"
+          "cmd+s>h=goto_split:left"
+          "cmd+s>l=goto_split:right"
+          "cmd+s>\\=new_split:right"
+          "cmd+s>-=new_split:down"
+        ];
+      };
     };
-  };
 
-  home.file.".config/ghostty/shaders/cursor.glsl".source = ./configs/ghostty/shaders/cursor.glsl;
+    home.file.".config/ghostty/shaders/cursor.glsl".source = ./configs/ghostty/shaders/cursor.glsl;
+  };
 }

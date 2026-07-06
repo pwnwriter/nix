@@ -16,9 +16,10 @@ let
     ./direnv.nix
     ./fzf.nix
     ./eza.nix
-    ./ghostty.nix
     ./jj.nix
     ./agenix.nix
+    ./ghostty.nix
+    ./linux.nix
   ];
 in
 {

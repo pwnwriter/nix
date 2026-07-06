@@ -1,6 +1,11 @@
 { inputs }:
 let
-  inherit (inputs) nixpkgs home-manager catppuccin agenix;
+  inherit (inputs)
+    nixpkgs
+    home-manager
+    catppuccin
+    agenix
+    ;
 
   system = "x86_64-linux";
   pkgs = import nixpkgs {
