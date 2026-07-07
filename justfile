@@ -9,7 +9,8 @@ _default:
     @printf "│  darlene    macOS  (Mac Mini)                │\n"
     @printf "│  whiterose  macOS  (MacBook M4)              │\n"
     @printf "│  elliot     Linux  (Pop OS)                  │\n"
-    @printf "│  fsoc       Linux  (ThinkCenter)             │\n"
+    @printf "│  fsoc       Linux  (ThinkCenter x86_64)       │\n"
+    @printf "│  fsoc-aarch64  Linux  (ThinkCenter aarch64)   │\n"
     @printf "│  dom        NixOS  (Precision 7740)          │\n"
     @printf "╰──────────────────────────────────────────────╯\n"
     @printf "\n  usage: just r <machine>\n\n"
@@ -68,11 +69,14 @@ rebuild machine *args:
         fsoc) \
             just _banner "Linux" ".#fsoc"; \
             nix run home-manager/master -- switch --flake ".#fsoc" {{args}} ;; \
+        fsoc-aarch64) \
+            just _banner "Linux" ".#fsoc-aarch64"; \
+            nix run home-manager/master -- switch --flake ".#fsoc-aarch64" {{args}} ;; \
         dom) \
             just _banner "NixOS" ".#dom"; \
             sudo nixos-rebuild switch --flake ".#dom" --show-trace {{args}} ;; \
         *) \
             echo "Unknown machine: {{machine}}"; \
-            echo "Available: darlene, whiterose, elliot, fsoc, dom"; \
+            echo "Available: darlene, whiterose, elliot, fsoc, fsoc-aarch64, dom"; \
             exit 1 ;; \
     esac

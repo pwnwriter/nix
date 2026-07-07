@@ -1,4 +1,4 @@
-{ inputs }:
+{ inputs, system ? "x86_64-linux" }:
 let
   inherit (inputs)
     nixpkgs
@@ -6,8 +6,6 @@ let
     catppuccin
     agenix
     ;
-
-  system = "x86_64-linux";
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
