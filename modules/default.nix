@@ -27,4 +27,9 @@ in
   xdg.dataHome = "${config.home.homeDirectory}/.local/share";
   programs.home-manager.enable = true;
   home.stateVersion = "26.05";
+
+  catppuccin = {
+    enable = true;
+    autoEnable = false;
+  };
 }

@@ -4,31 +4,33 @@
     enable = true;
     enableDefaultConfig = false;
 
-    matchBlocks = {
+    settings = {
       "*" = {
-        userKnownHostsFile = "${config.xdg.dataHome}/ssh/known_hosts";
-        identityFile = "${config.xdg.dataHome}/ssh/id_rsa";
-
-        extraOptions =
-          if pkgs.stdenv.isDarwin then
-            {
-              AddKeysToAgent = "yes";
-              UseKeychain = "yes";
-            }
-          else
-            {
-              AddKeysToAgent = "yes";
-            };
-      };
+        UserKnownHostsFile = "${config.xdg.dataHome}/ssh/known_hosts";
+        IdentityFile = "${config.xdg.dataHome}/ssh/id_rsa";
+        AddKeysToAgent = "yes";
+      } // (if pkgs.stdenv.isDarwin then { UseKeychain = "yes"; } else { });
 
       "fawn" = {
-        user = "pwn";
-        hostname = "192.168.1.174";
+        User = "pwn";
+        Hostname = "192.168.1.174";
       };
 
       "dom" = {
-        user = "pwn";
-        hostname = "192.168.1.213";
+        User = "pwn";
+        Hostname = "192.168.1.213";
+      };
+
+      "eipi" = {
+        User = "pwn";
+        Hostname = "161.153.39.31";
+        Port = 6969;
+      };
+
+      "tes" = {
+        User = "eipi";
+        Hostname = "167.233.193.30";
+        Port = 6969;
       };
     };
   };
