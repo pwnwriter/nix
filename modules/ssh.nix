@@ -9,6 +9,9 @@
         UserKnownHostsFile = "${config.xdg.dataHome}/ssh/known_hosts";
         IdentityFile = "${config.xdg.dataHome}/ssh/id_rsa";
         AddKeysToAgent = "yes";
+        SetEnv = {
+          TERM = "xterm-256color";
+        };
       } // (if pkgs.stdenv.isDarwin then { UseKeychain = "yes"; } else { });
 
       "fawn" = {
