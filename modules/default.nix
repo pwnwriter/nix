@@ -30,6 +30,6 @@ in
 
   catppuccin = {
     enable = true;
-    autoEnable = false;
+    autoEnable = true;
   };
 }
