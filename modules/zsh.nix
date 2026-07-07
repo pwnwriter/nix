@@ -19,6 +19,7 @@
 
     LESSHISTFILE = "${config.xdg.cacheHome}/less/history";
     NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
+    NPM_CONFIG_CACHE = "${config.xdg.cacheHome}/npm";
     PYTHONSTARTUP = "${config.xdg.configHome}/python/pythonrc";
     SSH_HOME = "${config.xdg.configHome}/ssh/ssh_config";
 
