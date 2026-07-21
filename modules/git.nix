@@ -17,7 +17,7 @@ in
 
       credential.helper = if pkgs.stdenv.isDarwin then "osxkeychain" else "cache";
 
-      help.autocorrect = 10;
+      help.autocorrect = 5;
 
       alias = {
         cl = "clone --depth=1 --filter=blob:none";
