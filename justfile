@@ -8,9 +8,7 @@ _default:
     @printf "├──────────────────────────────────────────────┤\n"
     @printf "│  darlene    macOS  (Mac Mini)                │\n"
     @printf "│  whiterose  macOS  (MacBook M4)              │\n"
-    @printf "│  elliot     Linux  (Pop OS)                  │\n"
-    @printf "│  fsoc       Linux  (ThinkCenter x86_64)       │\n"
-    @printf "│  fsoc-aarch64  Linux  (ThinkCenter aarch64)   │\n"
+    @printf "│  elliot     Linux  (Ubuntu server)           │\n"
     @printf "│  dom        NixOS  (Precision 7740)          │\n"
     @printf "╰──────────────────────────────────────────────╯\n"
     @printf "\n  usage: just r <machine>\n\n"
@@ -54,7 +52,7 @@ flake-update:
     @echo "Syncing latest git rev"
     @nix flake update
 
-# Rebuild a machine: just rebuild <darlene|whiterose|elliot|fsoc>
+# Rebuild a machine: just rebuild <darlene|whiterose|elliot|dom>
 rebuild machine *args:
     @case "{{machine}}" in \
         darlene) \
@@ -66,17 +64,11 @@ rebuild machine *args:
         elliot) \
             just _banner "Linux" ".#elliot"; \
             nix run home-manager/master -- switch --flake ".#elliot" {{args}} ;; \
-        fsoc) \
-            just _banner "Linux" ".#fsoc"; \
-            nix run home-manager/master -- switch --flake ".#fsoc" {{args}} ;; \
-        fsoc-aarch64) \
-            just _banner "Linux" ".#fsoc-aarch64"; \
-            nix run home-manager/master -- switch --flake ".#fsoc-aarch64" {{args}} ;; \
         dom) \
             just _banner "NixOS" ".#dom"; \
             sudo nixos-rebuild switch --flake ".#dom" --show-trace {{args}} ;; \
         *) \
             echo "Unknown machine: {{machine}}"; \
-            echo "Available: darlene, whiterose, elliot, fsoc, fsoc-aarch64, dom"; \
+            echo "Available: darlene, whiterose, elliot, dom"; \
             exit 1 ;; \
     esac

@@ -39,8 +39,6 @@
     # home-manager (linux)
     homeConfigurations = {
       elliot = import ./machines/elliot { inherit inputs; };
-      fsoc = import ./machines/fsoc { inherit inputs; };
-      fsoc-aarch64 = import ./machines/fsoc { inherit inputs; system = "aarch64-linux"; };
     };
   };
 }

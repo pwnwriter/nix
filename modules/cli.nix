@@ -15,7 +15,6 @@ with pkgs;
   openssl
   pkg-config
   ripgrep
-  tmux
   typst
   uv
   zoxide

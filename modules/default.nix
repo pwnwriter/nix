@@ -19,6 +19,7 @@ let
     ./jj.nix
     ./agenix.nix
     ./ghostty.nix
+    ./herdr.nix
     ./linux.nix
   ];
 in

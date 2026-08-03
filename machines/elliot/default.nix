@@ -20,12 +20,11 @@ home-manager.lib.homeManagerConfiguration {
     catppuccin.homeModules.catppuccin
     agenix.homeManagerModules.default
     ./../../modules
-    ./../../modules/tmux.nix
 
     {
       home = {
-        username = "pwn";
-        homeDirectory = "/home/pwn";
+        username = "eipi";
+        homeDirectory = "/home/eipi";
         stateVersion = "26.05";
       };
     }

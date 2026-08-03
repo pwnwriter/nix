@@ -33,7 +33,6 @@ nixpkgs.lib.nixosSystem {
         users.pwn = {
           imports = [
             ./../../modules
-            ./../../modules/tmux.nix
             catppuccin.homeModules.catppuccin
             agenix.homeManagerModules.default
           ];
