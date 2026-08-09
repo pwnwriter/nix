@@ -1,14 +1,12 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
+let
+  repoDir = "${config.home.homeDirectory}/Developer/nix";
+in
 {
   config = lib.mkIf pkgs.stdenv.isLinux {
     home.packages = [ pkgs.herdr ];
 
-    xdg.configFile."herdr/config.toml".text = ''
-      [theme]
-      name = "rose-pine"
-      auto_switch = true
-      dark_name = "rose-pine"
-      light_name = "rose-pine-dawn"
-    '';
+    xdg.configFile."herdr/config.toml".source =
+      config.lib.file.mkOutOfStoreSymlink "${repoDir}/modules/configs/herdr/config.toml";
   };
 }

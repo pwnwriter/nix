@@ -1,0 +1,19 @@
+# herdr config — linked via mkOutOfStoreSymlink (see modules/herdr.nix).
+# Mutable + git-tracked: herdr writes here when you install integrations or
+# toggle settings in-app, and you can also edit it by hand.
+
+[theme]
+name = "rose-pine"
+auto_switch = true
+dark_name = "rose-pine"
+light_name = "rose-pine-dawn"
+
+# Background popup notifications: off | herdr | terminal | system
+[ui.toast]
+delivery = "herdr"
+
+# Agents I use. This controls per-agent notification sound (on | off) and is the
+# only agent setting config.toml holds — the actual integration ("report state
+# directly") is installed from the in-app integrations tab, not from here.
+[ui.sound]
+agents = { claude = "on", codex = "on" }
