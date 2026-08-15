@@ -8,6 +8,11 @@ auto_switch = true
 dark_name = "rose-pine"
 light_name = "rose-pine-dawn"
 
+# alt+1..alt+9 -> tabs 1-9, alt+0 -> tab 10 (no literal "alt+10" key exists).
+# Range form "1..0" expands to 1,2,...,9,0. Overrides the default prefix+1..9.
+[keys]
+switch_tab = "alt+1..0"
+
 # Background popup notifications: off | herdr | terminal | system
 [ui.toast]
 delivery = "herdr"
