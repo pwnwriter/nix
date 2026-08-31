@@ -30,7 +30,7 @@
         Port = 6969;
       };
 
-      "tes" = {
+      "elliot" = {
         User = "eipi";
         Hostname = "167.233.193.30";
         Port = 6969;
