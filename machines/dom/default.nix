@@ -3,7 +3,6 @@ let
   inherit (inputs)
     nixpkgs
     home-manager
-    catppuccin
     agenix
     determinate
     ;
@@ -33,7 +32,6 @@ nixpkgs.lib.nixosSystem {
         users.pwn = {
           imports = [
             ./../../modules
-            catppuccin.homeModules.catppuccin
             agenix.homeManagerModules.default
           ];
 

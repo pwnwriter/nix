@@ -11,7 +11,7 @@
         shell-integration = "zsh";
         auto-update = "off";
 
-        theme = "dark:catppuccin mocha,light:rose pine dawn";
+        theme = "dark:Rose Pine Moon,light:Rose Pine Dawn";
         background-opacity = 0.80;
         background-blur-radius = 30;
 

@@ -1,16 +1,18 @@
-_: {
+{ pkgs, theme, ... }:
+{
   programs.bat = {
     enable = true;
 
     config = {
       pager = "less -FR";
+      theme = "rose-pine";
     };
 
-  };
-
-  catppuccin = {
-    enable = true;
-    flavor = "latte";
+    # Rosé Pine theme generated from the active palette (see modules/theme.nix).
+    themes."rose-pine" = {
+      src = pkgs.writeTextDir "rose-pine.tmTheme" theme.tmTheme;
+      file = "rose-pine.tmTheme";
+    };
   };
 
   home.sessionVariables = {

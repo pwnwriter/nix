@@ -3,7 +3,6 @@ let
   inherit (inputs)
     darwin
     home-manager
-    catppuccin
     agenix
     ;
 in
@@ -27,7 +26,6 @@ darwin.lib.darwinSystem {
         users.pwnwriter = {
           imports = [
             ./../../modules
-            catppuccin.homeModules.catppuccin
             agenix.homeManagerModules.default
           ];
 

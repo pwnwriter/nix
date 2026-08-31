@@ -3,7 +3,6 @@ let
   inherit (inputs)
     nixpkgs
     home-manager
-    catppuccin
     agenix
     ;
 
@@ -17,7 +16,6 @@ home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
 
   modules = [
-    catppuccin.homeModules.catppuccin
     agenix.homeManagerModules.default
     ./../../modules
 

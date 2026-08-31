@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, theme, ... }:
 
 let
   macos_prompt = {
@@ -20,6 +20,32 @@ in
 
     settings = {
       scan_timeout = 10;
+
+      # Rosé Pine palette from the active theme (see modules/theme.nix).
+      # The style strings below use Catppuccin-style colour names, mapped
+      # onto Rosé Pine roles here so they keep working across variants.
+      palette = "rose_pine";
+      palettes.rose_pine = {
+        inherit (theme)
+          love
+          gold
+          rose
+          pine
+          foam
+          iris
+          text
+          base
+          surface
+          overlay
+          muted
+          subtle
+          ;
+        red = theme.love;
+        green = theme.pine;
+        rosewater = theme.rose;
+        pink = theme.iris;
+        maroon = theme.rose;
+      };
 
       format = ''
         $directory$git_branch$git_status
@@ -69,8 +95,4 @@ in
     };
   };
 
-  catppuccin = {
-    enable = true;
-    flavor = "latte";
-  };
 }
