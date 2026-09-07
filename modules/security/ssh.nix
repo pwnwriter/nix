@@ -21,7 +21,8 @@
 
       "dom" = {
         User = "pwn";
-        Hostname = "192.168.1.213";
+        # Tailscale MagicDNS name — reachable on LAN and from anywhere.
+        Hostname = "dom";
       };
 
       "eipi" = {

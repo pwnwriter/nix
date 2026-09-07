@@ -43,6 +43,6 @@
       };
     };
 
-    home.file.".config/ghostty/shaders/cursor.glsl".source = ./configs/ghostty/shaders/cursor.glsl;
+    home.file.".config/ghostty/shaders/cursor.glsl".source = ../configs/ghostty/shaders/cursor.glsl;
   };
 }
