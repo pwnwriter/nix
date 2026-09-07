@@ -1,5 +1,6 @@
 { pkgs, ... }:
-with pkgs;
-[
-  nerd-fonts.lilex
-]
+{
+  home.packages = with pkgs; [
+    nerd-fonts.lilex
+  ];
+}
