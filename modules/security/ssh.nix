@@ -12,7 +12,8 @@
         SetEnv = {
           TERM = "xterm-256color";
         };
-      } // (if pkgs.stdenv.isDarwin then { UseKeychain = "yes"; } else { });
+      }
+      // (if pkgs.stdenv.isDarwin then { UseKeychain = "yes"; } else { });
 
       "fawn" = {
         User = "pwn";

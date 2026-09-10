@@ -36,7 +36,8 @@ in
         ../modules/darwin
         home-manager.darwinModules.home-manager
         (hmModule username)
-      ] ++ modules;
+      ]
+      ++ modules;
     };
 
   # NixOS host
@@ -54,7 +55,8 @@ in
         { determinate.enable = true; }
         home-manager.nixosModules.home-manager
         (hmModule username)
-      ] ++ modules;
+      ]
+      ++ modules;
     };
 
   # Standalone home-manager host (linux server)

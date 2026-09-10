@@ -17,6 +17,9 @@ alias g := gens
 alias f := format
 alias s := statix
 alias c := clean
+alias ca := clean-all
+alias co := clean-old
+alias ls := list-system
 alias r := rebuild
 alias u := flake-update
 
@@ -37,9 +40,36 @@ gens:
     @echo "🏠🏠🏠 Listing home-manager generations 🏠🏠🏠"
     @nix-env --list-generations
 
+# Light clean: trim THIS USER's old generations + GC.
+# NOTE: does NOT touch the system profile (the darwin-rebuild history).
 clean:
-    @echo "Cleaning up unused Nix store items"
+    @echo "🧹 Cleaning user profile generations + store garbage"
     @nix-collect-garbage -d
+
+# Deep clean: trim user AND system (darwin) generations, then optimise.
+# This is the one that clears the pile of darwin-rebuild system generations.
+clean-all:
+    @echo "🧹 Cleaning user + system generations + store garbage"
+    nix-collect-garbage -d
+    sudo nix-collect-garbage -d
+    @echo "🗜  Optimising store"
+    nix store optimise
+
+# Age-based clean: drop everything older than N days (default 14), user + system.
+clean-old days="14":
+    @echo "🧹 Removing generations older than {{days}} days (user + system)"
+    nix-collect-garbage --delete-older-than {{days}}d
+    sudo nix-collect-garbage --delete-older-than {{days}}d
+
+# Trim only the darwin system profile to the last N generations (default 5).
+clean-system keep="5":
+    @echo "🧹 Keeping last {{keep}} system generations"
+    sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +{{keep}}
+    sudo nix-collect-garbage
+
+# List darwin system generations (the real darwin-rebuild history).
+list-system:
+    @sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 
 format:
     @nixfmt $(find ./ -type f -name '*.nix')

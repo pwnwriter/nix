@@ -171,13 +171,16 @@ let
   '';
 in
 {
-  _module.args.theme = rp // aliases // {
-    name = variant;
-    isDark = variant == "moon";
-    ghostty = {
-      dark = "rose-pine-moon";
-      light = "rose-pine-dawn";
+  _module.args.theme =
+    rp
+    // aliases
+    // {
+      name = variant;
+      isDark = variant == "moon";
+      ghostty = {
+        dark = "rose-pine-moon";
+        light = "rose-pine-dawn";
+      };
+      inherit tmTheme;
     };
-    inherit tmTheme;
-  };
 }

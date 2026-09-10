@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   repoDir = "${config.home.homeDirectory}/Developer/nix";
 in
