@@ -31,12 +31,12 @@
 
     # NixOS
     nixosConfigurations = {
-      dom = import ./machines/dom { inherit inputs; };
+      elliot = import ./machines/elliot { inherit inputs; };
     };
 
     # home-manager (linux)
     homeConfigurations = {
-      elliot = import ./machines/elliot { inherit inputs; };
+      dom = import ./machines/dom { inherit inputs; };
     };
   };
 }

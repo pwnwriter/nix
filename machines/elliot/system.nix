@@ -3,7 +3,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "dom";
+  networking.hostName = "elliot";
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/New_York";

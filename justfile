@@ -8,8 +8,8 @@ _default:
     @printf "├──────────────────────────────────────────────┤\n"
     @printf "│  darlene    macOS  (Mac Mini)                │\n"
     @printf "│  whiterose  macOS  (MacBook M4)              │\n"
-    @printf "│  elliot     Linux  (Ubuntu server)           │\n"
-    @printf "│  dom        NixOS  (Precision 7740)          │\n"
+    @printf "│  elliot     NixOS  (Precision 7740)          │\n"
+    @printf "│  dom        Linux  (Ubuntu server)           │\n"
     @printf "╰──────────────────────────────────────────────╯\n"
     @printf "\n  usage: just r <machine>\n\n"
 
@@ -92,11 +92,11 @@ rebuild machine *args:
             just _banner "macOS" ".#whiterose"; \
             sudo -H nix run nix-darwin -- switch --flake ".#whiterose" --show-trace {{args}} ;; \
         elliot) \
-            just _banner "Linux" ".#elliot"; \
-            nix run home-manager/master -- switch --flake ".#elliot" {{args}} ;; \
+            just _banner "NixOS" ".#elliot"; \
+            sudo nixos-rebuild switch --flake ".#elliot" --show-trace {{args}} ;; \
         dom) \
-            just _banner "NixOS" ".#dom"; \
-            sudo nixos-rebuild switch --flake ".#dom" --show-trace {{args}} ;; \
+            just _banner "Linux" ".#dom"; \
+            nix run home-manager/master -- switch --flake ".#dom" {{args}} ;; \
         *) \
             echo "Unknown machine: {{machine}}"; \
             echo "Available: darlene, whiterose, elliot, dom"; \

@@ -1,5 +1,10 @@
 { inputs }:
-(import ../../lib { inherit inputs; }).mkHome {
-  username = "eipi";
-  homeDirectory = "/home/eipi";
+(import ../../lib { inherit inputs; }).mkNixos {
+  modules = [
+    ./hardware.nix
+    ./system.nix
+    ./nix.nix
+    ./power.nix
+    ./services.nix
+  ];
 }

@@ -20,10 +20,11 @@
         Hostname = "192.168.1.174";
       };
 
-      "dom" = {
+      # NixOS laptop (Precision 7740). Tailscale MagicDNS name — reachable on
+      # LAN and from anywhere. Node name follows its hostname ("elliot").
+      "elliot" = {
         User = "pwn";
-        # Tailscale MagicDNS name — reachable on LAN and from anywhere.
-        Hostname = "dom";
+        Hostname = "elliot";
       };
 
       "eipi" = {
@@ -32,7 +33,8 @@
         Port = 6969;
       };
 
-      "elliot" = {
+      # Ubuntu server (home-manager only, user eipi).
+      "dom" = {
         User = "eipi";
         Hostname = "167.233.193.30";
         Port = 6969;
