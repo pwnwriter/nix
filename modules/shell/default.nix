@@ -8,5 +8,6 @@
     ./eza.nix
     ./bat.nix
     ./cli.nix
+    ./nh.nix
   ];
 }
