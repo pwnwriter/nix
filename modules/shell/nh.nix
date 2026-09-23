@@ -2,6 +2,6 @@
 {
   programs.nh = {
     enable = true;
-    flake = "${config.home.homeDirectory}/Developer/nix";
+    flake = "${config.home.homeDirectory}/Developer/infra";
   };
 }

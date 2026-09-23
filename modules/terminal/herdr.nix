@@ -5,7 +5,7 @@
   ...
 }:
 let
-  repoDir = "${config.home.homeDirectory}/Developer/nix";
+  repoDir = "${config.home.homeDirectory}/Developer/infra";
 in
 {
   config = lib.mkIf pkgs.stdenv.isLinux {
