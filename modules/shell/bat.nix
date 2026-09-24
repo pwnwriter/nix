@@ -5,13 +5,13 @@
 
     config = {
       pager = "less -FR";
-      theme = "rose-pine";
+      theme = "evergarden";
     };
 
-    # Rosé Pine theme generated from the active palette (see modules/theme.nix).
-    themes."rose-pine" = {
-      src = pkgs.writeTextDir "rose-pine.tmTheme" theme.tmTheme;
-      file = "rose-pine.tmTheme";
+    # Evergarden theme generated from the active palette (see modules/theme.nix).
+    themes.evergarden = {
+      src = pkgs.writeTextDir "evergarden.tmTheme" theme.tmTheme;
+      file = "evergarden.tmTheme";
     };
   };
 

@@ -4,23 +4,23 @@
     enable = true;
     enableZshIntegration = true;
 
-    # Rosé Pine colours from the active palette (see modules/theme.nix).
+    # Evergarden colours from the active palette (see modules/theme.nix).
     colors = {
-      "fg" = theme.subtle;
+      "fg" = theme.subtext0;
       "bg" = theme.base;
-      "hl" = theme.rose;
+      "hl" = theme.orange;
       "fg+" = theme.text;
-      "bg+" = theme.overlay;
-      "hl+" = theme.rose;
-      "border" = theme.highlightMed;
-      "header" = theme.pine;
+      "bg+" = theme.surface1;
+      "hl+" = theme.orange;
+      "border" = theme.surface1;
+      "header" = theme.green;
       "gutter" = theme.base;
-      "spinner" = theme.gold;
-      "info" = theme.foam;
-      "separator" = theme.highlightMed;
-      "pointer" = theme.iris;
-      "marker" = theme.love;
-      "prompt" = theme.subtle;
+      "spinner" = theme.yellow;
+      "info" = theme.aqua;
+      "separator" = theme.surface1;
+      "pointer" = theme.purple;
+      "marker" = theme.red;
+      "prompt" = theme.subtext0;
     };
   };
 }

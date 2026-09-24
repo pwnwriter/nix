@@ -18,15 +18,15 @@
 
     filekinds:
       normal: {foreground: "${theme.text}"}
-      directory: {foreground: "${theme.maroon}"}
+      directory: {foreground: "${theme.orange}"}
       symlink: {foreground: "${theme.blue}"}
       pipe: {foreground: "${theme.subtext1}"}
-      block_device: {foreground: "${theme.maroon}"}
-      char_device: {foreground: "${theme.maroon}"}
+      block_device: {foreground: "${theme.orange}"}
+      char_device: {foreground: "${theme.orange}"}
       socket: {foreground: "${theme.subtext1}"}
-      special: {foreground: "${theme.mauve}"}
+      special: {foreground: "${theme.purple}"}
       executable: {foreground: "${theme.green}"}
-      mount_point: {foreground: "${theme.teal}"}
+      mount_point: {foreground: "${theme.aqua}"}
 
     perms:
       user_read: {foreground: "${theme.red}", is_bold: true}
@@ -39,28 +39,28 @@
       other_read: {foreground: "${theme.red}"}
       other_write: {foreground: "${theme.yellow}"}
       other_execute: {foreground: "${theme.green}"}
-      special_user_file: {foreground: "${theme.mauve}"}
+      special_user_file: {foreground: "${theme.purple}"}
       special_other: {foreground: "${theme.overlay1}"}
       attribute: {foreground: "${theme.overlay2}"}
 
     size:
       major: {foreground: "${theme.subtext0}"}
-      minor: {foreground: "${theme.sky}"}
+      minor: {foreground: "${theme.skye}"}
       number_byte: {foreground: "${theme.subtext1}"}
       number_kilo: {foreground: "${theme.subtext0}"}
       number_mega: {foreground: "${theme.blue}"}
-      number_giga: {foreground: "${theme.mauve}"}
-      number_huge: {foreground: "${theme.mauve}"}
+      number_giga: {foreground: "${theme.purple}"}
+      number_huge: {foreground: "${theme.purple}"}
       unit_byte: {foreground: "${theme.subtext0}"}
-      unit_kilo: {foreground: "${theme.sky}"}
-      unit_mega: {foreground: "${theme.mauve}"}
-      unit_giga: {foreground: "${theme.mauve}"}
-      unit_huge: {foreground: "${theme.teal}"}
+      unit_kilo: {foreground: "${theme.skye}"}
+      unit_mega: {foreground: "${theme.purple}"}
+      unit_giga: {foreground: "${theme.purple}"}
+      unit_huge: {foreground: "${theme.aqua}"}
 
     users:
       user_you: {foreground: "${theme.text}"}
       user_root: {foreground: "${theme.red}"}
-      user_other: {foreground: "${theme.maroon}"}
+      user_other: {foreground: "${theme.orange}"}
       group_yours: {foreground: "${theme.subtext0}"}
       group_other: {foreground: "${theme.overlay2}"}
       group_root: {foreground: "${theme.red}"}
@@ -72,35 +72,35 @@
     git:
       new: {foreground: "${theme.green}"}
       modified: {foreground: "${theme.yellow}"}
-      deleted: {foreground: "${theme.maroon}"}
-      renamed: {foreground: "${theme.teal}"}
+      deleted: {foreground: "${theme.orange}"}
+      renamed: {foreground: "${theme.aqua}"}
       typechange: {foreground: "${theme.pink}"}
       ignored: {foreground: "${theme.overlay1}"}
-      conflicted: {foreground: "${theme.peach}"}
+      conflicted: {foreground: "${theme.orange}"}
 
     git_repo:
       branch_main: {foreground: "${theme.subtext0}"}
-      branch_other: {foreground: "${theme.mauve}"}
+      branch_other: {foreground: "${theme.purple}"}
       git_clean: {foreground: "${theme.green}"}
-      git_dirty: {foreground: "${theme.maroon}"}
+      git_dirty: {foreground: "${theme.orange}"}
 
     security_context:
       colon: {foreground: "${theme.overlay0}"}
       user: {foreground: "${theme.overlay1}"}
-      role: {foreground: "${theme.mauve}"}
+      role: {foreground: "${theme.purple}"}
       typ: {foreground: "${theme.surface2}"}
-      range: {foreground: "${theme.mauve}"}
+      range: {foreground: "${theme.purple}"}
 
     file_type:
       image: {foreground: "${theme.yellow}"}
       video: {foreground: "${theme.red}"}
       music: {foreground: "${theme.green}"}
-      lossless: {foreground: "${theme.teal}"}
+      lossless: {foreground: "${theme.aqua}"}
       crypto: {foreground: "${theme.overlay1}"}
       document: {foreground: "${theme.text}"}
       compressed: {foreground: "${theme.pink}"}
-      temp: {foreground: "${theme.maroon}"}
-      compiled: {foreground: "${theme.sapphire}"}
+      temp: {foreground: "${theme.orange}"}
+      compiled: {foreground: "${theme.snow}"}
       source: {foreground: "${theme.blue}"}
 
     punctuation: {foreground: "${theme.overlay0}"}
@@ -108,11 +108,11 @@
     inode: {foreground: "${theme.subtext0}"}
     blocks: {foreground: "${theme.overlay0}"}
     header: {foreground: "${theme.text}"}
-    octal: {foreground: "${theme.teal}"}
-    flags: {foreground: "${theme.mauve}"}
+    octal: {foreground: "${theme.aqua}"}
+    flags: {foreground: "${theme.purple}"}
 
-    symlink_path: {foreground: "${theme.sky}"}
-    control_char: {foreground: "${theme.sapphire}"}
+    symlink_path: {foreground: "${theme.skye}"}
+    control_char: {foreground: "${theme.snow}"}
     broken_symlink: {foreground: "${theme.red}"}
     broken_path_overlay: {foreground: "${theme.surface2}"}
   '';

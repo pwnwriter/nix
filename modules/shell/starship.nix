@@ -9,13 +9,13 @@ let
   macos_prompt = {
     error_symbol = "[ ](red)";
     vimcmd_symbol = "[ ](green)";
-    success_symbol = "[ ](rosewater)";
+    success_symbol = "[ ](orange)";
   };
 
   linux_prompt = {
     error_symbol = "[ ](red)";
     vimcmd_symbol = "[ ](green)";
-    success_symbol = "[ ](rosewater)";
+    success_symbol = "[ ](orange)";
   };
 in
 {
@@ -26,30 +26,35 @@ in
     settings = {
       scan_timeout = 10;
 
-      # Rosé Pine palette from the active theme (see modules/theme.nix).
-      # The style strings below use Catppuccin-style colour names, mapped
-      # onto Rosé Pine roles here so they keep working across variants.
-      palette = "rose_pine";
-      palettes.rose_pine = {
+      # Evergarden palette from the active theme (see modules/theme.nix).
+      palette = "evergarden";
+      palettes.evergarden = {
         inherit (theme)
-          love
-          gold
-          rose
-          pine
-          foam
-          iris
+          red
+          orange
+          yellow
+          lime
+          green
+          aqua
+          skye
+          snow
+          blue
+          purple
+          pink
+          cherry
           text
+          subtext1
+          subtext0
+          overlay2
+          overlay1
+          overlay0
+          surface2
+          surface1
+          surface0
           base
-          surface
-          overlay
-          muted
-          subtle
+          mantle
+          crust
           ;
-        red = theme.love;
-        green = theme.pine;
-        rosewater = theme.rose;
-        pink = theme.iris;
-        maroon = theme.rose;
       };
 
       format = ''
