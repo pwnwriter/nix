@@ -1,10 +1,11 @@
 { ... }:
 {
-  # keep running with lid closed
+  # keep running with lid closed, never act on idle
   services.logind.settings.Login = {
     HandleLidSwitch = "ignore";
     HandleLidSwitchDocked = "ignore";
     HandleLidSwitchExternalPower = "ignore";
+    IdleAction = "ignore";
   };
 
   # power management for thermals
@@ -18,11 +19,18 @@
     };
   };
 
-  # prevent suspend/hibernate
+  # prevent suspend/hibernate: mask the targets AND tell systemd-sleep to
+  # refuse, so nothing (GNOME, logind, `systemctl suspend`) can put it down.
   systemd.targets = {
     sleep.enable = false;
     suspend.enable = false;
     hibernate.enable = false;
     hybrid-sleep.enable = false;
+  };
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = "no";
+    AllowHibernation = "no";
+    AllowHybridSleep = "no";
+    AllowSuspendThenHibernate = "no";
   };
 }
